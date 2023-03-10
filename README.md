@@ -1,24 +1,29 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10352922&assignment_repo_type=AssignmentRepo)
-# TÍTULO DO PROJETO
+# SHAVES
 
-`CURSO`
+`Sistemas de Informação`
 
-`DISCIPLINA`
+`Trabalho Intersdisciplinar: Aplicações Web`
 
-`SEMESTRE`
+`1° Semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+   Visando um atendimento de maior qualidade e em aumentar a produtividade dos profissionais da barbearia Golden Hair, foi detectado a necessidade de um sistema próprio para agendamento. O sistema shaves visa garantir a possibilidade de um crescimento e um aumento da clientela diretamente proporcional para a barbearia.
+   Com um sistema intuitivo onde os clientes podem agendar um horário com um sistema intuitivo onde os clientes podem agendar um horário com um determinado funcionário da barbearia, bem como dar acesso aos serviços disponíveis. Os funcionários também podem organizar seus horários e aprimorar sua produtividade. 
+
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Felipe Ferreira de Castro 
+* Matheus Felipe Galdino
+* Guilherme Simão Barbosa da Silva
+* Bruno Henrique Almeida Moreira
+* Gabriel Amorim Gonçalves Silva
+* Igor Alvarenga Nunes de Brito
+* João Vitor de Souza França
 
 ## Orientador
 
-* Nome completo do professor 1
+* Fábio Cordeiro
 
 ## Instruções de utilização
 
