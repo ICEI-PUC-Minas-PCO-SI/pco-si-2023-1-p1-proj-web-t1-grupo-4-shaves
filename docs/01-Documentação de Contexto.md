@@ -7,7 +7,7 @@ Visando um atendimento de maior qualidade e em aumentar a produtividade dos prof
 
 ## Objetivos
 
-O sistema Shaves visa garantir a possibilidade de crescimento e um aumento de clientela diretamente proporcional para a barbearia Golden Hair. Com um sistema intuitivo onde os clientes podem agendar um horário com um determinado funcionário da barbearia, bem como dar acesso aos serviços disponíveis. os funcionários também podem organizar seus horários e aprimorar sua produtividade.
+O sistema Shaves visa garantir a possibilidade de crescimento e um aumento de clientela diretamente proporcional para a barbearia Golden Hair. Com um sistema intuitivo onde os clientes podem agendar um horário com um determinado funcionário da barbearia, bem como dar acesso aos serviços disponíveis. Os funcionários também podem organizar seus horários e aprimorar sua produtividade.
 
 ## Justificativa
 
@@ -15,4 +15,4 @@ A implementação de um sistema próprio, passa por uma maior credibilidade para
 
 ## Público-Alvo
 
-Homens 13 a 55 anos, sem determinação de  estado civil, sem determinação de escolaridade ou conhecimento aprofundado em tecnologia e sem diferenciação quanto a ocupaçção profissional.
+Homens 13 a 55 anos, sem determinação de  estado civil, sem determinação de escolaridade ou conhecimento aprofundado em tecnologia e sem diferenciação quanto a ocupação profissional.
