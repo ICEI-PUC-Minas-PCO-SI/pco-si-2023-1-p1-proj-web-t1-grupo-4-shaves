@@ -10,7 +10,11 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 1 - Samuel Nogueira tem 30 anos e é barbeiro a 10 anos, desde criança sempre foi muito competitivo, e seus pais sempre o incentivaram a fazer as coisas bem feitas. Atualmente trabalha como barbeiro e tem como capital através do mercado de investimentos. Já participou de diversos campeonatos de cortes masculinos.
 
-2-
+2- Enzo Ezaquiel tem 9 anos, é de uma família de classe média alta, está no terceiro ano do ensino fundamental, fica irritado quando não tem o que quer de imediato, passa o dia inteiro no celuular e tem o desejo de se tornar um pro player de free fire, odeia estudar e ama comer besteiras.
+
+3- Yago Campos tem 36 anos e é pai de duas meninas e é divorciado, ama praticar esportes e ser melhor que puder todos os dias. É apaixonado por futebol e joga desde criança. Uma das suas frustrações é pela sua queda de cabelo eminente e que não consegue achar um salão que te ajude a melhorar isso, ele busca aumentar sua autoestima achando uma barbearia que o deixe satisfeito com a sua aparência.
+
+4-
 
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
