@@ -30,7 +30,7 @@
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
 
 # Documentação
-<img src= "relatorio/images/persona.png">
+<img src= "https://i0.wp.com/gamehall.com.br/wp-content/uploads/2011/05/batman-wallpaper.jpg?ssl=1">
 <ol>
 <li><a href="docs/01-Documentação de Contexto.md"> Documentação de Contexto</a></li>
 <li><a href="docs/02-Especificação do Projeto.md"> Especificação do Projeto</a></li>
