@@ -10,12 +10,14 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 1 - Samuel Nogueira tem 30 anos e é barbeiro a 10 anos, desde criança sempre foi muito competitivo, e seus pais sempre o incentivaram a fazer as coisas bem feitas. Atualmente trabalha como barbeiro e tem como capital através do mercado de investimentos. Já participou de diversos campeonatos de cortes masculinos.
 
-2- Enzo Ezaquiel tem 9 anos, é de uma família de classe média alta, está no terceiro ano do ensino fundamental, fica irritado quando não tem o que quer de imediato, passa o dia inteiro no celuular e tem o desejo de se tornar um pro player de free fire, odeia estudar e ama comer besteiras.
+2 - Enzo Ezaquiel tem 9 anos, é de uma família de classe média alta, está no terceiro ano do ensino fundamental, fica irritado quando não tem o que quer de imediato, passa o dia inteiro no celular e tem o desejo de se tornar um pro player de free fire, odeia estudar e ama comer besteiras.
 
-3- Yago Campos tem 36 anos e é pai de duas meninas e é divorciado, ama praticar esportes e ser melhor que puder todos os dias. É apaixonado por futebol e joga desde criança. Uma das suas frustrações é pela sua queda de cabelo eminente e que não consegue achar um salão que te ajude a melhorar isso, ele busca aumentar sua autoestima achando uma barbearia que o deixe satisfeito com a sua aparência.
+3 - Yago Campos tem 36 anos e é pai de duas meninas e é divorciado, ama praticar esportes e ser melhor que puder todos os dias. É apaixonado por futebol e joga desde criança. Uma das suas frustrações é pela sua queda de cabelo eminente e que não consegue achar um salão que te ajude a melhorar isso, ele busca aumentar sua autoestima achando uma barbearia que o deixe satisfeito com a sua aparência.
 
-4-
+4 - Washington Dias tem 27 anos e é músico, tem grande vaidade e procura ao máximo cuidar do seu corpo, ele possui grande aptidão para aprender novos instrumentos além dos que já possui conhecimento e tem como paixão a música. Washington gosta de sempre se reunir com seus amigos e tem bastante convivência com outros músicos desde a sua infância. Apesar de todas as qualidades, Washington tem um sério problema em não ser muito bem compreendido e tem isso como frustração.
 
+5 - Roger Raffari tem 41 anos e é dono da barbearia Golden Hair, ele possui grande experiência no ramo, vem atuando na área a pelo menos dez anos e tem como objetivo e motivação sempre prestar um bom serviço aos seus clientes. Roger possui vida economica ativa no mercado de investimentos e tem como hobbie jogar futebol, assim como também gosta de acompanhar enquanto toma uma cervejinha gelada. Apesar de dar seu máximo em prol da barbearia, Roger se sente um tanto quanto incapaz e odeia ser desorganizado, prezando sempre pela organização da barbearia e dos seus funcionários. 
+ 
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
 > **Links Úteis**:
