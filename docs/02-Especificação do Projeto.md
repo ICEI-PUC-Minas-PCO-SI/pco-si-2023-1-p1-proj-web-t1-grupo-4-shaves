@@ -17,18 +17,7 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 4 - Washington Dias tem 27 anos e é músico, tem grande vaidade e procura ao máximo cuidar do seu corpo, ele possui grande aptidão para aprender novos instrumentos além dos que já possui conhecimento e tem como paixão a música. Washington gosta de sempre se reunir com seus amigos e tem bastante convivência com outros músicos desde a sua infância. Apesar de todas as qualidades, Washington tem um sério problema em não ser muito bem compreendido e tem isso como frustração.
 
 5 - Roger Raffari tem 41 anos e é dono da barbearia Golden Hair, ele possui grande experiência no ramo, vem atuando na área a pelo menos dez anos e tem como objetivo e motivação sempre prestar um bom serviço aos seus clientes. Roger possui vida economica ativa no mercado de investimentos e tem como hobbie jogar futebol, assim como também gosta de acompanhar enquanto toma uma cervejinha gelada. Apesar de dar seu máximo em prol da barbearia, Roger se sente um tanto quanto incapaz e odeia ser desorganizado, prezando sempre pela organização da barbearia e dos seus funcionários. 
- 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
@@ -36,8 +25,17 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Usuário do sistema  |  Escolher o barbeiro melhor capacitado, para o meu fillho.         | Quero que meu filho se sinta bem com o seu cabelo.               |
+|Usuário do sistema  | Ver todos os serviços oferecidos pela barbearia e marcar um horário.         | Quero ter a possibilidade de escolher entre diversos cortes e estilos de barba. 
+|Usuário do sistema  | Marcar meus cortes de forma rápida e efetiva.    | Quero evitar filas e organizar melhor meus compromissos.              |
+|Usuário do sistema  | Marcar meus cortes com um barbeiro específico.    | Quero cortar com meu barbeiro fixo.             |
+|Usuário do sistema barbeiro  | Ver os meus clientes do dia de forma organizada e postar meus cortes.   | Manter a organização do meu dia e impulsionar minha carreira.             |
+|Administrador       | Aumentar a produtividade dos barbeiros, e dar agilidade e organização para todos os clientes.             | Impulsionar os ganhos da barbearia, melhor organização do ambiente de trabalho.
+
+
+
+
+
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
@@ -56,7 +54,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
+|RF-001| Logar  | ALTA | 
 |RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
 
 
