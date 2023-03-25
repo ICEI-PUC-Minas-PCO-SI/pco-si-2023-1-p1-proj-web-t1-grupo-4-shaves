@@ -8,6 +8,8 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
+*Inserir 1 usuário PCD e um barbeiro especializado em PCD*
+
 1 - Samuel Nogueira tem 30 anos e é barbeiro a 10 anos, desde criança sempre foi muito competitivo, e seus pais sempre o incentivaram a fazer as coisas bem feitas. Atualmente trabalha como barbeiro e tem como capital através do mercado de investimentos. Já participou de diversos campeonatos de cortes masculinos.
 
 2 - Enzo Ezaquiel tem 9 anos, é de uma família de classe média alta, está no terceiro ano do ensino fundamental, fica irritado quando não tem o que quer de imediato, passa o dia inteiro no celular e tem o desejo de se tornar um pro player de free fire, odeia estudar e ama comer besteiras.
@@ -16,82 +18,77 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 4 - Washington Dias tem 27 anos e é músico, tem grande vaidade e procura ao máximo cuidar do seu corpo, ele possui grande aptidão para aprender novos instrumentos além dos que já possui conhecimento e tem como paixão a música. Washington gosta de sempre se reunir com seus amigos e tem bastante convivência com outros músicos desde a sua infância. Apesar de todas as qualidades, Washington tem um sério problema em não ser muito bem compreendido e tem isso como frustração.
 
-5 - Roger Raffari tem 41 anos e é dono da barbearia Golden Hair, ele possui grande experiência no ramo, vem atuando na área a pelo menos dez anos e tem como objetivo e motivação sempre prestar um bom serviço aos seus clientes. Roger possui vida economica ativa no mercado de investimentos e tem como hobbie jogar futebol, assim como também gosta de acompanhar enquanto toma uma cervejinha gelada. Apesar de dar seu máximo em prol da barbearia, Roger se sente um tanto quanto incapaz e odeia ser desorganizado, prezando sempre pela organização da barbearia e dos seus funcionários. 
+5 - Roger Raffari tem 41 anos e é dono da barbearia Golden Hair, ele possui grande experiência no ramo, vem atuando na área a pelo menos dez anos e tem como objetivo e motivação sempre prestar um bom serviço aos seus clientes. Roger possui vida econômica ativa no mercado de investimentos e tem como hobbies jogar futebol, assim como também gosta de acompanhar enquanto toma uma cervejinha gelada. Apesar de dar seu máximo em prol da barbearia, Roger se sente um tanto quanto incapaz e odeia ser desorganizado, prezando sempre pela organização da barbearia e dos seus funcionários. 
+
+
 
 
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  |  Escolher o barbeiro melhor capacitado, para o meu fillho.         | Quero que meu filho se sinta bem com o seu cabelo.               |
-|Usuário do sistema  | Ver todos os serviços oferecidos pela barbearia e marcar um horário.         | Quero ter a possibilidade de escolher entre diversos cortes e estilos de barba. 
-|Usuário do sistema  | Marcar meus cortes de forma rápida e efetiva.    | Quero evitar filas e organizar melhor meus compromissos.              |
-|Usuário do sistema  | Marcar meus cortes com um barbeiro específico.    | Quero cortar com meu barbeiro fixo.             |
-|Usuário do sistema barbeiro  | Ver os meus clientes do dia de forma organizada e postar meus cortes.   | Manter a organização do meu dia e impulsionar minha carreira.             |
-|Administrador       | Aumentar a produtividade dos barbeiros, e dar agilidade e organização para todos os clientes.             | Impulsionar os ganhos da barbearia, melhor organização do ambiente de trabalho.
+| EU COMO... `PERSONA`        | QUERO/PRECISO ... `FUNCIONALIDADE`                           | PARA ... `MOTIVO/VALOR`                                      |
+| --------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Usuário do sistema          | Ver todos os serviços oferecidos pela barbearia e marcar um horário. | Quero ter a possibilidade de escolher entre diversos cortes e estilos de barba. |
+| Usuário do sistema          | Escolher o barbeiro melhor capacitado, para o meu filho.     | Quero que meu filho se sinta bem com o seu cabelo.           |
+| Usuário do sistema          | Marcar meus cortes de forma rápida e efetiva.                | Quero evitar filas e organizar melhor meus compromissos.     |
+| Usuário do sistema          | Marcar meus cortes com um barbeiro específico.               | Quero cortar com meu barbeiro fixo.                          |
+| Usuário do sistema barbeiro | Ver os meus clientes do dia de forma organizada e postar meus cortes. | Manter a organização do meu dia e impulsionar minha carreira. |
+| Administrador               | Aumentar a produtividade dos barbeiros, e dar agilidade e organização para todos os clientes. | Impulsionar os ganhos da barbearia, melhor organização do ambiente de trabalho. |
 
 
-
-
-
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
-
-## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
+
+
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Logar  | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| ID     | Descrição do Requisito                     | Prioridade |
+| ------ | ------------------------------------------ | ---------- |
+| RF-001 | Criar conta                                | ALTA       |
+| RF-002 | Alterar informação conta                   | ALTA       |
+| RF-003 | Excluir conta                              | ALTA       |
+| RF-004 | Visualizar informações conta               | ALTA       |
+| RF-005 | Marcar um horário para cortar cabelo       | ALTA       |
+| RF-006 | Selecionar um barbeiro preferencial        | MÉDIA      |
+| RF-007 | Visualizar perfil do babeiro               | BAIXA      |
+| RF-008 | Visualizar portfolio de cortes do barbeiro | BAIXA      |
+| RF-009 | Adicionar fotos no portfolio do barbeiro   | BAIXA      |
+| RF-010 | Reagendar corte marcado                    | ALTA       |
+| RF-011 | Fornecer feedback do corte e serviço       | MÉDIA      |
+| RF-012 | Chat de interação usuário-barbeiro         | BAIXA      |
+| RF-013 | Pedido de reagendamento                    | ALTA       |
+| RF-014 | Visualizar todos os atendimentos do dia    | ALTA       |
+| RF-015 | Emitir relatório de trabalho               | MÉDIA      |
+| RF-016 | Premiar o barbeiro que se destacou mais    | BAIXA      |
+| RF-017 | Transferir cliente para outro barbeiro     | MÉDIA      |
+
 
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID      | Descrição do Requisito                                       | Prioridade |
+| ------- | ------------------------------------------------------------ | ---------- |
+| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA      |
+| RNF-002 | Deve processar requisições do usuário em no máximo 4s        | BAIXA      |
+| RNF-003 | Possuir disponibilidade 99.9                                 | ALTA       |
+| RNF-004 | Usabilidade                                                  | MÉDIA      |
+| RNF-005 | Portabilidade para navegadores mais comuns                   | ALTA       |
+| RNF-006 | Restrito às leis da LGPD (Lei Geral de Proteção de Dados Pessoais) | ALTA       |
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+| ID   | Restrição                                                    |
+| ---- | ------------------------------------------------------------ |
+| 01   | O projeto deverá ser entregue até o final do semestre        |
+| 02   | Não pode ser desenvolvido um módulo de backend               |
+| 03   | Restringir atendimento para dias e horários úteis            |
+| 04   | Pagamento é realizado no local de atendimento                |
+| 05   | Um barbeiro não pode atender 2 ou mais clientes no mesmo horário |
+| 06   | Reagendamento somente com antecedência de 2 horas            |
+| 07   | Restringir atendimento especializado para barbeiro com competência |
