@@ -8,7 +8,7 @@
 `1° Semestre`
 
    Visando um atendimento de maior qualidade e em aumentar a produtividade dos profissionais da barbearia Golden Hair, foi detectado a necessidade de um sistema próprio para agendamento. O sistema shaves visa garantir a possibilidade de um crescimento e um aumento da clientela diretamente proporcional para a barbearia.
-   Com um sistema intuitivo onde os clientes podem agendar um horário com um sistema intuitivo onde os clientes podem agendar um horário com um determinado funcionário da barbearia, bem como dar acesso aos serviços disponíveis. Os funcionários também podem organizar seus horários e aprimorar sua produtividade. 
+   Com um sistema intuitivo onde os clientes podem agendar um horário com um determinado funcionário da barbearia, bem como dar acesso aos serviços disponíveis. Os funcionários também podem organizar seus horários e aprimorar sua produtividade. 
 
 
 ## Integrantes
