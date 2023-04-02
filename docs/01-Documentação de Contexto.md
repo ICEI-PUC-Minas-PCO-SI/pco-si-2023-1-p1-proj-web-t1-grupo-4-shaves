@@ -1,7 +1,6 @@
 # Introdução
 
-A Shaves é uma aplicação de gerenciamento de agenda com foco na barbearia Golden Hair e suas possíveis filiais.
-
+Bem-vindo ao projeto Shaves! Este é um aplicativo de gerenciamento de agenda projetado para atender às necessidades da barbearia Golden Hair e de suas filiais. Com foco em eficiência e facilidade de uso, a Shaves permite que a equipe da Golden Hair gerencie suas agendas de forma mais organizada e eficaz. Os clientes da barbearia também se beneficiarão do agendamento simplificado, notificações de lembrete, e essa eficiência no atendimento. Este repositório contém todo o código-fonte e documentação necessários para o desenvolvimento contínuo do aplicativo. Estamos animados para colaborar e ajudar a melhorar a experiência de gerenciamento de agendas da Golden Hair e suas filiais.
 ## Problema
 Devido a uma grande ocorrênca de problemas organizacionais dentro da barbearia Golden Hair tais como agendar horários manualmente estava levando a erros, como confusão de datas e horários, gerando atrasos e clientes insatisfeitos fora isso a falta de eficiência e agilidade, sem um aplicativo para gerenciar horários, a equipe pode passa muito tempo agendando horários manualmente, o que afeta negativamente a eficiência e produtividade da barbearia.
 
