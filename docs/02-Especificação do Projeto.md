@@ -1,26 +1,24 @@
 # Especificações do Projeto
 
-Pré-requisitos: [Documentação de Contexto](https://github.com/ICEI-PUC-Minas-PCO-SI/pco-si-2023-1-p1-proj-web-t1-grupo-4-shaves/blob/main/docs/1-Documentação de Contexto.md)
+O Shaves é um sistema de agendamento para a barbearia Golden Hair que permitirá usuários realizarem um agendamento para corte de cabelo nos dias e horários disponíveis, com opções de escolher um barbeiro de preferência e visualizar informações do barbeiro, tais como a sua experiência, feedback de outros clientes e o portfólio dos cortes realizados. 
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+O Front-end do sistema deve ser desenvolvido com o HTML, CSS e Javascript, podendo ter o auxílio do Framework Boostrap. O Back-End será desenvolvido com o Javascript e com as operações CRUD realizadas por JSON.
 
 ## Personas
 
-1 - Samuel Nogueira tem 30 anos e é barbeiro a 10 anos, desde criança sempre foi muito competitivo, e seus pais sempre o incentivaram a fazer as coisas bem feitas. Atualmente trabalha como barbeiro e tem como capital através do mercado de investimentos. Já participou de diversos campeonatos de cortes masculinos.
+1 - Samuel Nogueira tem 30 anos, barbeiro há 10 anos e desde criança sempre foi muito competitivo. O pais de Samuel sempre o incentivaram a fazer as coisas de forma bem feitas. Atualmente trabalha como barbeiro e tem como renda principal o mercado de investimentos. Já participou de diversos campeonatos de cortes masculinos.
 
-2 - Enzo Ezaquiel tem 9 anos, é de uma família de classe média alta, está no terceiro ano do ensino fundamental, fica irritado quando não tem o que quer de imediato, passa o dia inteiro no celular e tem o desejo de se tornar um pro player de free fire, odeia estudar e ama comer besteiras.
+2 - Enzo Ezaquiel tem 9 anos, vem de uma família de classe média alta, atualmente está no 3º ano do ensino fundamental. Enzo é muito acostumado a receber o que quer de imediato e se frustra facilmente quando é contrariado. Passa o dia inteiro no celular e tem o desejo de se tornar um jogador profissional de Free Fire. Enzo odeia estudar e ama comer doces e guloseimas.
 
-3 - Yago Campos tem 36 anos e é pai de duas meninas e é divorciado, ama praticar esportes e ser melhor que puder todos os dias. É apaixonado por futebol e joga desde criança. Uma das suas frustrações é pela sua queda de cabelo eminente e que não consegue achar um salão que te ajude a melhorar isso, ele busca aumentar sua autoestima achando uma barbearia que o deixe satisfeito com a sua aparência.
+3 - Yago Campos tem 36 anos, pai de duas meninas e divorciado. Ama praticar esportes e ser melhor que puder todos os dias. É apaixonado por futebol e joga desde criança. Uma das suas frustrações é pela sua queda de cabelo eminente e que não consegue achar um salão que te ajude a melhorar isso. Yago busca aumentar sua autoestima achando uma barbearia que o deixe satisfeito com a sua aparência.
 
-4 - Washington Dias tem 27 anos é barbeiro da barbearia Golden Hair e músico, tem grande vaidade e procura ao máximo cuidar do seu corpo, ele possui grande aptidão para aprender novos instrumentos além dos que já possui conhecimento e tem como paixão a música. Washington gosta de sempre se reunir com seus amigos e tem bastante convivência com outros músicos desde a sua infância. Apesar de todas as qualidades, Washington tem um sério problema em não ser muito bem compreendido e tem isso como frustração.
+4 - Washington Dias tem 27 anos, é barbeiro da barbearia Golden Hair e músico. Tem grande vaidade e procura ao máximo cuidar do seu corpo, ele possui grande aptidão para aprender novos instrumentos além dos que já possui conhecimento e tem como paixão a música. Washington gosta de sempre se reunir com seus amigos e tem bastante convivência com outros músicos desde a sua infância. Apesar de todas as qualidades, Washington tem um sério problema em não ser muito bem compreendido e tem isso como frustração.
 
 5 - Roger Raffari tem 41 anos e é dono da barbearia Golden Hair, ele possui grande experiência no ramo, vem atuando na área a pelo menos dez anos e tem como objetivo e motivação sempre prestar um bom serviço aos seus clientes. Roger possui vida econômica ativa no mercado de investimentos e tem como hobbies jogar futebol, assim como também gosta de acompanhar enquanto toma uma cervejinha gelada. Apesar de dar seu máximo em prol da barbearia, Roger se sente um tanto quanto incapaz e odeia ser desorganizado, prezando sempre pela organização da barbearia e dos seus funcionários.
 
 6 - Antônio tem 14 anos e é uma criança autista, o transtorno foi descoberto ainda quando criança. Antônio gosta de jogar videogame e sair para lugares calmos e não turbulentos, é muito amoroso com os pais mas odeia pessoas e lugares novos. Apesar do seu bom desempenho na escola é notável que ele odeia ir para aula, desde muito novo sua mãe nunca encontrou um barbeiro especializado para atendê-lo.
 
-7 - Michael tem 28 anos é barbeiro da Golden Hair a 3 anos, ele possui uma grande experiência no ramo da barbearia e é especializado em cortes de crianças com alguma necessidade especial. Além de seu serviço como barbeiro Michael presta serviços comunitários sempre que pode, e ama se exercitar. Sempre que pode tenta evoluir na profissão mostrando total dedicação ao seu trabalho.
+7 - Michael tem 28 anos é barbeiro da Golden Hair a 3 anos, ele possui uma grande experiência no ramo da barbearia e é especializado em cortes de crianças com alguma necessidade especial. Além de seu serviço como barbeiro, Michael presta serviços comunitários sempre que pode, e ama se exercitar. Sempre que pode tenta evoluir na profissão mostrando total dedicação ao seu trabalho.
 
 ## Histórias de Usuários
 
@@ -41,25 +39,29 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-| ID     | Descrição do Requisito                     | Prioridade |
-| ------ | ------------------------------------------ | ---------- |
-| RF-001 | Criar conta                                | ALTA       |
-| RF-002 | Alterar informação conta                   | ALTA       |
-| RF-003 | Excluir conta                              | ALTA       |
-| RF-004 | Visualizar informações conta               | ALTA       |
-| RF-005 | Marcar um horário para cortar cabelo       | ALTA       |
-| RF-006 | Selecionar um barbeiro preferencial        | MÉDIA      |
-| RF-007 | Visualizar perfil do babeiro               | BAIXA      |
-| RF-008 | Visualizar portfolio de cortes do barbeiro | BAIXA      |
-| RF-009 | Adicionar fotos no portfolio do barbeiro   | BAIXA      |
-| RF-010 | Reagendar corte marcado                    | ALTA       |
-| RF-011 | Fornecer feedback do corte e serviço       | MÉDIA      |
-| RF-012 | Chat de interação usuário-barbeiro         | BAIXA      |
-| RF-013 | Pedido de reagendamento                    | ALTA       |
-| RF-014 | Visualizar todos os atendimentos do dia    | ALTA       |
-| RF-015 | Emitir relatório de trabalho               | MÉDIA      |
-| RF-016 | Premiar o barbeiro que se destacou mais    | BAIXA      |
-| RF-017 | Transferir cliente para outro barbeiro     | MÉDIA      |
+| ID     | Descrição do Requisito                                       | Prioridade | Responsável     |
+| ------ | ------------------------------------------------------------ | ---------- | --------------- |
+| RF-001 | O Usuário deve conseguir criar uma conta com as informações pessoais necessárias | ALTA       | GUILHERME       |
+| RF-002 | O Usuário deve conseguir alterar as informações pessoais da sua conta | ALTA       | GUILHERME       |
+| RF-003 | O Usuário deve conseguir excluir a conta por completo após um período de confirmação da exclusão | ALTA       | GUILHERME       |
+| RF-004 | O Usuário deve conseguir visualizar as informações pessoais da sua conta | ALTA       | GUILHERME       |
+| RF-005 | O Usuário deve conseguir marcar um horário para cortar cabelo dentro do limite estabelecido de dia e horário útil de atendimento da barbearia | ALTA       | FELIPE FERREIRA |
+| RF-006 | Ao selecionar um horário para o agendamento, o Usuário deve conseguir, opcionalmente, selecionar um Barbeiro de sua preferência | MÉDIA      | FELIPE FERREIRA |
+| RF-007 | O Usuário deve conseguir visualizar o perfil do babeiro      | BAIXA      | MATHEUS         |
+| RF-008 | O Usuário deve conseguir visualizar o portfólio de cortes do barbeiro | BAIXA      | MATHEUS         |
+| RF-009 | O Barbeiro deve conseguir adicionar fotos no seu portfólio   | BAIXA      | MATHEUS         |
+| RF-010 | O Barbeiro devem conseguir reagendar horário do corte marcado de determinado Usuário | ALTA       | MATHEUS         |
+| RF-011 | O Usuário deve conseguir fornecer feedback do corte e serviço prestado pelo Barbeiro | MÉDIA      | GABRIEL AMORIM  |
+| RF-012 | O Usuário deve conseguir se comunicar com o Barbeiro através de um Chat de interação | BAIXA      | GABRIEL AMORIM  |
+| RF-013 | O Usuário deve conseguir realizar um pedido de reagendamento para o Barbeiro | ALTA       | GABRIEL AMORIM  |
+| RF-014 | O Barbeiro deve conseguir visualizar todos os atendimentos marcados para o dia de trabalho | ALTA       | GABRIEL AMORIM  |
+| RF-015 | O Administrador deve conseguir emitir um relatório de trabalho | MÉDIA      | BRUNO           |
+| RF-016 | O Administrador deve conseguir premiar o Barbeiro que teve maior destaque no mês | BAIXA      | BRUNO           |
+| RF-017 | O Barbeiro deve conseguir transferir um cliente para outro Barbeiro | MÉDIA      | MATHEUS         |
+| RF-018 | O pagamento deve ser realizado no local de atendimento       | ALTA       | BRUNO           |
+| RF-019 | Um Barbeiro não deve poder atender 2 ou mais clientes no mesmo horário | ALTA       | FELIPE FERREIRA |
+| RF-020 | O reagendamento deve ser somente realizado com antecedência de 2 horas | ALTA       | GABRIEL AMORIM  |
+| RF-021 | O atendimento especializado é restringindo apenas a um barbeiro com as competências necessárias | ALTA       | FELIPE FERREIRA |
 
 ### Requisitos não Funcionais
 
@@ -68,21 +70,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA      |
 | RNF-002 | Deve processar requisições do usuário em no máximo 4s        | BAIXA      |
 | RNF-003 | Possuir disponibilidade 99.9                                 | ALTA       |
-| RNF-004 | Usabilidade                                                  | MÉDIA      |
+| RNF-004 | Deve ser intuitivo e simples                                 | MÉDIA      |
 | RNF-005 | Portabilidade para navegadores mais comuns                   | ALTA       |
-| RNF-006 | Restrito às leis da LGPD (Lei Geral de Proteção de Dados Pessoais) | ALTA       |
+| RNF-006 | Os usuários do sistemas só podem ter acesso às próprias informações pessoais | ALTA       |
 
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-| ID   | Restrição                                                    |
-| ---- | ------------------------------------------------------------ |
-| 01   | O projeto deverá ser entregue até o final do semestre        |
-| 02   | Não pode ser desenvolvido um módulo de backend               |
-| 03   | Restringir atendimento para dias e horários úteis            |
-| 04   | Pagamento é realizado no local de atendimento                |
-| 05   | Um barbeiro não pode atender 2 ou mais clientes no mesmo horário |
-| 06   | Reagendamento somente com antecedência de 2 horas            |
-| 07   | Restringir atendimento especializado para barbeiro com competência |
-
+| ID   | Restrição                                             |
+| ---- | ----------------------------------------------------- |
+| 01   | O projeto deverá ser entregue até o final do semestre |
+| 02   | Não pode ser desenvolvido um módulo de backend        |
