@@ -3,7 +3,8 @@
 A Shaves é uma aplicação de gerenciamento de agenda com foco na barbearia Golden Hair e suas possíveis filiais.
 
 ## Problema
-Visando um atendimento de maior qualidade e em aumentar a produtividade dos profissionais da barbearia Golden Hair, foi detectado a necessidade de um sistema próprio para agendamento. Muitas vezes a falta de organização impediu uma expansão mais orgânica da empresa.
+Devido a uma grande ocorrênca de problemas organizacionais dentro da barbearia Golden Hair tais como erros de agendamento agendar horários manualmente estava levando a erros, como confusão de datas e horários, gerando atrasos e clientes insatisfeitos fora isso a falta de eficiência e agilidade, sem um aplicativo para gerenciar horários, a equipe pode passa muito tempo agendando horários manualmente, o que afeta negativamente a eficiência e produtividade da barbearia.
+
 
 ## Objetivos
 
@@ -15,4 +16,4 @@ A implementação de um sistema próprio, passa por uma maior credibilidade para
 
 ## Público-Alvo
 
-Homens 13 a 55 anos, sem determinação de  estado civil, sem determinação de escolaridade ou conhecimento aprofundado em tecnologia e sem diferenciação quanto a ocupação profissional.
+Todo público masculino sem uma idade determinada, sem determinação de  estado civil, sem determinação de escolaridade ou conhecimento aprofundado em tecnologia e sem diferenciação quanto a ocupação profissional.
