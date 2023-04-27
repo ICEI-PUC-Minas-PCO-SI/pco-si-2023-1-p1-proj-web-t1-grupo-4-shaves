@@ -14,3 +14,7 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 ![Barbeiros](img/barbeiros.jpeg)
 
 ![PerfilBarbeiros](img/perfilbarbeiros.jpeg)
+
+![Conta](img/conta.png)
+
+![Gerencia](img/gerencia.png)
