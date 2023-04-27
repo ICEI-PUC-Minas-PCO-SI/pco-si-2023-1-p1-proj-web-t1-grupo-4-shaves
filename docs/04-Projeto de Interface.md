@@ -11,6 +11,8 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ## Wireframes
 
+![HomePage](img/HomePage.png)
+
 ![Barbeiros](img/barbeiros.jpeg)
 
 ![PerfilBarbeiros](img/perfilbarbeiros.jpeg)
@@ -19,7 +21,7 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ![Gerencia](img/gerencia.png)
 
-![Agendamento_Profissionais](img\agendamentoProfissionais.png)
-![Agendamento_Servico](docs\img\agendamentoServico.png)
-![Agendamento_Horarios](docs\img\agendamentoHorarios.png)
-![Agendamento_Confirmacao](docs\img\agendamentoConfirmacao.png)
+![Agendamento_Profissionais](img/agendamentoProfissionais.png)
+![Agendamento_Servico](img/agendamentoServico.png)
+![Agendamento_Horarios](img/agendamentoHorarios.png)
+![Agendamento_Confirmacao](img/agendamentoConfirmacao.png)
