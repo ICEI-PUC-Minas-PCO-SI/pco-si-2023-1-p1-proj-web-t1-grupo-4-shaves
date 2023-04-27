@@ -12,3 +12,5 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 ## Wireframes
 
 ![Barbeiros](img/barbeiros.jpeg)
+
+![PerfilBarbeiros](img/perfilbarbeiros.jpeg)
