@@ -6,8 +6,10 @@
 Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
 
 ## User Flow
-
-![Exemplo de UserFlow](img/userflow.jpg)
+Fluxo de usuario comum
+![UserFlow usuario](img/userflow_usuario.jpeg)
+Fluxo de administrador
+![UserFlow adm](img/userflow-adm.jpeg)
 
 ## Wireframes
 
