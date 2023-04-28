@@ -3,3 +3,5 @@ nesta primeira tarefa utilizei a plataforma figma. Além disso realizei o commit
 em outras tarefas que foram propostas pelo grupo.
 
 Bruno Henrique Almeida Moreira - Fui responsável por criar as páginas designadas ao agendamento de um serviço no sistema de marcação, bem como estabelecer o fluxo atráves da criação das mesmas, estas sendo criadas atráves da plataforma Figma, além disso commitá-las na develop do projeto. Além disso tarefas gerais que abordaram as necessidades pontuais para a sequencia do projeto.
+
+Gabriel Amorim Gonçalves Silva - Fui designado pelo time pela função de realizar o wireframe do detalhe dos barbeiros, que foi a tela criada pelo Felipe Ferreira. Basicamente a minha tela consiste em um perfil detalhado do barbeiro selecionado pelo usuário no wireframe anterior. Utilizei a ferramenta Figma para a criação do wireframe. Além disso, também auxiliei em questões relacionadas ao commit de outros integrantes do grupo.
