@@ -97,18 +97,18 @@ class Conexao {
 
     #valida_parametros_novo_usuario(username, password) {
 
-        var char_especial = /^[!@$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
-
+        
         // Teste se usuário já existe
         for (var i = 0; i < this.array_usuarios.length; i++) {
             if (this.array_usuarios[i].username === username)
-                return m_error.user_existente;
-        }
-
-        if (this.array_usuarios.includes(username))
             return m_error.user_existente;
-
+        }
+        
+        if (this.array_usuarios.includes(username))
+        return m_error.user_existente;
+        
         // Contem caracteres inválidos
+        var char_especial = /^[!@$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
         if (username.match(char_especial))
             return m_error.char_especial;
 
