@@ -12,7 +12,7 @@ function preenche_card_barbeiros() {
 
     conexao.array_barbeiros.forEach((element,i) => {
         
-        const card_barbeiro_html =  '<div class="row bg-secondary card-barbeiro my-3 py-auto" Barbeiro="'+ i +'">' +
+        const card_barbeiro_html =  '<div class="row bg-secondary card-barbeiro my-3 py-auto w-50" Barbeiro="'+ i +'">' +
                                         '<div class="col-9 m-0">' + 
                                             '<p><strong>Nome:</strong> '+ element.username +'</p>' +
                                             '<p><strong>Atendimentos Totais: </strong>'+ element.atendimentos +'</p>' +

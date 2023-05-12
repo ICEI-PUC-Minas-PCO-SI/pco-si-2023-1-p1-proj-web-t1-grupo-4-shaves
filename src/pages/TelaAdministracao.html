@@ -72,77 +72,16 @@
     </header>
 
     <main class="container-fluid p-0">
-        <div class="row bg-secondary w-100 m-0" id="retangulo-titulo">
-            <h2>
+        <div class="d-flex bg-secondary w-100 m-0" id="retangulo-titulo">
+            <h2 class="mx-auto" style="color: white;">
                 Gerência
             </h2>
         </div>
-        <div class="row">
-            <section class="col-5" id="section-relatorio">
-                <h2 class="d-block">
-                    Relatório
-                </h2>
-                <div id="selecao-periodo">
-                    <h4>
-                        Período
-                    </h4>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio" checked>Diário
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Mensal
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Anual
-                        </label>
-                    </div>
-                </div>
-                <div id="selecao-opcao">
-                    <h4>
-                        Opção
-                    </h4>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio2" checked>Ganhos
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio2">Gastos
-                        </label>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-secondary mt-3" id="gerar-relatorio">Gerar Relatorio</button>
-            </section>
-            <section class="col-7" id="section-controle">
-                <div id="controle-valores" class="px-0">
-                    <h2 class="row d-block">
-                        Controle
-                    </h2>
-                    <div class="row d-flex">
-                        <h5 class="my-auto px-0">Custo diário</h5>
-                        <input id="valor-custo" type="text" class="form-control d-inline" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                        <button type="button" class="btn btn-secondary d-inline w-25 ms-2" id="salvar-custo-d">Salvar</button>
-                    </div>
-                    <div class="row d-flex mt-3">
-                        <h5 class="my-auto px-0">Ganho diário</h5>
-                        <input id="valor-ganho" type="text" class="form-control d-inline" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                        <button type="button" class="btn btn-secondary d-inline w-25 ms-2" id="salvar-ganho-d">Salvar</button>
-                    </div>
-                    <button type="button" class="btn btn-secondary mt-3" id="gerar-relatorio">Download arquivo</button>
-                </div>
-                <div id="controle-barbeiros" class="container-fluid p-0">
-                    <h2 class="row d-block mt-3">
-                        Equipe
-                    </h2>
-                    <!-- Aqui os cards dos barbeiros são inseridos via JS -->
-                </div>
-            </section>
+        <div id="controle-barbeiros" class="container p-0">
+            <h2 class="row d-block mt-3">
+                Equipe
+            </h2>
+            <!-- Aqui os cards dos barbeiros são inseridos via JS -->
         </div>
     </main>
 
