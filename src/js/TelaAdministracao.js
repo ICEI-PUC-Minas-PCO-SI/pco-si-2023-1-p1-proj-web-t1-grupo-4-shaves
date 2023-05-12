@@ -15,8 +15,8 @@ function preenche_card_barbeiros() {
         const card_barbeiro_html =  '<div class="row bg-secondary card-barbeiro my-3 py-auto w-50" Barbeiro="'+ i +'">' +
                                         '<div class="col-9 m-0">' + 
                                             '<p><strong>Nome:</strong> '+ element.username +'</p>' +
-                                            '<p><strong>Atendimentos Totais: </strong>'+ element.atendimentos +'</p>' +
-                                            '<p><strong>Tempo de serviço: </strong>'+ element.tempo_servico +'</p>' +
+                                            '<hr><p><strong>Atendimentos Totais: </strong>'+ element.atendimentos +'</p>' +
+                                            '<hr><p><strong>Tempo de serviço: </strong>'+ element.tempo_servico +'</p>' +
                                         '</div>' +
                                         '<div class="col-3 d-flex">' +
                                             '<button type="button" class="btn btn-secondary d-inline btn_desativar" idBarbeiro="'+ i +'">Desativar</button>' +
