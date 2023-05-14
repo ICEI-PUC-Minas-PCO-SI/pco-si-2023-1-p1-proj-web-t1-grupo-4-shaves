@@ -6,7 +6,7 @@ O Front-end do sistema deve ser desenvolvido com o HTML, CSS e Javascript, poden
 
 ## Personas
 
-1 - Samuel Nogueira tem 30 anos, barbeiro há 10 anos e desde criança sempre foi muito competitivo. O pais de Samuel sempre o incentivaram a fazer as coisas de forma bem feitas. Atualmente trabalha como barbeiro e tem como renda principal o mercado de investimentos. Já participou de diversos campeonatos de cortes masculinos.
+1 - Samuel Nogueira tem 30 anos, barbeiro há 10 anos e desde criança sempre foi muito competitivo. Os pais de Samuel sempre o incentivaram a fazer as coisas de forma bem feitas. Atualmente trabalha como barbeiro e tem como renda principal o mercado de investimentos. Já participou de diversos campeonatos de cortes masculinos.
 
 2 - Enzo Ezaquiel tem 9 anos, vem de uma família de classe média alta, atualmente está no 3º ano do ensino fundamental. Enzo é muito acostumado a receber o que quer de imediato e se frustra facilmente quando é contrariado. Passa o dia inteiro no celular e tem o desejo de se tornar um jogador profissional de Free Fire. Enzo odeia estudar e ama comer doces e guloseimas.
 
