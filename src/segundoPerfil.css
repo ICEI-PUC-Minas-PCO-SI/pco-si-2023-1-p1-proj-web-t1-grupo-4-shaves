@@ -1,0 +1,47 @@
+/* Header */
+.header a{color: white;}
+.header img{width: 100%;}
+.header nav a:hover{background-color: rgb(97, 186, 255); color: black;}
+.pesquisar{margin-bottom: 10px;}
+
+/*Footer*/
+.footer_area{color: white;}
+.footer img{width: 40%;}
+
+@media screen and (max-width:600px){
+    /*Header Mobile*/
+    .header{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 999;
+    }
+    .header img{width: 130px;margin-left: 110px;}
+    .img_area{height: 50px;}
+    #navegacao{display: none;margin-top: 0px;margin-bottom: 0px;}
+    .dropdown ul{font-size: 5px;}
+    .pesquisar{margin-bottom: 0px;}
+
+    /*Footer Mobile*/
+    .footer_area{margin-top: 10px;}
+}
+@media screen and (min-width:601px) and (max-width:1000px){
+    /*Header - Tablet*/
+    .header{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 999;
+    }
+    .header img{width: 25%;margin-left: 200px;padding-top: 10px;}
+    .img_area{height: 80px;}
+    #navegacao{display: none;margin-top: 0px;margin-bottom: 0px;}
+    .btn_drop{margin-left: 30px;}
+    .pesquisar{margin-bottom: 10px;}
+
+    /*Footer Mobile*/
+    .footer_area{margin-top: 70px;}
+}
+@media screen and (min-width:1001px) {
+    .btn_drop{display: none;}
+}
