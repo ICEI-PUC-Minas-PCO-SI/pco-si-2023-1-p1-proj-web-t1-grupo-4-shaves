@@ -16,9 +16,9 @@ O Front-end do sistema deve ser desenvolvido com o HTML, CSS e Javascript, poden
 
 5 - Roger Raffari tem 41 anos e é dono da barbearia Golden Hair, ele possui grande experiência no ramo, vem atuando na área a pelo menos dez anos e tem como objetivo e motivação sempre prestar um bom serviço aos seus clientes. Roger possui vida econômica ativa no mercado de investimentos e tem como hobbies jogar futebol, assim como também gosta de acompanhar enquanto toma uma cervejinha gelada. Apesar de dar seu máximo em prol da barbearia, Roger se sente um tanto quanto incapaz e odeia ser desorganizado, prezando sempre pela organização da barbearia e dos seus funcionários.
 
-6 - Antônio tem 14 anos e é uma criança autista, o transtorno foi descoberto ainda quando criança. Antônio gosta de jogar videogame e sair para lugares calmos e não turbulentos, é muito amoroso com os pais mas odeia pessoas e lugares novos. Apesar do seu bom desempenho na escola é notável que ele odeia ir para aula, desde muito novo sua mãe nunca encontrou um barbeiro especializado para atendê-lo.
+6 - Antônio Luiz tem 14 anos e é uma criança autista, o transtorno foi descoberto ainda quando criança. Antônio gosta de jogar videogame e sair para lugares calmos e não turbulentos, é muito amoroso com os pais mas odeia pessoas e lugares novos. Apesar do seu bom desempenho na escola é notável que ele odeia ir para aula, desde muito novo sua mãe nunca encontrou um barbeiro especializado para atendê-lo.
 
-7 - Michael tem 28 anos é barbeiro da Golden Hair a 3 anos, ele possui uma grande experiência no ramo da barbearia e é especializado em cortes de crianças com alguma necessidade especial. Além de seu serviço como barbeiro, Michael presta serviços comunitários sempre que pode, e ama se exercitar. Sempre que pode tenta evoluir na profissão mostrando total dedicação ao seu trabalho.
+7 - Michael Fernandes tem 28 anos é barbeiro da Golden Hair a 3 anos, ele possui uma grande experiência no ramo da barbearia e é especializado em cortes de crianças com alguma necessidade especial. Além de seu serviço como barbeiro, Michael presta serviços comunitários sempre que pode, e ama se exercitar. Sempre que pode tenta evoluir na profissão mostrando total dedicação ao seu trabalho.
 
 ## Histórias de Usuários
 
