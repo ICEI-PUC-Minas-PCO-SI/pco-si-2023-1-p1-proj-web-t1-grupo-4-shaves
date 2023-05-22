@@ -1,98 +1,112 @@
-/* Header */
-.header a {
-  color: white;
+/* Estilos para a página */
+body {
+  background-color: #f1f1f1;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.header img {
-  width: 100%;
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
 }
-.header nav a:hover {
-  background-color: rgb(97, 186, 255);
-  color: black;
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 50px;
 }
-.pesquisar {
+
+/* Estilos para o cabeçalho */
+.header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #fff; /* Cor do texto em branco */
+}
+
+.header .btn {
+  color: #fff; /* Cor do texto dos botões em branco */
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* Estilos para o formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Alinha os campos ao centro */
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
   margin-bottom: 10px;
 }
 
-/* Footer */
-.footer_area {
+input[type="text"],
+select {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
   color: white;
-}
-.footer img {
-  width: 40%;
-}
-
-/* Mobile */
-@media screen and (max-width: 600px) {
-  /* Header */
-  .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-  }
-  .header img {
-    width: 130px;
-    margin-left: 110px;
-  }
-  .img_area {
-    height: 50px;
-  }
-  #navegacao {
-    display: none;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .dropdown ul {
-    font-size: 5px;
-  }
-  .pesquisar {
-    margin-bottom: 0;
-  }
-
-  /* Footer */
-  .footer_area {
-    margin-top: 10px;
-  }
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 200px;
 }
 
-/* Tablet */
-@media screen and (min-width: 601px) and (max-width: 1000px) {
-  /* Header */
-  .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-  }
-  .header img {
-    width: 25%;
-    margin-left: 200px;
-    padding-top: 10px;
-  }
-  .img_area {
-    height: 80px;
-  }
-  #navegacao {
-    display: none;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .btn_drop {
-    margin-left: 30px;
-  }
-  .pesquisar {
-    margin-bottom: 10px;
-  }
-
-  /* Footer */
-  .footer_area {
-    margin-top: 70px;
-  }
+input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
-/* Desktop */
-@media screen and (min-width: 1001px) {
-  .btn_drop {
-    display: none;
-  }
+/* Estilos para o cartão de confirmação */
+#card-confirmacao {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  width: 300px;
+  text-align: center;
+  /* Alinha o conteúdo ao centro */
+  margin: 0 auto;
+  /* Centraliza o cartão horizontalmente */
+}
+
+#card-confirmacao h2 {
+  margin-top: 0;
+}
+
+#card-confirmacao p {
+  margin-bottom: 10px;
+}
+
+#confirmar-agendamento {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#confirmar-agendamento:hover {
+  background-color: #45a049;
 }
