@@ -4,6 +4,11 @@
 .header nav a:hover{background-color: rgb(97, 186, 255); color: black;}
 .pesquisar{margin-bottom: 10px;}
 
+body, html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /*Footer*/
 .footer_area{color: white;}
 .footer img{width: 40%;}
