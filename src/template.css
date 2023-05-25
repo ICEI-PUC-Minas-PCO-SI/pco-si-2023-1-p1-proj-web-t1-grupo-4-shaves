@@ -1,9 +1,10 @@
 /* Header */
 .header a{color: white;}
 .header img{width: 100%;}
-.header nav a:hover{background-color: rgb(97, 186, 255); color: black;}
+.header nav a:hover{background-color: gold; color: black;}
 .pesquisar{margin-bottom: 10px;}
 .dropdown > button { background-color: gold; }
+.dropdown > button:hover { background-color: gold; }
 
 /*Footer*/
 .footer_area{color: white;}
