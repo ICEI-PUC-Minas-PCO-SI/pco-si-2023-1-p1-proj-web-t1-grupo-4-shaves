@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="../style/agendamento.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+</head>
+
+<body>
+
+    <body>
+        <header class="header">
+            <h1>Shaves</h1>
+            <nav>
+                <a class="nav-link" href="pages/template.html">Home Page</a>
+                <a href="#" class="btn">Barbeiros</a>
+                <a href="#" class="btn">Agenda</a>
+                <a href="#" class="btn">Contato</a>
+                <a href="#" class="btn">Minha Conta</a>
+            </nav>
+        </header>
+        <form>
+            <label for="data">Data:</label>
+            <input type="text" id="data" name="data">
+
+            <label for="horario">Horário:</label>
+            <select name="horario" id="horario" required>
+                <option value="">Selecione um horário</option>
+                <option value="08:00">08:00</option>
+                <option value="09:00">09:00</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+            </select>
+
+            <label for="servico">Serviço:</label>
+            <select name="servico" id="servico" required>
+                <option value="">Selecione um serviço</option>
+                <option value="Corte">Corte</option>
+                <option value="Barba">Barba</option>
+                <option value="Corte + Barba">Corte + Barba</option>
+                <option value="Escova">Escova</option>
+                <option value="Relaxamento">Relaxamento</option>
+            </select>
+
+
+            <label for="profissional">Profissional:</label>
+            <select id="profissional" name="profissional">
+                <option value="">Selecione</option>
+                <option value="Samuel Nogueira">Samuel Nogueira</option>
+                <option value="Washington Dias">Washington Dias</option>
+                <option value="Roger Raffari">Roger Raffari</option>
+                <option value="Michael">Michael</option>
+            </select>
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao">
+
+            <input type="submit" value="Agendar">
+        </form>
+
+        <div id="card-confirmacao">
+            <h2>Confirme os dados do agendamento:</h2>
+            <p>Data: <span id="data-confirmacao"></span></p>
+            <p>Hora: <span id="hora-confirmacao"></span></p>
+            <p>Profissional: <span id="profissional-confirmacao"></span></p>
+            <p>Serviço: <span id="servico-confirmacao"></span></p>
+
+            <p>Descrição: <span id="descricao-confirmacao"></span></p>
+            <button id="confirmar-agendamento">Confirmar Agendamento</button>
+        </div>
+
+        <script>
+            // Cria o calendário com o plugin jQuery UI
+            $("#data").datepicker();
+
+            function exibirCardConfirmacao() {
+                // Verifica se todos os campos obrigatórios foram preenchidos
+                if ($("#data").val() && $("#horario").val() && $("#profissional").val() && $("#servico").val()) {
+
+                    // Preenche os dados do agendamento no card de confirmação
+                    $("#data-confirmacao").text($("#data").val());
+                    $("#hora-confirmacao").text($("#horario").val()); // corrigido aqui
+                    $("#profissional-confirmacao").text($("#profissional").val());
+                    $("#servico-confirmacao").text($("#servico").val());
+                    $("#descricao-confirmacao").text($("#descricao").val());
+
+                    // Exibe o card de confirmação
+                    $("#card-confirmacao").show();
+                } else {
+                    alert("Por favor, preencha todos os campos obrigatórios.");
+                }
+            }
+
+
+            // Ao clicar no botão "Agendar", chama a função exibirCardConfirmacao()
+            $("form").submit(function (event) {
+                event.preventDefault();
+                exibirCardConfirmacao();
+            });
+
+            // Ao clicar no botão "Confirmar Agendamento", envia os dados para o servidor
+            $("#confirmar-agendamento").click(function () {
+                // Aqui, você pode adicionar a lógica para enviar os dados do agendamento para o servidor
+                alert("Agendamento confirmado!");
+            });
+        </script>
+    </body>
+
+</html>

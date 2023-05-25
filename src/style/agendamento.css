@@ -1,0 +1,89 @@
+/* Estilos para a página */
+body {
+  background-color: #f1f1f1;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+/* Estilos para o formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Alinha os campos ao centro */
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+select {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 200px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para o cartão de confirmação */
+#card-confirmacao {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  width: 300px;
+  text-align: center;
+  /* Alinha o conteúdo ao centro */
+  margin: 0 auto;
+  /* Centraliza o cartão horizontalmente */
+}
+
+#card-confirmacao h2 {
+  margin-top: 0;
+}
+
+#card-confirmacao p {
+  margin-bottom: 10px;
+}
+
+#confirmar-agendamento {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#confirmar-agendamento:hover {
+  background-color: #45a049;
+}
