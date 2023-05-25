@@ -10,39 +10,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/98eb266920.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="../template.css">
+    <link rel="stylesheet" href="../style/telaconta.css">
 </head>
 
 <body>
 
     <header class="header">
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-2 col-sm-12 col-md-12 col-lg-2 img_area">
-                        <!--Adicionar Link da pagina principal-->
-                        <img class="btn" src="img/Shaves-transparent.png" alt=""><a href="login.html"></a></img>
+        <nav class="navbar navbar-dark bg-dark ">
+            <div class="container ">
+                <div class="row align-items-center w-100">
+                    <div class="col-2 col-sm-12 col-md-12 col-lg-2 img_area" >
+                        <img src="../Img/newlogo.png" alt="">
                     </div>
                     <!--Navegacao/tabs-->
-                    <div class="col-9 col-lg-9" style="--bs-breadcrumb-divider: '';"
+                    <div class="col-7 col-lg-7" style="--bs-breadcrumb-divider: '';"
                         aria-label="breadcrumb" id="navegacao">
-                        <div class="nav_bar mt-4 mb-4">
+                        <div class="nav_bar" style="margin-top: 15px;">
                             <ul class="nav nav-pills nav-fill breadcrumb">
                                 <li class="nav-item breadcrumb-item">
-                                    <a class="nav-link h5" href="#"><i class="far fa-star" style="display: none;"></i>HomePage</a>
+                                    <a class="nav-link" href="HomePage.html"><i class="far fa-star" style="display: none;"></i>HomePage</a>
                                 </li>
                                 <li class="nav-item breadcrumb-item">
-                                    <a class="nav-link h5" href="#">Barbeiros</a>
+                                    <a class="nav-link" href="telaBarbeiros.html">Barbeiros</a>
                                 </li>
                                 <li class="nav-item breadcrumb-item">
-                                    <a class="nav-link h5" href="#">Agenda</a>
+                                    <a class="nav-link" href="agendamento.html">Agenda</a>
+                                </li>
+                                <!--
+                                <li class="nav-item breadcrumb-item">
+                                    <a class="nav-link" href="#">Contato</a>
                                 </li>
                                 <li class="nav-item breadcrumb-item">
-                                    <a class="nav-link h5" href="#">Contato</a>
+                                    <a class="nav-link" href="telaconta.html">Minha Conta</a>
                                 </li>
-                                <li class="nav-item breadcrumb-item">
-                                    <a class="nav-link h5" href="#">Minha Conta</a>
-                                </li>
+                                -->
                             </ul>
                         </div>
                     </div>
@@ -56,8 +58,10 @@
                                 <li><button class="dropdown-item" type="button">HomePage</button></li>
                                 <li><button class="dropdown-item" type="button">Barbeiros</button></li>
                                 <li><button class="dropdown-item" type="button">Agenda</button></li>
+                                <!--
                                 <li><button class="dropdown-item" type="button">Contato</button></li>
                                 <li><button class="dropdown-item" type="button">Minha Conta</button></li>
+                                -->
                             </ul>
                         </div>
                     </div>
@@ -67,40 +71,48 @@
     </header>
 
     
-    <main class="container pt-5 pb-5">
-        <form class="container-fluid">
-            <div class="row justify-content-center">
-                <p class="col-12 text-center h1">Login</p>
+    <main>
+        <section class="container-fluid px-0">
+            <div class="d-flex bg-secondary w-100 m-0">
+                <h2 class="mx-auto mt-3" style="color: white;">
+                    Conta
+                </h2>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-7 input-group-lg">
-                    <label for="inputEmail" class="form-label h4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail">
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-7 input-group-lg pt-sm-4">
-                    <label for="inputSenha" class="form-label h4">Senha</label>
-                    <input type="password" class="form-control" id="inputSenha">
-                </div>
-            </div>
-            <div class="row pt-4 justify-content-center">
-                <div class="col-6 form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label h5" for="gridCheck">Mostrar Senha</label>
-                </div>
-            </div>
-            <div class="row pt-4 justify-content-center">
-                <div class="col-6">
-                    <button type="submit" class="btn btn-outline-dark btn-lg">Criar Conta</button>
-                </div>
-                <div class="col-1">
-                    <button type="submit" class="btn btn-primary btn-lg">Login</button>
-                </div>
+        </section>
 
-                
+        <div class="container-cadastro my-3">
+          <h2>informações da conta</h2>
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome:</label>
+              <input type="text" class="form-control" id="nome" placeholder="nome">
             </div>
-        </form>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="***@gmail.com">
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone de Contato:</label>
+              <input type="tel" class="form-control" id="telefone" placeholder="(**)*********">
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha:</label>
+              <input type="password" class="form-control" id="senha" placeholder="**********">
+            </div>
+
+            <div class="" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-9 ms-5">
+                  <img src="../Img/imagemshavesigor.png" class="img-fluid rounded-start mt-2" alt="..."  width="300" height="550">
+                  
+            <button type="button" class="btn btn-secondary">Editar Conta</button>
+            <button type="button" class="btn btn-danger">Apagar Conta</button>
+            <button type="button" class="btn btn-primary">Sair da conta</button>
+           
+          </form>
+        </div>
+        
+       
     </main>
 
     <!--Footer-->
@@ -111,7 +123,7 @@
                     Copyright 2023 - TIAW - Grupo Shaves - <strong>ICEI Puc Minas</strong>
                 </div>
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <img src="img/Shaves-transparent.png" alt="" style="width: 50%;">
+                    <img src="newlogo.png" alt="" style="width: 50%;">
                 </div>
             </div>
         </div>
