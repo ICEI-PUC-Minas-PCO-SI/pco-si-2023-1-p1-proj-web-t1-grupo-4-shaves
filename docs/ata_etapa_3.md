@@ -4,3 +4,5 @@ João Vítor de Souza França - Durante a etapa 3, fiquei responsável pelo dese
 
 
 Matheus Felipe Galdino-   No decorrer da etapa 3, fiquei responsável pela criação da tela HomePage. Desenvolvendo-a em html, bootstrap, e CSS, nessa página é possível ter acesso à informações do seu último agendamento, um carrossel que mostra alguns cortes realizados pelos profissionais da barbearia e é possível vizualisar também os barbeiros mais procurados pelos clientes. Também auxiliei na criação da tela de contas juntamente com o integrante do grupo Igor.
+
+Igor Alvarenga Nunes de Brito - Ao decorrer da etapa 3, fui responsavel pela criação da tela "feature/telacontas" no qual desenvolvi toda a parte de design de site, tentei ser o mais fiel possível ao wireframe apresentado na etapa anterior. Utilizei as ferramentas html, css e bootstrap para o desenvolvimento da mesma. Nessa tela nos mostra as informaçoes dos usuários e opções de excluir conta, editar a conta e sair da conta. Também auxiliei o aluno Matheus na criação da sua devida tela. 
