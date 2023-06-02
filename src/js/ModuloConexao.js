@@ -12,6 +12,10 @@ const m_error = {
     user_existente: "Nome de usuário já está sendo utilizado"
 }
 
+const permissions = { comum: 1, barbeiro: 2, admin: 3 }
+
+const servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
+
 // Função para receber um objeto vazio de usuário
 function criaUsuario() {
 
@@ -22,9 +26,9 @@ function criaUsuario() {
         "username": "", // Nome de usuário
         "password": "", // Senha
         "email": "",    // Email
-        "usertype": 1,  // Permissão. Por padrão cria como 1(usuário comum)
+        "usertype": permissions.comum,  // Permissão. Por padrão cria como 1(usuário comum)
         "creationDate": { // Data de criação do usuário
-            "day": today.getDay(),
+            "day": today.getDate(),
             "month": today.getMonth(),
             "year": today.getFullYear()
         },
@@ -42,7 +46,8 @@ function novoAgendamento() {
         "time": "",    // Horas e minutos
         "client": 0,   // Id do usuário do cliente
         "barber": 0,   // Id do usuário do barbeiro
-        "service": "", // Serviço
+        "service": servicos[0], // Serviço, por padrão vem como corte
+        "description": ""
     }
 }
 
