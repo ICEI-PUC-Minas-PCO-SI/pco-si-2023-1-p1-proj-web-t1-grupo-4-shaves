@@ -1,10 +1,8 @@
 
 // Itens para acessar o localStorage
 const DataBase = {
-    Usuarios  : 'usuarios',
-    Barbeiros : "barbeiros",
-    Ganhos    : "ganhos",
-    Custos    : "custos"
+    Usuarios  : "usuarios",
+    Agendamentos : "agendamentos"
 };
 
 // Mensagens de erro
@@ -14,30 +12,63 @@ const m_error = {
     user_existente: "Nome de usuário já está sendo utilizado"
 }
 
+// Função para receber um objeto vazio de usuário
+function criaUsuario() {
+
+    const today = new Date();
+
+    return {
+        "id": 0, // Identificador de cada usuário
+        "username": "", // Nome de usuário
+        "password": "", // Senha
+        "email": "",    // Email
+        "usertype": 1,  // Permissão. Por padrão cria como 1(usuário comum)
+        "creationDate": { // Data de criação do usuário
+            "day": today.getDay(),
+            "month": today.getMonth(),
+            "year": today.getFullYear()
+        },
+        "images": {
+            "profile-picture": "", // Destinado a foto de perfil
+            "jobs": [] // Vetor para armazenar o caminho de imagens de Cortes (Destinado para barbeiros)
+        }, // Imagens
+    }
+}
+
+// Função para criar um objeto vazio de agendamento
+function novoAgendamento() {
+    return {
+        "date": "",    // Data
+        "time": "",    // Horas e minutos
+        "client": 0,   // Id do usuário do cliente
+        "barber": 0,   // Id do usuário do barbeiro
+        "service": "", // Serviço
+    }
+}
+
 // Classe de conexão
 class Conexao {
 
     array_usuarios;
-    array_barbeiros;
-    array_dados_custos;
-    array_dados_ganhos;
+    array_agendamentos;
 
     constructor() {
-        this.#busca_dados();
+
+        if (Conexao.instance) {
+            return Conexao.instance;
+        }
+
+        Conexao.instance = this;
+
+        this.busca_dados();
     }
 
-    #busca_dados() {
+    busca_dados() {
         this.array_usuarios = JSON.parse(localStorage.getItem(DataBase.Usuarios));
         this.array_usuarios = this.array_usuarios == null ? [] : this.array_usuarios;
 
-        this.array_barbeiros = JSON.parse(localStorage.getItem(DataBase.Barbeiros));
-        this.array_barbeiros = this.array_barbeiros == null ? [] : this.array_barbeiros;
-
-        this.array_dados_custos = JSON.parse(localStorage.getItem(DataBase.Ganhos));
-        this.array_dados_custos = this.array_dados_custos == null ? [] : this.array_dados_custos;
-
-        this.array_dados_ganhos = JSON.parse(localStorage.getItem(DataBase.Ganhos));
-        this.array_dados_ganhos = this.array_dados_ganhos == null ? [] : this.array_dados_ganhos;
+        this.array_agendamentos = JSON.parse(localStorage.getItem(DataBase.Agendamentos));
+        this.array_agendamentos = this.array_agendamentos == null ? [] : this.array_agendamentos;
     }
 
     novo_usuario(username, password) {
@@ -47,11 +78,10 @@ class Conexao {
         if (error_message != null)
             return error_message;
 
-        var novo_usuario = {
-            "username": username,
-            "password": password,
-            "admin" : false
-        }
+        var novo_usuario = criaUsuario();
+        novo_usuario.id = this.#nextId();
+        novo_usuario.username = username;
+        novo_usuario.password = password;
 
         this.array_usuarios.push(novo_usuario);
 
@@ -75,29 +105,8 @@ class Conexao {
 
     }
 
-    novo_barbeiro(username, total_atendimentos = 0, tempo_em_dias = 0) {
-        var novo_barbeiro = {
-            "username"     : username,
-            "atendimentos" : total_atendimentos,
-            "tempo_servico": tempo_em_dias
-        }
-
-        this.array_barbeiros.push(novo_barbeiro);
-
-        this.salvar();
-    }
-
-    remove_barbeiro(index) {
-        if (index < 0 || index > this.array_barbeiros.length)
-            return;
-
-        this.array_barbeiros.splice(index,1);
-        this.salvar();
-    }
-
     #valida_parametros_novo_usuario(username, password) {
 
-        
         // Teste se usuário já existe
         for (var i = 0; i < this.array_usuarios.length; i++) {
             if (this.array_usuarios[i].username === username)
@@ -122,12 +131,24 @@ class Conexao {
 
     salvar() {
         localStorage.setItem(DataBase.Usuarios, JSON.stringify(this.array_usuarios));
-        localStorage.setItem(DataBase.Barbeiros, JSON.stringify(this.array_barbeiros));
-        localStorage.setItem(DataBase.Ganhos, JSON.stringify(this.array_dados_ganhos));
-        localStorage.setItem(DataBase.Custos, JSON.stringify(this.array_dados_custos));
+        localStorage.setItem(DataBase.Agendamentos, JSON.stringify(this.array_agendamentos));
     }
 
     reset_localStorage() {
         localStorage.clear();
     }
+
+    #nextId() {
+        let lastId = -1;
+        this.array_usuarios.forEach((user)=>{
+            if (user.id > lastId)
+                lastId = user.id;
+        });
+        return lastId + 1;
+    }
 }
+
+var objConexao = new Conexao();
+Object.freeze(objConexao);
+
+export default objConexao;
