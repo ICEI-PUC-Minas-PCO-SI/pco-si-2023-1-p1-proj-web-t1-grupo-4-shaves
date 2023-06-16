@@ -119,6 +119,7 @@ class Conexao {
     // -------------------------
     #valida_parametros_novo_usuario(username, password) {
 
+
         // Teste se usuário já existe
         for (var i = 0; i < this.lista_usuarios_json.length; i++) {
             if (this.lista_usuarios_json[i].username === username)
