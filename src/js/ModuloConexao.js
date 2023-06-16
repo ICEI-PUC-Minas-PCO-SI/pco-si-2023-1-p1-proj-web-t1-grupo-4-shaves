@@ -1,110 +1,131 @@
-
-// Itens para acessar o localStorage
-const DataBase = {
-    Usuarios  : 'usuarios',
-    Barbeiros : "barbeiros",
-    Ganhos    : "ganhos",
-    Custos    : "custos"
-};
-
-// Mensagens de erro
-const m_error = {
-    senha_pequena : "Senha deve ter ao menos 6 caracteres",
-    char_especial : "O nome de usuário não pode ter caracteres especiais",
-    user_existente: "Nome de usuário já está sendo utilizado"
-}
-
 // Classe de conexão
 class Conexao {
 
-    array_usuarios;
-    array_barbeiros;
-    array_dados_custos;
-    array_dados_ganhos;
+    lista_usuarios_json; lista_agendamentos_json;
 
     constructor() {
+        if (Conexao.instance) {
+            return Conexao.instance;
+        }
+        Conexao.instance = this;
         this.#busca_dados();
     }
 
     #busca_dados() {
-        this.array_usuarios = JSON.parse(localStorage.getItem(DataBase.Usuarios));
-        this.array_usuarios = this.array_usuarios == null ? [] : this.array_usuarios;
+        this.lista_usuarios_json = JSON.parse(localStorage.getItem(DataBase.Usuarios));
+        this.lista_usuarios_json = this.lista_usuarios_json == null ? [] : this.lista_usuarios_json;
 
-        this.array_barbeiros = JSON.parse(localStorage.getItem(DataBase.Barbeiros));
-        this.array_barbeiros = this.array_barbeiros == null ? [] : this.array_barbeiros;
-
-        this.array_dados_custos = JSON.parse(localStorage.getItem(DataBase.Ganhos));
-        this.array_dados_custos = this.array_dados_custos == null ? [] : this.array_dados_custos;
-
-        this.array_dados_ganhos = JSON.parse(localStorage.getItem(DataBase.Ganhos));
-        this.array_dados_ganhos = this.array_dados_ganhos == null ? [] : this.array_dados_ganhos;
+        this.lista_agendamentos_json = JSON.parse(localStorage.getItem(DataBase.Agendamentos));
+        this.lista_agendamentos_json = this.lista_agendamentos_json == null ? [] : this.lista_agendamentos_json;
     }
 
-    novo_usuario(username, password) {
+    // Métodos para usuários
+    novo_usuario(username, password, email = "", permissao = permissions.comum, dataCriacao = "", telefone = "") {
 
         let error_message = this.#valida_parametros_novo_usuario(username, password);
 
         if (error_message != null)
             return error_message;
 
-        var novo_usuario = {
-            "username": username,
-            "password": password,
-            "admin" : false
+        var usuario = {
+            "id": this.#nextId(this.lista_usuarios_json),
+            "nome": username, 
+            "senha": password, 
+            "email": email,
+            "usertype": permissao,
+            "creationDate": dataCriacao, 
+            "telefone": telefone,
+            "images": { 
+                "profile_picture": "",
+                "jobs": [] // Vetor para armazenar imagens de Cortes (Destinado para barbeiros)
+            }, 
         }
-
-        this.array_usuarios.push(novo_usuario);
-
+        
+        this.lista_usuarios_json.push(usuario);
         this.salvar();
-
     }
 
-    remove_usuario(username) {
-
-        var index = null;
-        for (var i = 0; i < this.array_usuarios.length; i++) {
-            if (this.array_usuarios[i].username === username)
+    busca_usuario_por_email(email) {
+        let index = -1;
+        this.lista_usuarios_json.forEach((user,i)=>{
+            if (user.email == email)
                 index = i;
+        })
+        return this.lista_usuarios_json[index];
+    }
+
+    busca_imagem_perfil(id) {
+        return this.busca_usuario_por_id(id).images.profile_picture;
+    }
+
+    upload_imagem_perfil(idUsuário, conteudoArquivo) {
+        if (conteudoArquivo) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var resultadoArquivo = e.target.result;
+                let con = new Conexao();
+                // Armazenar o conteúdo do arquivo no localStorage
+                con.lista_usuarios_json.forEach(user=>{
+                    if (user.id != idUsuário) { return; }
+                    user.images.profile_picture = resultadoArquivo;
+                })
+                con.salvar();
+                console.log('Arquivo enviado e salvo no localStorage.');
+            };
+            reader.readAsDataURL(conteudoArquivo);
         }
-
-        if (index == null)
-            return;
-
-        this.array_usuarios.splice(index,1);
-        this.salvar();
-
     }
 
-    novo_barbeiro(username, total_atendimentos = 0, tempo_em_dias = 0) {
-        var novo_barbeiro = {
-            "username"     : username,
-            "atendimentos" : total_atendimentos,
-            "tempo_servico": tempo_em_dias
+    upload_imagem_trabalho(idUsuário, conteudoArquivo, descricaoImagem) {
+        if (conteudoArquivo) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var resultadoArquivo = e.target.result;
+                let con = new Conexao();
+                // Armazenar o conteúdo do arquivo no localStorage
+                con.lista_usuarios_json.forEach(user=>{
+                    if (user.id != idUsuário) { return; }
+                    user.images.jobs.push({
+                        "caminho": resultadoArquivo,
+                        "descricao": descricaoImagem
+                    })
+                })
+                con.salvar();
+                console.log('Arquivo enviado e salvo no localStorage.');
+            };
+            reader.readAsDataURL(conteudoArquivo);
         }
+    }
+    // ---------------------
 
-        this.array_barbeiros.push(novo_barbeiro);
-
+    // Métodos para agendamentos
+    novo_agendamento(data = "", horario = "", cliente = "", barbeiro = "", servico = servicos[0], descricao = "") {
+        let novo_agendamento = {
+            "id": this.#nextId(this.lista_agendamentos_json),
+            "data": data,    
+            "horario": horario,    
+            "cliente": cliente,   
+            "barbeiro": barbeiro,   
+            "servico": servico, 
+            "descricao": descricao
+        }
+        this.lista_agendamentos_json.push(novo_agendamento);
         this.salvar();
     }
 
-    remove_barbeiro(index) {
-        if (index < 0 || index > this.array_barbeiros.length)
-            return;
+    busca_agendamento() {
 
-        this.array_barbeiros.splice(index,1);
-        this.salvar();
     }
-
+    // -------------------------
     #valida_parametros_novo_usuario(username, password) {
 
-        
         // Teste se usuário já existe
-        for (var i = 0; i < this.array_usuarios.length; i++) {
-            if (this.array_usuarios[i].username === username)
+        for (var i = 0; i < this.lista_usuarios_json.length; i++) {
+            if (this.lista_usuarios_json[i].username === username)
             return m_error.user_existente;
         }
         
-        if (this.array_usuarios.includes(username))
+        if (this.lista_usuarios_json.includes(username))
         return m_error.user_existente;
         
         // Contem caracteres inválidos
@@ -121,13 +142,42 @@ class Conexao {
     }
 
     salvar() {
-        localStorage.setItem(DataBase.Usuarios, JSON.stringify(this.array_usuarios));
-        localStorage.setItem(DataBase.Barbeiros, JSON.stringify(this.array_barbeiros));
-        localStorage.setItem(DataBase.Ganhos, JSON.stringify(this.array_dados_ganhos));
-        localStorage.setItem(DataBase.Custos, JSON.stringify(this.array_dados_custos));
+        localStorage.setItem(DataBase.Usuarios, JSON.stringify(this.lista_usuarios_json));
+        localStorage.setItem(DataBase.Agendamentos, JSON.stringify(this.lista_agendamentos_json));
     }
 
     reset_localStorage() {
         localStorage.clear();
     }
+
+    #nextId(lista) {
+        let lastId = -1;
+        lista.forEach((user)=>{
+            if (user.id > lastId)
+                lastId = user.id;
+        });
+        return lastId + 1;
+    }
 }
+
+// Itens para acessar o localStorage
+const DataBase = {
+    Usuarios  : "usuarios",
+    Agendamentos : "agendamentos"
+};
+
+// Mensagens de erro
+const m_error = {
+    senha_pequena : "Senha deve ter ao menos 6 caracteres",
+    char_especial : "O nome de usuário não pode ter caracteres especiais",
+    user_existente: "Nome de usuário já está sendo utilizado"
+}
+
+const permissions = { comum: 1, barbeiro: 2, admin: 3 }
+
+const servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
+
+var objConexao = new Conexao();
+Object.freeze(objConexao);
+
+export default objConexao;
