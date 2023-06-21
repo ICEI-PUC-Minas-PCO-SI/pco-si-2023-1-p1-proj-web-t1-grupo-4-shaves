@@ -2,12 +2,9 @@ import objConexao from "./ModuloConexao.js";
 
 var vetor_barbeiros = [];
 
-
-
 // Ao carregar a página
 $( document ).ready(function() {
-    filtraBarbeiros();
-    preenche_card_barbeiros();
+    
 });
 
 function preenche_card_barbeiros() {
