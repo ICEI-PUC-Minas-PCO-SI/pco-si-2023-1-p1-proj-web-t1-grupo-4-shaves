@@ -99,7 +99,7 @@ class Conexao {
     // ---------------------
 
     // Métodos para agendamentos
-    novo_agendamento(data = "", horario = "", cliente = "", barbeiro = "", servico = servicos[0], descricao = "") {
+    novo_agendamento(data = "", horario = "", cliente = "", barbeiro = "", servico = servicos[0], descricao = "", status = CSTATUS.ativo) {
         let novo_agendamento = {
             "id": this.#nextId(this.lista_agendamentos_json),
             "data": data,    
@@ -107,7 +107,8 @@ class Conexao {
             "cliente": cliente,   
             "barbeiro": barbeiro,   
             "servico": servico, 
-            "descricao": descricao
+            "descricao": descricao,
+            "status": status
         }
         this.lista_agendamentos_json.push(novo_agendamento);
         this.salvar();
@@ -177,6 +178,8 @@ const m_error = {
 const permissions = { comum: 1, barbeiro: 2, admin: 3 }
 
 const servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
+
+const CSTATUS = { ativo: 1, finalizado: 2, cancelado: 3, remarcado: 4 };
 
 var objConexao = new Conexao();
 Object.freeze(objConexao);
