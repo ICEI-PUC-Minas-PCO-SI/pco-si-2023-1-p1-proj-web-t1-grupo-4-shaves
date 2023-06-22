@@ -19,11 +19,16 @@
 <body>
 
     <header class="header">
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-dark shadow">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-sm-2 col-md-4 col-lg-2 img_area">
-                        <a style="background-color: transparent;" href="login.html"><img class="btn" src="../Img/newlogo.png" alt=""></img></a>
+                <div class="row align-items-center justify-content-between">
+
+
+
+                    <!-- Logo -->
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-2 img_area">
+                        <a style="background-color: transparent;" href="login.html"><img class="btn"
+                                src="../Img/newlogoCropped.png" alt=""></img></a>
                     </div>
 
 
@@ -55,11 +60,12 @@
 
 
 
-                    <div class="col-sm-5 col-md-1 btn_drop">
-                        <!--Dropdowm menu-->
+                    <!-- Dropdown Menu ---Mobile Only--- -->
+                    <div class="col-3 col-sm-4 col-md-1 btn_drop">
                         <div class="dropdown d-grid d-sm-block">
-                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-bars"></i>
+                            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"><i
+                                    class="fas fa-bars"></i>
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark dropdown-menu-sm-start dropdown-menu-md-start"
                                 aria-labelledby="dropdownMenuButton1" style="font-size: large;">
@@ -78,11 +84,11 @@
 
 
 
-    <main class="container-fluid p-3">
+    <main class="container-fluid p-3" id="body">
 
         <!-- Page Identification -->
         <div class="row justify-content-center">
-            <p class="col-12 text-center h1" style="color: orange;">Criar Conta</p>
+            <p class="col-12 text-center h1" style="color: orange;font-size: 40px;">Criar Conta</p>
         </div>
 
 
@@ -162,9 +168,9 @@
 
 
         <!-- CheckBox -->
-        <div class="row px-4 pb-4">
-            <div class="col-sm-12 form-check">
-                <input class="form-check-input" type="checkbox" id="mostrarSenhaCheckbox">
+        <div class="row align-items-center px-4 pb-4">
+            <div class="col-sm-12 form-check form-switch">
+                <input class="form-check-input form-check-input" type="checkbox" role="switch" id="mostrarSenhaCheckbox">
                 <label class="form-check-label h5" for="mostrarSenhaCheckbox">Mostrar Senha</label>
             </div>
         </div>
@@ -174,10 +180,12 @@
         <!-- Buttons -->
         <div class="row justify-content-between">
             <div class="col-6">
-                <button type="button" onclick="history.back()" class="btn btn-outline-danger btn-lg">Voltar</button>
+                <a href="./Login.html">
+                    <button type="button" class="btn btn-outline-danger btn-lg">Voltar</button>
+                </a>
             </div>
             <div class="col-6">
-                <button id="criarContaBtn" type="submit" class="btn btn-primary btn-lg" style="width: 160px;">Criar
+                <button id="criarContaBtn" type="submit" class="btn btn-warning btn-lg" style="width: 160px; border: 1px solid black;">Criar
                     Conta</button>
             </div>
         </div>
@@ -188,12 +196,12 @@
     <!--Footer-->
     <footer class="footer bg-dark text-white-50">
         <div class="container">
-            <div class="row align-items-center p-3">
-                <div class="col-9 col-sm-6 col-md-8 col-lg-8">
+            <div class="row align-items-center py-2">
+                <div class="col-8 col-sm-6">
                     Copyright 2023 - TIAW - Grupo Shaves - <strong>ICEI Puc Minas</strong>
                 </div>
-                <div class="col-3 col-sm-6 col-md-4 col-lg-4">
-                    <img src="../Img/newlogo.png" alt="" style="width: 100%;">
+                <div class="col-4 col-sm-6">
+                    <img src="../Img/newlogoCropped.png" alt="" style="width: 100%;">
                 </div>
             </div>
         </div>

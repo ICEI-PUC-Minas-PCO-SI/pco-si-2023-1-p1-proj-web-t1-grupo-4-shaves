@@ -17,6 +17,7 @@
 }
 
 .dropdown>button {
+    border: 2px solid transparent;
     background-color: gold;
 }
 
@@ -24,35 +25,24 @@
     background-color: darkgoldenrod;
 }
 
-/* Footer
-.footer_area {
-    color: white;
-} */
-
-.footer img {
-    width: 40%;
-}
-
 @media screen and (max-width:600px) {
 
     /*Header Mobile*/
     .header {
-        position: relative;
+        position: fixed;
         top: 0px;
         width: 100%;
         z-index: 99;
-    }
-
-    /* .header img{width:100%;} */
-    .img_area {
-        height: 30px;
-        width: 50%;
     }
 
     #navegacao {
         display: none;
         margin-top: 0px;
         margin-bottom: 0px;
+    }
+
+    #body{
+        margin-top: 70px;
     }
 }
 
