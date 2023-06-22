@@ -1,11 +1,53 @@
 import objConexao from "./ModuloConexao.js";
 
+/*objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",1);
+objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",2);
+objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",3);
+objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",4);
+
+objConexao.novo_usuario("user1","123");
+objConexao.novo_usuario("user2","123");
+objConexao.novo_usuario("user3","123");*/
+
+objConexao.reset_localStorage();
+
 var vetor_barbeiros = [];
 
 // Ao carregar a página
 $( document ).ready(function() {
-    
+    preencheAgendamentos();
 });
+
+function preencheAgendamentos() {
+    var table = $('#t-agen');
+    var agendamentos = objConexao.lista_agendamentos_json;
+    agendamentos.forEach((agendamento)=>{
+
+        var color = "";
+        switch (agendamento.status) {
+            case 1: color = "table-primary"; break;
+            case 2: color = "table-success"; break;
+            case 3: color = "table-danger";  break;
+            case 4: color = "table-warning"; break;
+        }
+
+        var actions = `<button class="btn bg-danger" style="color: white;" >
+                            <span class="material-symbols-outlined">
+                            delete
+                            </span>
+                       </button>`;
+
+        table.append(`<tr class="${color}">
+                        <td>${agendamento.id}</td>
+                        <td>${agendamento.data}</td>
+                        <td>${agendamento.horario}</td>
+                        <td>${agendamento.cliente}</td>
+                        <td>${agendamento.barbeiro}</td>
+                        <td>${agendamento.servico}</td>
+                        <td class="d-flex">${actions}</td>
+                    `);
+    });
+}
 
 function preenche_card_barbeiros() {
 
