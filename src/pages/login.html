@@ -23,13 +23,17 @@
                         <!--Adicionar Link da pagina principal-->
                         <img class="btn" src="../Img/newlogo.png" alt=""><a href="HomePage.html"></a></img>
                     </div>
+
+
+
                     <!--Navegacao/tabs-->
-                    <div class="col-9 col-lg-9" style="--bs-breadcrumb-divider: '';"
-                        aria-label="breadcrumb" id="navegacao">
+                    <div class="col-9 col-lg-9" style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb"
+                        id="navegacao">
                         <div class="nav_bar mt-4 mb-4">
                             <ul class="nav nav-pills nav-fill breadcrumb">
                                 <li class="nav-item breadcrumb-item">
-                                    <a class="nav-link h5" href="#"><i class="far fa-star" style="display: none;"></i>HomePage</a>
+                                    <a class="nav-link h5" href="#"><i class="far fa-star"
+                                            style="display: none;"></i>HomePage</a>
                                 </li>
                                 <li class="nav-item breadcrumb-item">
                                     <a class="nav-link h5" href="#">Barbeiros</a>
@@ -46,13 +50,17 @@
                             </ul>
                         </div>
                     </div>
+
+
+
                     <div class="col-12 col-sm-12 col-md-1 btn_drop">
                         <!--Dropdowm menu-->
                         <div class="dropdown d-grid d-sm-block">
                             <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1"
                                 data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-bars"></i>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark dropdown-menu-sm-start dropdown-menu-md-start" aria-labelledby="dropdownMenuButton1" style="font-size: large;">
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark dropdown-menu-sm-start dropdown-menu-md-start"
+                                aria-labelledby="dropdownMenuButton1" style="font-size: large;">
                                 <li><button class="dropdown-item" type="button">HomePage</button></li>
                                 <li><button class="dropdown-item" type="button">Barbeiros</button></li>
                                 <li><button class="dropdown-item" type="button">Agenda</button></li>
@@ -66,9 +74,10 @@
         </nav>
     </header>
 
-    
+
+    <!-- Login Form -->
     <main class="container pt-5 pb-5">
-        <form class="container-fluid">
+        <form class="container-fluid" id="loginForm">
             <div class="row justify-content-center">
                 <p class="col-12 text-center h1">Login</p>
             </div>
@@ -92,16 +101,19 @@
             </div>
             <div class="row pt-4 justify-content-center">
                 <div class="col-6">
-                    <button type="submit" class="btn btn-outline-dark btn-lg">Criar Conta</button>
+                    <a href="/pages/Cadastro.html">
+                        <button type="button" class="btn btn-outline-dark btn-lg">Criar Conta</button>
+                    </a>
                 </div>
                 <div class="col-1">
                     <button type="submit" class="btn btn-primary btn-lg">Login</button>
                 </div>
-
-                
             </div>
         </form>
     </main>
+
+
+
 
     <!--Footer-->
     <footer class="footer bg-dark">
