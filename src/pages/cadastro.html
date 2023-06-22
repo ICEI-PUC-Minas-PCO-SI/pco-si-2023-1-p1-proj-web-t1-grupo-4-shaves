@@ -65,8 +65,8 @@
 
 
 
-                        <!-- Dropdown Menu ---Mobile Only--- -->
-                        <div class="col-3 col-sm-4 col-md-4 btn_drop">
+                        <!-- Dropdown Menu ---Mobile and Tablet Only--- -->
+                        <div class="col-6 col-sm-6 col-md-4 btn_drop">
                             <div class="dropdown">
                                 <button class="btn btn-warning dropdown-toggle btn-lg" type="button" id="dropdownBtn"
                                     data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"><i
@@ -168,8 +168,8 @@
         <!-- CheckBox -->
         <div class="row justify-content-center align-items-center px-4 py-4">
             <div class="col-sm-12 col-md-10 form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="mostrarSenhaCheckbox">
-                <label class="form-check-label h5" for="mostrarSenhaCheckbox">Mostrar Senha</label>
+                <input class="form-check-input btn-lg" type="checkbox" id="mostrarSenhaCheckbox">
+                <label class="form-check-label h5" for="mostrarSenhaCheckbox" style="font-size: large; padding-top: 4px;">Mostrar Senha</label>
             </div>
         </div>
         <script>
@@ -197,12 +197,15 @@
 
 
         <!-- Buttons -->
-        <div class="row justify-content-between justify-content-md-center">
-            <div class="col-6 col-md-3">
+        <div class="row justify-content-sm-between justify-content-md-center">
+            <div class="col-6 col-md-2">
                 <a href="./Login.html">
                     <button type="button" class="btn btn-outline-danger btn-lg">Voltar</button>
                 </a>
             </div>
+            <!-- <div class="col-6 col-md-3">
+                <button type="reset" class="btn btn-outline-dark btn-lg" id="limparCamposBtn">Limpar Campos</button>
+            </div> -->
             <div class="col-6 col-md-3">
                 <button id="criarContaBtn" type="submit" class="btn btn-warning btn-lg"
                     style="width: 160px; border: 1px solid black;">Criar
@@ -214,14 +217,14 @@
 
 
     <!--Footer-->
-    <footer class="footer bg-dark text-white-50" style="position: relative; margin-top: 10px;">
+    <footer class="footer bg-dark text-white-50">
         <div class="container">
 
-            <div class="row align-items-center justify-content-md-between py-2">
-                <div class="col-8 col-sm-6 col-md-6">
+            <div class="row align-items-center justify-content-md-between justify-content-lg-between py-2">
+                <div class="col-8 col-sm-6 col-md-8 col-lg-6">
                     Copyright 2023 - TIAW - Grupo Shaves - <strong>ICEI Puc Minas</strong>
                 </div>
-                <div class="col-4 col-sm-6 col-md-6">
+                <div class="col-4 col-sm-6 col-md-4 col-lg-2">
                     <img src="../Img/newlogoCropped.png" alt="">
                 </div>
             </div>
