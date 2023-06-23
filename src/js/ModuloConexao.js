@@ -123,12 +123,12 @@ class Conexao {
 
         // Teste se usuário já existe
         for (var i = 0; i < this.lista_usuarios_json.length; i++) {
-            if (this.lista_usuarios_json[i].username === username)
+            if (this.lista_usuarios_json[i].nome == username)
             return m_error.user_existente;
         }
         
         if (this.lista_usuarios_json.includes(username))
-        return m_error.user_existente;
+            return m_error.user_existente;
         
         // Contem caracteres inválidos
         var char_especial = /^[!@$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
