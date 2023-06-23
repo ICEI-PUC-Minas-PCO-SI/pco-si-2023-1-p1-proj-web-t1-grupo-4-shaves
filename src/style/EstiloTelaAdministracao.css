@@ -23,6 +23,8 @@ main input:checked { background-color: var(--default_checkbox_color) !important;
 
 #section-relatorio, #section-controle { padding: 1.5rem 2.5rem 2.5rem 5rem; }
 
+#controle-usuario > div { border-radius: 1rem;  }
+
 #section-controle input { width: 10rem; }
 
 #section-controle h5 { width: 20%; }

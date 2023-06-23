@@ -1,15 +1,15 @@
 import objConexao from "./ModuloConexao.js";
 
-/*objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",1);
+/* objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",1);
 objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",2);
 objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",3);
 objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",4);
 
 objConexao.novo_usuario("user1","123");
-objConexao.novo_usuario("user2","123");
-objConexao.novo_usuario("user3","123");*/
+objConexao.novo_usuario("user2","123");*/
 
-objConexao.reset_localStorage();
+
+//objConexao.reset_localStorage();
 
 var vetor_barbeiros = [];
 
@@ -49,53 +49,92 @@ function preencheAgendamentos() {
     });
 }
 
-function preenche_card_barbeiros() {
+$('#busca-usuario').on('click', pesquisaUsuario);
 
-    if (vetor_barbeiros.length == 0)
-        return;
+$("#salvar-alteracoes").on('click', salvaInfo);
+$("#apagar-usuario").on('click', apagaUsuario);
 
-        vetor_barbeiros.forEach((element,i) => {
-        
-        const card_barbeiro_html =  '<div class="row bg-secondary card-barbeiro my-3 py-auto w-50" Barbeiro="'+ i +'">' +
-                                        '<div class="col-9 m-0">' + 
-                                            '<p><strong>Nome:</strong> '+ element.username +'</p>' +
-                                            '<hr><p><strong>Atendimentos Totais: </strong></p>' +
-                                            '<hr><p><strong>Tempo de serviço: </strong></p>' +
-                                        '</div>' +
-                                        '<div class="col-3 d-flex">' +
-                                            '<button type="button" class="btn btn-secondary d-inline btn_desativar" idBarbeiro="'+ i +'">Desativar</button>' +
-                                        '</div>' +
-                                    '</div>';
-
-        $('#controle-barbeiros').append(card_barbeiro_html);
-
-        $(".btn_desativar").on('click', function() {
-            var idBarbeiro = $(this).attr("idBarbeiro");
-            Swal.fire({
-                title: 'Tem certeza que deseja desativar esse barbeiro?',
-                showDenyButton: true,
-                confirmButtonText: 'Desativar',
-                denyButtonText: `Cancelar`,
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    apaga_barbeiro(idBarbeiro)
-                    Swal.fire('Barbeiro desativado', '', 'success')
-                } 
-            })
-        })
-
-    });
-
+function pesquisaUsuario() {
+    var nome = $('#nome-usuario').val();
+    var usuario = buscaUsuarioPorNome(nome);
+    exibeInfoUsuario(usuario);
 }
 
-function apaga_barbeiro(idBarbeiro) {
-    conexao.remove_barbeiro(idBarbeiro);
-    $('[Barbeiro='+ idBarbeiro +']').remove()
+function salvaInfo() {
+    var nome = $('#nome-usuario').val();
+    var usuario = buscaUsuarioPorNome(nome);
+    usuario.email = $("#show-email").val();
+    usuario.usertype = $("#select-permissions").val();
+    usuario.telefone = $("#show-phone").val();
+    editaUsuario(usuario.id, usuario);
+    Swal.fire(
+        'Editado!',
+        'As informações foram atualizadas!',
+        'success'
+    );
 }
 
-function filtraBarbeiros() {
-    objConexao.array_usuarios.forEach(user=>{
-        if (user.usertype == 2)
-            vetor_barbeiros.push(user);
-    });
+function apagaUsuario() {
+    var idUsuário = $("#show-id").val();
+    for (let i = 0; i < objConexao.lista_usuarios_json.length; i++) {
+        if (objConexao.lista_usuarios_json[i].id == idUsuário)
+            objConexao.lista_usuarios_json.splice(i,1);
+    }
+    objConexao.salvar();
+    Swal.fire(
+        'Removido!',
+        'O usuário foi deletado!',
+        'success'
+    );
+    disableAll();
+    clearAll();
+}
+
+function editaUsuario(idUsuário, novoUsuario) {
+    var usuarios = objConexao.lista_usuarios_json;
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i] == idUsuário) 
+            objConexao.lista_usuarios_json[i] = novoUsuario; 
+    }
+    objConexao.salvar();
+}
+
+function buscaUsuarioPorNome(nome) {
+    var usuarios = objConexao.lista_usuarios_json;
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuarios[i].nome == nome) { return usuarios[i]; }
+    }
+    return null;
+}
+
+function exibeInfoUsuario(usuario) {
+    if (usuario == null) { 
+        disableAll();
+        clearAll();
+        return; 
+    }
+    disableAll(false);
+    $("#show-id").val(usuario.id);
+    $("#show-email").val(usuario.email);
+    $("#select-permissions").val(usuario.usertype);
+    $("#show-phone").val(usuario.telefone);
+    $("#show-creation").val(usuario.creationDate);
+}
+
+function disableAll(value = true) {
+    //$("#show-id").prop('disabled',value);
+    $("#show-email").prop('disabled',value);
+    $("#show-phone").prop('disabled',value);
+    //$("#show-creation").prop('disabled',value);
+    $("#select-permissions").prop('disabled',value);
+    $("#salvar-alteracoes").prop('disabled',value);
+    $("#apagar-usuario").prop('disabled',value);
+}
+
+function clearAll() {
+    $("#show-id").val('');
+    $("#show-email").val('');
+    $("#show-phone").val('');
+    $("#show-creation").val('');
+    $("#select-permissions").val('');
 }
