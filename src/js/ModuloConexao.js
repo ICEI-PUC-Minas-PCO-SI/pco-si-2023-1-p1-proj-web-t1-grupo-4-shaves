@@ -76,7 +76,7 @@ class Conexao {
         }
     }
 
-    upload_imagem_trabalho(idUsuário, conteudoArquivo, descricaoImagem) {
+    upload_imagem_trabalho(idUsuário, conteudoArquivo, descricaoImagem, tituloCorte) {
         if (conteudoArquivo) {
             var reader = new FileReader();
             reader.onload = function(e) {
@@ -87,7 +87,8 @@ class Conexao {
                     if (user.id != idUsuário) { return; }
                     user.images.jobs.push({
                         "caminho": resultadoArquivo,
-                        "descricao": descricaoImagem
+                        "descricao": descricaoImagem,
+                        "titulo":tituloCorte
                     })
                 })
                 con.salvar();
