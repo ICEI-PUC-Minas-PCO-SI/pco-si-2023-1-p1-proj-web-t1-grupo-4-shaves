@@ -73,8 +73,16 @@ criarContaBtn?.addEventListener("click", () => {
           showConfirmButton: true,
           confirmButtonColor: "red",
         });
+      }else{
+        Swal.fire({
+          icon: "success",
+          title: "Conta Criada!",
+          text: "Agora é só fazer login na conta",
+          showConfirmButton: false,
+          timer:2000
+        });
+        window.location.href = '../pages/login.html'
       }
-      window.location.href = '../pages/login.html'
     } else {
       // Existe
       console.log("Deu ruim!");
