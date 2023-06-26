@@ -52,20 +52,20 @@ criarContaBtn?.addEventListener("click", () => {
     // Criar objeto Data e recupera data atual de acordo com os parametros BRs - DD/MM/AAAA
     let date = new Date().toLocaleDateString("pt-br");
 
-    var teste = objConexao.busca_usuario_por_email(email.value);
-    console.log(teste);
+    var retorno = objConexao.busca_usuario_por_email(email.value);
+    console.log(retorno);
 
     // Verifica se ja existe conta com o email inserido
-    if (teste == undefined) {
+    if (retorno != undefined) {
       // Nao Existe
-      verificacao = objConexao.novo_usuario(
+      var contaCriada = objConexao.novo_usuario(
         nome.value,
         senha.value,
         email.value,
         date,
         contato.value
       );
-      if (verificacao == false) {
+      if (contaCriada == false) {
         Swal.fire({
           icon: "error",
           title: "Ocorreu um erro",
