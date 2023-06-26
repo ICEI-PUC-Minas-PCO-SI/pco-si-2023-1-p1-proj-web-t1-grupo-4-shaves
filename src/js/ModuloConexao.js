@@ -43,6 +43,7 @@ class Conexao {
         
         this.lista_usuarios_json.push(usuario);
         this.salvar();
+        return true;
     }
 
     busca_usuario_por_email(email) {
@@ -137,7 +138,7 @@ class Conexao {
             return m_error.char_especial;
 
         // Senha deve ter ao menos 6 caracteres
-        if (password.lenght < 6)
+        if (password.length < 6)
             return m_error.senha_pequena;
         
         return null;
