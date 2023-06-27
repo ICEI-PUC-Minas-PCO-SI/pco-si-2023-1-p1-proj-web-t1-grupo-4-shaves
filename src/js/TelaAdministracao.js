@@ -1,110 +1,102 @@
 import objConexao from "./ModuloConexao.js";
 
-/* objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",1);
-objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",2);
-objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",3);
-objConexao.novo_agendamento("22/06/2023","18:00",1,2,"corte","teste",4);
-
-objConexao.novo_usuario("user1","123");
-objConexao.novo_usuario("user2","123");*/
-
-
-//objConexao.reset_localStorage();
-
-var vetor_barbeiros = [];
+var prevSearchedUser = null;
 
 // Ao carregar a página
 $( document ).ready(function() {
     preencheAgendamentos();
 });
 
-function preencheAgendamentos() {
+async function preencheAgendamentos() {
     var table = $('#t-agen');
-    var agendamentos = objConexao.lista_agendamentos_json;
-    agendamentos.forEach((agendamento)=>{
 
-        var color = "";
-        switch (agendamento.status) {
-            case 1: color = "table-primary"; break;
-            case 2: color = "table-success"; break;
-            case 3: color = "table-danger";  break;
-            case 4: color = "table-warning"; break;
-        }
+    await objConexao.buscaAgendamentos()
+    .then(agendamentos=>{
+        agendamentos.forEach((agendamento)=>{
 
-        var actions = `<button class="btn bg-danger" style="color: white;" >
-                            <span class="material-symbols-outlined">
-                            delete
-                            </span>
-                       </button>`;
-
-        table.append(`<tr class="${color}">
-                        <td>${agendamento.id}</td>
-                        <td>${agendamento.data}</td>
-                        <td>${agendamento.horario}</td>
-                        <td>${agendamento.cliente}</td>
-                        <td>${agendamento.barbeiro}</td>
-                        <td>${agendamento.servico}</td>
-                        <td class="d-flex">${actions}</td>
-                    `);
-    });
+            var color = "";
+            switch (parseInt(agendamento.status)) {
+                case 1: color = "table-primary"; break;
+                case 2: color = "table-success"; break;
+                case 3: color = "table-danger";  break;
+                case 4: color = "table-warning"; break;
+            }
+    
+            var actions = `<button class="btn bg-danger" style="color: white;" >
+                                <span class="material-symbols-outlined">
+                                delete
+                                </span>
+                           </button>`;
+    
+            table.append(`<tr class="${color}">
+                            <td>${agendamento.id}</td>
+                            <td>${agendamento.data}</td>
+                            <td>${agendamento.horario}</td>
+                            <td>${agendamento.cliente}</td>
+                            <td>${agendamento.barbeiro}</td>
+                            <td>${agendamento.servico}</td>
+                            <td class="d-flex">${actions}</td>
+                        `);
+        });
+    })
 }
 
 $('#busca-usuario').on('click', pesquisaUsuario);
-
 $("#salvar-alteracoes").on('click', salvaInfo);
 $("#apagar-usuario").on('click', apagaUsuario);
 
-function pesquisaUsuario() {
+async function pesquisaUsuario(event) {
+    event.preventDefault();
     var nome = $('#nome-usuario').val();
-    var usuario = buscaUsuarioPorNome(nome);
+    var usuario = await buscaUsuarioPorNome(nome);
+    if (usuario == null) { return; }
     exibeInfoUsuario(usuario);
+    prevSearchedUser = usuario;
 }
 
-function salvaInfo() {
-    var nome = $('#nome-usuario').val();
-    var usuario = buscaUsuarioPorNome(nome);
+async function salvaInfo(event) {
+    event.preventDefault();
+    //var usuario = await objConexao.buscaUsuarios(idUsuário);
+    var usuario = prevSearchedUser;
     usuario.email = $("#show-email").val();
-    usuario.usertype = $("#select-permissions").val();
+    usuario.permissao = $("#select-permissions").val();
     usuario.telefone = $("#show-phone").val();
-    editaUsuario(usuario.id, usuario);
-    Swal.fire(
+    objConexao.editaUsuario(usuario.id,usuario);
+    prevSearchedUser = usuario;
+    /* Swal.fire(
         'Editado!',
         'As informações foram atualizadas!',
         'success'
-    );
+    ); */
 }
 
-function apagaUsuario() {
+async function apagaUsuario() {
     var idUsuário = $("#show-id").val();
-    for (let i = 0; i < objConexao.lista_usuarios_json.length; i++) {
-        if (objConexao.lista_usuarios_json[i].id == idUsuário)
-            objConexao.lista_usuarios_json.splice(i,1);
+
+    if (idUsuário == "" || idUsuário == null) { return; }
+
+    var usuario = await objConexao.buscaUsuarios(idUsuário);
+
+    if (usuario == null) { 
+        clearAll();
+        disableAll();
+        return;
     }
-    objConexao.salvar();
-    Swal.fire(
-        'Removido!',
-        'O usuário foi deletado!',
-        'success'
-    );
+
+    objConexao.apagaUsuario(idUsuário);
     disableAll();
     clearAll();
 }
 
-function editaUsuario(idUsuário, novoUsuario) {
-    var usuarios = objConexao.lista_usuarios_json;
-    for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i] == idUsuário) 
-            objConexao.lista_usuarios_json[i] = novoUsuario; 
-    }
-    objConexao.salvar();
-}
-
-function buscaUsuarioPorNome(nome) {
-    var usuarios = objConexao.lista_usuarios_json;
-    for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i].nome == nome) { return usuarios[i]; }
-    }
-    return null;
+async function buscaUsuarioPorNome(nome) {
+    var usuarioRetorno = null;
+    await objConexao.buscaUsuarios()
+    .then(usuarios=>{
+        usuarios.forEach(usuario=>{
+            if (usuario.nome == nome) { usuarioRetorno = usuario; }
+        })
+    })
+    return usuarioRetorno;
 }
 
 function exibeInfoUsuario(usuario) {
@@ -116,7 +108,7 @@ function exibeInfoUsuario(usuario) {
     disableAll(false);
     $("#show-id").val(usuario.id);
     $("#show-email").val(usuario.email);
-    $("#select-permissions").val(usuario.usertype);
+    $("#select-permissions").val(parseInt(usuario.permissao));
     $("#show-phone").val(usuario.telefone);
     $("#show-creation").val(usuario.creationDate);
 }
