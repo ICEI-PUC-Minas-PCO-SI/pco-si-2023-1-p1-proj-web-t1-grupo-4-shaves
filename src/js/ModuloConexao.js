@@ -76,7 +76,7 @@ class Conexao {
         }
     }
 
-    upload_imagem_trabalho(idUsuário, conteudoArquivo, descricaoImagem) {
+    upload_imagem_trabalho(idUsuário, conteudoArquivo, descricaoImagem, tituloCorte) {
         if (conteudoArquivo) {
             var reader = new FileReader();
             reader.onload = function(e) {
@@ -87,7 +87,8 @@ class Conexao {
                     if (user.id != idUsuário) { return; }
                     user.images.jobs.push({
                         "caminho": resultadoArquivo,
-                        "descricao": descricaoImagem
+                        "descricao": descricaoImagem,
+                        "titulo":tituloCorte
                     })
                 })
                 con.salvar();
@@ -123,12 +124,12 @@ class Conexao {
 
         // Teste se usuário já existe
         for (var i = 0; i < this.lista_usuarios_json.length; i++) {
-            if (this.lista_usuarios_json[i].username === username)
+            if (this.lista_usuarios_json[i].nome == username)
             return m_error.user_existente;
         }
         
         if (this.lista_usuarios_json.includes(username))
-        return m_error.user_existente;
+            return m_error.user_existente;
         
         // Contem caracteres inválidos
         var char_especial = /^[!@$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
@@ -162,6 +163,172 @@ class Conexao {
     }
 }
 
+class JSONServer {
+
+    permissoes = { comum: 1, barbeiro: 2, admin: 3 }
+    status = { ativo: 1, finalizado: 2, cancelado: 3, remarcado: 4 };
+    servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
+
+    static urlUsuarios() { return "http://localhost:3000/usuarios"; }
+    static urlAgendamentos() { return "http://localhost:3000/agendamentos"; }
+
+    constructor() {
+        if (Conexao.instance) {
+            return Conexao.instance;
+        }
+        Conexao.instance = this;
+    }
+
+    // Métodos READ ---------------------
+    async buscaUsuarios(idUsuário = -1) {
+        if (idUsuário == -1) 
+            return await fetch(JSONServer.urlUsuarios()).then(res=>res.json());
+        else 
+            return await fetch(JSONServer.urlUsuarios() + "/" + idUsuário).then(res=>res.json());
+    }
+
+    async buscaAgendamentos() { 
+        return await fetch(JSONServer.urlAgendamentos()).then(res=>res.json()); 
+    }
+    // ----------------------------------
+
+    // Métodos CREATE -------------------------------------
+    async novoUsuario(nome, senha, email = "", permissao = this.permissoes.comum, dataCriacao = "", telefone = "") {
+        var usuario = {
+            //"id": this.#nextId(await this.buscaUsuarios()),
+            "nome": nome, 
+            "senha": senha, 
+            "email": email,
+            "permissao": permissao,
+            "dataCriacao": dataCriacao, 
+            "telefone": telefone,
+            "trabalhos": 0,
+            "imagem_perfil": "",
+        }
+        console.log(usuario)
+        $.ajax({
+            url: JSONServer.urlUsuarios(),
+            method: 'POST',
+            data: usuario,
+            success: (res) => { console.log("Novo usuário cadastrado."); },
+            error: (xhr,status,error) => { console.log("Erro ao cadastrar:" + error); }
+        });
+    }
+
+    async novoAgendamento(data = "", horario = "", cliente = "", barbeiro = "", servico = this.servicos[0], descricao = "", status = this.status.ativo) {
+        let novo_agendamento = {
+            //"id": this.#nextId(this.lista_agendamentos_json),
+            "data": data,    
+            "horario": horario,    
+            "cliente": cliente,   
+            "barbeiro": barbeiro,   
+            "servico": servico, 
+            "descricao": descricao,
+            "status": status
+        }
+        $.ajax({
+            url: JSONServer.urlAgendamentos(),
+            method: 'POST',
+            data: novo_agendamento,
+            success: (res) => { console.log("Novo agendamento cadastrado."); },
+            error: (xhr,status,error) => { console.log("Erro ao cadastrar:" + error); }
+        });
+    }
+    // ----------------------------------------------------
+
+    // Métodos UPDATE -------------------------------------
+    async editaUsuario(idUsuário, ObjUsuario) {
+        $.ajax({
+            url: JSONServer.urlUsuarios() + "/" + idUsuário,
+            method: 'PUT',
+            data: ObjUsuario,
+            success: (res) => { console.log("Usuário editado."); },
+            error: (xhr,status,error) => { console.log("Erro ao editar o usuário:" + error); }
+        });
+    }
+
+    async editaAgendamento(idAgendamento, ObjAgendamento) {
+        $.ajax({
+            url: JSONServer.urlAgendamentos() + "/" + idAgendamento,
+            method: 'PUT',
+            data: ObjAgendamento,
+            success: (res) => { console.log("Agendamento editado."); },
+            error: (xhr,status,error) => { console.log("Erro ao editar o agendamento:" + error); }
+        });
+    }
+    // ----------------------------------------------------
+
+    // Métodos DELETE ---------------------
+    async apagaUsuario(idUsuário) {
+        $.ajax({
+            url: JSONServer.urlUsuarios() + "/" + idUsuário,
+            method: 'DELETE',
+            success: (res) => { console.log("Usuário editado."); },
+            error: (xhr,status,error) => { console.log("Erro ao editar o usuário:" + error); }
+        });
+    }
+
+    async apagaAgendamento(idAgendamento) {
+        $.ajax({
+            url: JSONServer.urlAgendamentos() + "/" + idAgendamento,
+            method: 'DELETE',
+            success: (res) => { console.log("Agendamento apagado."); },
+            error: (xhr,status,error) => { console.log("Erro ao apagar o agendamento:" + error); }
+        });
+    }
+    // ------------------------------------
+
+    // Métodos variados ------------------------------
+    async uploadImagemPerfil(idUsuário, nomeArquivo) {
+        if (nomeArquivo == null) { return; }
+        this.buscaUsuarios().then(usuarios=>{
+            usuarios.forEach(user=>{
+                if (user.id != idUsuário) { return; }
+                user.imagem_perfil = nomeArquivo;
+                $.ajax({
+                    url: JSONServer.urlUsuarios() + "/" + idUsuário,
+                    method: 'PUT',
+                    data: user,
+                    success: (res) => { console.log("Imagem de perfil salva."); },
+                    error: (xhr,status,error) => { console.log("Erro ao salvar a imagem:" + error); }
+                });
+            })
+        })
+    }
+
+    async uploadImagemTrabalho(idUsuário, nomeArquivo, descricaoImagem, tituloCorte) {
+        if (nomeArquivo == null) { return; }
+        this.buscaUsuarios().then(usuarios=>{
+            usuarios.forEach(user=>{
+                if (user.id != idUsuário) { return; }
+                if (user.trabalhos == 1) {
+                    user.trabalhos = [{
+                        "caminho": resultadoArquivo,
+                        "descricao": descricaoImagem,
+                        "titulo":tituloCorte
+                    }]
+                } else {
+                    user.trabalhos.push({
+                        "caminho": resultadoArquivo,
+                        "descricao": descricaoImagem,
+                        "titulo":tituloCorte
+                    })
+                }
+                $.ajax({
+                    url: JSONServer.urlUsuarios() + "/" + idUsuário,
+                    method: 'PUT',
+                    data: user,
+                    success: (res) => { console.log("Imagem de trabalho salva."); },
+                    error: (xhr,status,error) => { console.log("Erro ao salvar a imagem:" + error); }
+                });
+            })
+        })
+        
+    }
+    // -----------------------------------------------
+
+}
+
 // Itens para acessar o localStorage
 const DataBase = {
     Usuarios  : "usuarios",
@@ -181,7 +348,7 @@ const servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
 
 const CSTATUS = { ativo: 1, finalizado: 2, cancelado: 3, remarcado: 4 };
 
-var objConexao = new Conexao();
+var objConexao = new JSONServer();
 Object.freeze(objConexao);
 
 export default objConexao;
