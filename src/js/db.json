@@ -1,0 +1,49 @@
+{
+  "usuarios": [
+    {
+      "nome": "Usuario1",
+      "senha": "123",
+      "email": "user1@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 1
+    },
+    {
+        "nome": "Usuario2",
+        "senha": "123",
+        "email": "user2@gmail.com",
+        "permissao": "2",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988888888",
+        "trabalhos": "0",
+        "imagem_perfil": "",
+        "id": 2
+    },
+    {
+        "nome": "Usuario3",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988888888",
+        "trabalhos": "0",
+        "imagem_perfil": "",
+        "id": 3
+    }
+  ],
+  "agendamentos": [
+    {
+      "data": "26/06/2023",
+      "horario": "18:00",
+      "cliente": "1",
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "Descrição teste",
+      "status": "1",
+      "id": 1
+    }
+  ]
+}
