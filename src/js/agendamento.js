@@ -1,5 +1,7 @@
 import LoginManager from "./ModuloLogin.js";
 
+console.log('Teste');
+
 document.addEventListener("DOMContentLoaded", async function () {
     var form = document.getElementById("form-agendamento");
 
