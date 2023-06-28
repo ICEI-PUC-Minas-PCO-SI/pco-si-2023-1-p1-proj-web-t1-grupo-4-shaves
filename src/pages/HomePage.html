@@ -133,60 +133,16 @@
                             <div class="card-header">
                                 <p class="h3 text-center">Detalhes do Último Agendamento</p>
                             </div>
-                            <div class="card-body">
-                                <p class="h4">Barbeiro:</p>
-                                <p>Nome do Barbeiro</p>
-                                <hr>
-                                <p class="h4">Data e Hora:</p>
-                                <p>mês/dia/ano, horas</p>
-                                <hr>
-                                <p class="h4">Tipo do corte:</p>
-                                <p>Barba/Cabelo/Pézinho etc</p> 
+                            <div class="card-body" id="cardUltimo">
+
                             </div>
                         </div>
                     </div>  
                     <!--Card-Barbeiro mais procurado -->
                     <div class="col-9 ">
-                        <div class="row">
+                        <div class="row" id="cardLabel">
                             <div class="h2 text-center mt-5">Barbeiros Mais Procurados</div>
-                            <div class=" col-lg-4  col-sm-12  mb-3">
-                                <div class="card  mt-3 h-100 ">
-                                    <div class="card-header bg-light mt-1 mx-1">
-                                        <img class="img-fluid  rounded barbeiros " src="../Img/barbeiro1.png">
-                                    </div>
-                                    <div class="card-body bg-light mb-1 mx-1 ">
-                                        <a class="h5 text-decoration-none text-dark text-center" >Nome Barbeiro</a>
-                                        <p >Informações básicas sobre o Barbeiro </p>
-                                    </div>
-                                </div>
-                            </div>
-                        
-
-                            <div class=" col-lg-4  col-sm-12  mb-3">
-                                <div class="card  mt-3 h-100 ">
-                                    <div class="card-header bg-light mt-1 mx-1">
-                                        <img class="img-fluid  rounded barbeiros" src="../Img/barbeiro2.png">
-                                    </div>
-                                    <div class="card-body bg-light mb-1 mx-1 ">
-                                        <a class="h5 text-decoration-none text-dark text-center" >Nome Barbeiro</a>
-                                        <p >Informações básicas sobre o Barbeiro </p>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            
-                            <div class=" col-lg-4  col-sm-12  mb-3 ">
-                                <div class="card  mt-3 h-100 ">
-                                    <div class="card-header bg-light mt-1 mx-1">
-                                        <img class="img-fluid  rounded " id="barbeiro3" src="../Img/barbeiro3.png">
-                                    </div>
-                                    <div class="card-body bg-light mb-1 mx-1 ">
-                                        <a class="h5 text-decoration-none text-dark text-center" >Nome Barbeiro</a>
-                                        <p >Informações básicas sobre o Barbeiro </p>
-                                    </div>
-                                </div>
-                            </div>
-                        
+                                                    
 
                         </div>
                         
@@ -199,6 +155,7 @@
         <div class="p-5">
         </div>
     </main>
+   <!--  <input id="arquivo" type="file"><button id="enviar">Enviar</button> -->
 
     <!--Footer-->
     <footer class="footer bg-dark">
@@ -215,9 +172,17 @@
     </footer>
 
     <!--Bootstrap Js-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+crossorigin="anonymous"></script>
+<!-- SweetAlert JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="../js/HomePage.js" type="module"></script>
+<script src="../js/Login.js" type="module"></script>
+
 </body>
 
 </html>

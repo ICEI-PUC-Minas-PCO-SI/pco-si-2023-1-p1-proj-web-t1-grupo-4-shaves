@@ -14,12 +14,7 @@ body, html {
 .cortes{ height: 25vw;}
 
 /*Barbeiros*/
-.barbeiros{
-    height: 10vw;
-    width: 15vw;
-}
-
-#barbeiro3{
+#barbeiro{
     height: 10vw;
     width: 15vw;
 }
