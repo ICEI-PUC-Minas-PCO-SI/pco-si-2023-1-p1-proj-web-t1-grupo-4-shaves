@@ -106,11 +106,16 @@ function CriarCard(barbeiro){
                     <p></p>
                     <p> <b>e-mail:</b> ${barbeiro.email}</p>
                     <p> <b>Contato:</b> ${barbeiro.telefone}
+                    <p></p>
+                
                 </div>
             </div>
         </div>`
         $("#cardLabel").append(card)
 }
+
+    //Botao Agendar Horario
+    /* <a href="segundoPerfil.html" class="btn btn-dark">Agendar horário</a> */
 
 function CriarUltimo(ultimoAgendamento, barbeiroAgendado){
     var card= `                                 <p class="h4">Barbeiro:</p>

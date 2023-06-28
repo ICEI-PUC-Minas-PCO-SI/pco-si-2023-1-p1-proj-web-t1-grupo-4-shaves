@@ -31,7 +31,11 @@ body, html {
     #navegacao{display: none;margin-top: 0px;margin-bottom: 0px;}
     .dropdown ul{font-size: 5px;}
     .pesquisar{margin-bottom: 0px;}
-
+    /* Body Mobile */
+    #barbeiro{
+        height: 50vw;
+        width: 135vw;
+    }
     /*Footer Mobile*/
     .footer_area{margin-top: 10px;}
 }
@@ -48,7 +52,11 @@ body, html {
     #navegacao{display: none;margin-top: 0px;margin-bottom: 0px;}
     .btn_drop{margin-left: 30px;}
     .pesquisar{margin-bottom: 10px;}
-
+    /*Body Mobile  */
+    #barbeiro{
+        height: 50vw;
+        width: 135vw;
+    }
     /*Footer Mobile*/
     .footer_area{margin-top: 70px;}
 }
