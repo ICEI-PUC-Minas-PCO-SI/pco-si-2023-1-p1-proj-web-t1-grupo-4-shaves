@@ -103,7 +103,7 @@
 
 
 
-    <main class="container-fluid p-3" id="body">
+    <main class="container-fluid" id="body" style="margin: 5vh 0vh;">
 
         <!-- Page Identification -->
         <div class="row justify-content-center">
@@ -114,11 +114,11 @@
 
         <!-- Input Nome -->
         <div class="row justify-content-center pt-4">
-            <div class="col-sm-12 col-md-10">
+            <div class="col-sm-12 col-md-10 col-lg-7">
                 <label for="inputNome" class="form-label h5">Nome</label>
                 <input type="text" class="form-control form-control-lg" id="inputNome" required maxlength="200">
             </div>
-            <span class="form-text col-sm-12 col-md-10">
+            <span class="form-text col-sm-12 col-md-10 col-lg-7">
                 Digite seu nome completo
             </span>
         </div>
@@ -127,12 +127,12 @@
 
         <!-- Input Email -->
         <div class="row justify-content-center pt-4">
-            <div class="col-sm-12 col-md-10">
+            <div class="col-sm-12 col-md-10 col-lg-7">
                 <label for="inputEmail" class="form-label h5">Email</label>
                 <input type="email" class="form-control form-control-lg" id="inputEmail"
                     placeholder="Exemplo: usuario123@gmail.com" required>
             </div>
-            <span class="col-sm-12 col-md-10 form-text">
+            <span class="col-sm-12 col-md-10 col-lg-7 form-text">
                 Forneça o seu email de contato
             </span>
         </div>
@@ -141,11 +141,11 @@
 
         <!-- Input Contato -->
         <div class="row justify-content-center pt-4">
-            <div class="col-sm-12 col-md-10">
+            <div class="col-sm-12 col-md-10 col-lg-7">
                 <label for="inputContato" class="form-label h5">Contato</label>
                 <input type="tel" class="form-control form-control-lg" id="inputContato" placeholder="DDD XXXXXXXXX"
-                    required maxlength="11">
-                <div class="col-sm-12 col-md-10 form-text">
+                    required maxlength="13">
+                <div class="col-sm-12 col-md-10 col-lg-7 form-text">
                     Forneça o DDD do número e em seguida adicione o seu número, por exemplo: 31 98765432
                 </div>
             </div>
@@ -155,11 +155,11 @@
 
         <!-- Input Senha -->
         <div class="row justify-content-center pt-4">
-            <div class="col-sm-12 col-md-10">
+            <div class="col-sm-12 col-md-10 col-lg-7">
                 <label for="inputSenha" class="form-label h4">Senha</label>
                 <input type="password" class="form-control form-control-lg" id="inputSenha" required minlength="8">
             </div>
-            <span class="col-sm-12 col-md-10 form-text">
+            <span class="col-sm-12 col-md-10 col-lg-7 form-text">
                 A senha deve ter de no mínimo 6 letras, sem emojis e espaços
             </span>
         </div>
@@ -168,11 +168,11 @@
 
         <!-- Input Confirmar Senha -->
         <div class="row justify-content-center pt-4">
-            <div class="col-sm-12 col-md-10">
+            <div class="col-sm-12 col-md-10 col-lg-7">
                 <label for="inputConfSenha" class="form-label h4">Confirmar Senha</label>
                 <input type="password" class="form-control form-control-lg" id="inputConfSenha" required minlength="8">
             </div>
-            <span class="col-sm-12 col-md-10 form-text">
+            <span class="col-sm-12 col-md-10 col-lg-7 form-text">
                 Digite a senha novamente
             </span>
         </div>
@@ -181,7 +181,7 @@
 
         <!-- CheckBox -->
         <div class="row justify-content-center align-items-center px-4 py-4">
-            <div class="col-sm-12 col-md-10 form-check form-switch">
+            <div class="col-sm-12 col-md-10 col-lg-7 form-check form-switch">
                 <input class="form-check-input btn-lg" type="checkbox" id="mostrarSenhaCheckbox">
                 <label class="form-check-label h5" for="mostrarSenhaCheckbox"
                     style="font-size: large; padding-top: 4px;">Mostrar Senha</label>
@@ -203,17 +203,9 @@
             });
         </script>
 
-
-
-        <!-- Mensagem de Erro -->
-        <!-- <div class="row-cols-sm-auto text-center text-danger pt-4">
-            <span id="errorMessage" style="font-weight: bold;"></span>
-        </div> -->
-
-
         <!-- Buttons -->
-        <div class="row justify-content-sm-between justify-content-md-center">
-            <div class="col-6 col-md-2">
+        <div class="row justify-content-sm-between justify-content-md-center justify-content-lg-center" >
+            <div class="col-6 col-md-2 col-lg-1">
                 <a href="./Login.html">
                     <button type="button" class="btn btn-outline-danger btn-lg">Voltar</button>
                 </a>
@@ -221,7 +213,7 @@
             <!-- <div class="col-6 col-md-3">
                 <button type="reset" class="btn btn-outline-dark btn-lg" id="limparCamposBtn">Limpar Campos</button>
             </div> -->
-            <div class="col-6 col-md-3">
+            <div class="col-6 col-md-3 col-lg-1">
                 <button id="criarContaBtn" type="submit" class="btn btn-warning btn-lg"
                     style="width: 160px; border: 1px solid black;">Criar
                     Conta</button>
