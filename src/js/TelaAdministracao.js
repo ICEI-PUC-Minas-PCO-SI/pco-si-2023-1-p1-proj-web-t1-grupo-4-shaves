@@ -18,21 +18,19 @@ $( document ).ready(async function() {
 });
 
 async function validaUsuario() {
-    var res = 0;
     var id = LoginManager.getIdUsuarioLogado();
-    
     if (id == "") {
-        res = 1;
         $('main').empty();
         $('main').append('<h3>Sem permissão para acessar essa página.</h3>')
+        return 1;
     }
     var usuario = await objConexao.buscaUsuarios(id);
     if (usuario.permissao != 3) {
-        res = 2;
         $('main').empty();
         $('main').append('<h3>Sem permissão para acessar essa página.</h3>');
+        return 2;
     }
-    return res;
+    return 0;
 }
 
 async function preencheAgendamentos() {
