@@ -1,4 +1,5 @@
 import objConexao from "./ModuloConexao.js";
+import LoginManager from "./ModuloLogin.js";
 
 var permissoes = ["","Cliente","Barbeiro","Administrador"];
 var prevSearchedUser = null;
@@ -6,10 +7,33 @@ var todosAgendamentos = [];
 var todosUsuarios = [];
 
 // Ao carregar a página
-$( document ).ready(function() {
+$( document ).ready(async function() {
+
+    var error = await validaUsuario();
+
+    if (error != 0) {return;}
+
     preencheAgendamentos();
     preencheUsuarios();
 });
+
+async function validaUsuario() {
+    var res = 0;
+    var id = LoginManager.getIdUsuarioLogado();
+    
+    if (id == "") {
+        res = 1;
+        $('main').empty();
+        $('main').append('<h3>Sem permissão para acessar essa página.</h3>')
+    }
+    var usuario = await objConexao.buscaUsuarios(id);
+    if (usuario.permissao != 3) {
+        res = 2;
+        $('main').empty();
+        $('main').append('<h3>Sem permissão para acessar essa página.</h3>');
+    }
+    return res;
+}
 
 async function preencheAgendamentos() {
     var table = $('#t-agen');
@@ -126,7 +150,8 @@ async function salvaInfo(event) {
     ); */
 }
 
-async function apagaUsuario() {
+async function apagaUsuario(event) {
+    event.preventDefault();
     var idUsuário = $("#show-id").val();
 
     if (idUsuário == "" || idUsuário == null) { return; }
