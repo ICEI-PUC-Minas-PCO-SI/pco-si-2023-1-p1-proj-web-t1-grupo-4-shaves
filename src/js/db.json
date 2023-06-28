@@ -12,26 +12,59 @@
       "id": 1
     },
     {
-        "nome": "Usuario2",
-        "senha": "123",
-        "email": "user2@gmail.com",
-        "permissao": "2",
-        "dataCriacao": "26/06/2023",
-        "telefone": "31988888888",
-        "trabalhos": "0",
-        "imagem_perfil": "",
-        "id": 2
+      "nome": "Usuario2",
+      "senha": "123",
+      "email": "user2@gmail.com",
+      "permissao": "2",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 2
     },
     {
-        "nome": "Usuario3",
-        "senha": "123",
-        "email": "user3@gmail.com",
-        "permissao": "3",
-        "dataCriacao": "26/06/2023",
-        "telefone": "31988888888",
-        "trabalhos": "0",
-        "imagem_perfil": "",
-        "id": 3
+      "nome": "Usuario3",
+      "senha": "123",
+      "email": "user3@gmail.com",
+      "permissao": "3",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 3
+    },
+    {
+      "nome": "Usuario4",
+      "senha": "123",
+      "email": "user3@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 4
+    },
+    {
+      "nome": "Usuario5",
+      "senha": "123",
+      "email": "user3@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 5
+    },
+    {
+      "nome": "Usuario6",
+      "senha": "123",
+      "email": "user3@gmail.com",
+      "permissao": "3",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 6
     }
   ],
   "agendamentos": [
@@ -44,6 +77,66 @@
       "descricao": "Descrição teste",
       "status": "1",
       "id": 1
+    },
+    {
+      "data": "26/06/2023",
+      "horario": "18:00",
+      "cliente": "1",
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "Descrição teste",
+      "status": "1",
+      "id": 2
+    },
+    {
+      "data": "26/06/2023",
+      "horario": "18:00",
+      "cliente": "1",
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "Descrição teste",
+      "status": "1",
+      "id": 3
+    },
+    {
+      "data": "26/06/2023",
+      "horario": "18:00",
+      "cliente": "1",
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "Descrição teste",
+      "status": "3",
+      "id": 4
+    },
+    {
+      "data": "26/06/2023",
+      "horario": "18:00",
+      "cliente": "1",
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "Descrição teste",
+      "status": "1",
+      "id": 5
+    },
+    {
+      "data": "26/06/2023",
+      "horario": "18:00",
+      "cliente": "1",
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "Descrição teste",
+      "status": "1",
+      "id": 6
+    },
+    {
+      "data": "26/06/2023",
+      "horario": "18:00",
+      "cliente": "1",
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "Descrição teste",
+      "status": "1",
+      "id": 7
     }
   ]
 }

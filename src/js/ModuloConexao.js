@@ -187,8 +187,11 @@ class JSONServer {
             return await fetch(JSONServer.urlUsuarios() + "/" + idUsuário).then(res=>res.json());
     }
 
-    async buscaAgendamentos() { 
-        return await fetch(JSONServer.urlAgendamentos()).then(res=>res.json()); 
+    async buscaAgendamentos(idAgendamento = -1) { 
+        if (idAgendamento == -1)
+            return await fetch(JSONServer.urlAgendamentos()).then(res=>res.json()); 
+        else
+            return await fetch(JSONServer.urlAgendamentos() + "/" + idAgendamento).then(res=>res.json());
     }
     // ----------------------------------
 
