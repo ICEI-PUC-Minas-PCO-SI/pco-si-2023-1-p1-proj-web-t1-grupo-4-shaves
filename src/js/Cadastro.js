@@ -1,4 +1,5 @@
-import objConexao from "./ModuloConexao.js";
+import JSONServer from "./ModuloConexao.js";
+// import Swal from "sweetalert2";
 
 // Inputs
 var nome = document.getElementById("inputNome");
@@ -10,6 +11,8 @@ var confSenha = document.getElementById("inputConfSenha");
 // Logica do Botao de Cadastrar
 var criarContaBtn = document.getElementById("criarContaBtn");
 criarContaBtn?.addEventListener("click", () => {
+
+
   // Checar se existem campos vazios e destaca-los
   if (nome.value == "") {
     nome.style.border = "2px solid red";
@@ -45,51 +48,38 @@ criarContaBtn?.addEventListener("click", () => {
     Swal.fire({
       icon: "error",
       title: "Campos vazios",
-      html: "Por favor preencha todos os campos",
+      html: "Por favor preencha todos os campos e tente novamente",
       confirmButtonColor: "red",
     });
   } else {
+
+
+
     // Criar objeto Data e recupera data atual de acordo com os parametros BRs - DD/MM/AAAA
     let date = new Date().toLocaleDateString("pt-br");
 
-    var retorno = objConexao.busca_usuario_por_email(email.value);
-    console.log(retorno);
+
+    var teste = JSONServer.novoUsuario(nome.value,senha.value,email.value,1,date,contato.value) 
 
     // Verifica se ja existe conta com o email inserido
-    if (retorno != undefined) {
-      // Nao Existe
-      var contaCriada = objConexao.novo_usuario(
-        nome.value,
-        senha.value,
-        email.value,
-        date,
-        contato.value
-      );
-      if (contaCriada == false) {
-        Swal.fire({
-          icon: "error",
-          title: "Ocorreu um erro",
-          text: "Não foi possível cadastrar a conta. Por favor tente novamente mais tarde!",
-          showConfirmButton: true,
-          confirmButtonColor: "red",
-        });
-      }else{
-        Swal.fire({
-          icon: "success",
-          title: "Conta Criada!",
-          text: "Agora é só fazer login na conta",
-          showConfirmButton: false,
-          timer:2000
-        });
-        window.location.href = '../pages/login.html'
-      }
+    if (teste) {
+      // A conta nao existe ainda
+      Swal.fire({
+        icon: "success",
+        title: "Conta Criada",
+        showConfirmButton: false,
+        timer:2000
+      });
+      // setTimeout(window.location.href = '../pages/login.html',3000)
+      
+    
     } else {
-      // Existe
-      console.log("Deu ruim!");
+
+      // A conta ja existe
       Swal.fire({
         icon: "error",
-        title: "Email já cadastrado!",
-        text: "Esse email já está cadastrado no nosso sistema. Por favor tente realizar o login",
+        title: "Ocorreu um erro",
+        text: "Tente novamente mais tarde, ou então entre em contato com o administrador do sistema",
         showConfirmButton: true,
         confirmButtonColor: "red",
       });

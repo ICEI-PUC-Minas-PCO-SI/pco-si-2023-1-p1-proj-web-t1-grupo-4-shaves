@@ -191,6 +191,28 @@ class JSONServer {
     async buscaAgendamentos() { 
         return await fetch(JSONServer.urlAgendamentos()).then(res=>res.json()); 
     }
+
+    async verificarContaExistente(email, senha) {
+        // Chama o metodo do JSONSERVER
+        var usuarios = await JSONServer.buscaUsuarios();
+      
+        // Verifica por email igual
+        var usuarioExistente = usuarios.find(
+          (usuario) => usuario.email === email
+        );
+      
+        if (usuarioExistente) {
+            // Verifica se senha é igual
+          if (usuarioExistente.senha === senha) {
+            return true;
+          } else {
+            return false;
+          }
+        } else {
+          return false;
+        }
+      }
+      
     // ----------------------------------
 
     // Métodos CREATE -------------------------------------
@@ -206,13 +228,13 @@ class JSONServer {
             "trabalhos": 0,
             "imagem_perfil": "",
         }
-        console.log(usuario)
+        console.log(usuario);
         $.ajax({
             url: JSONServer.urlUsuarios(),
             method: 'POST',
             data: usuario,
-            success: (res) => { console.log("Novo usuário cadastrado."); },
-            error: (xhr,status,error) => { console.log("Erro ao cadastrar:" + error); }
+            success: (res) => { console.log("Novo usuário cadastrado."); return true; },
+            error: (xhr,status,error) => { console.log("Erro ao cadastrar:" + status + " " + error); return false; }
         });
     }
 
