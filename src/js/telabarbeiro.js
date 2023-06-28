@@ -1,4 +1,20 @@
+import objConexao from "./ModuloConexao.js";
+import LoginManager from "./ModuloLogin.js";
 
+async function preencheBarbeiro(){
+    var todosUsuarios = await objConexao.buscaUsuarios();
+
+
+}
+
+function filtraBarbeiros(todosUsuarios){
+    var barbeiros = [];
+    for(let i =0;i<todosUsuarios.length;i++){
+        if(todosUsuarios[i].permissao == 2){
+            barbeiros.push(todosUsuarios[i]);
+        }
+    }
+}
 document.addEventListener("DOMContentLoaded", function() {
     var searchBar = document.querySelector(".search-bar input");
     var searchButton = document.querySelector(".search-bar button");
