@@ -1,5 +1,4 @@
 import JSONServer from "./ModuloConexao.js";
-// import Swal from "sweetalert2";          IMPORTADO VIA SCRIPT NO HMTL
 
 // Inputs
 var email = document.getElementById("inputEmail");

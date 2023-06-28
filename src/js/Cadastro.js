@@ -1,5 +1,4 @@
 import JSONServer from "./ModuloConexao.js";
-// import Swal from "sweetalert2";
 
 // Inputs
 var nome = document.getElementById("inputNome");
@@ -53,11 +52,8 @@ criarContaBtn?.addEventListener("click", () => {
     });
   } else {
 
-
-
     // Criar objeto Data e recupera data atual de acordo com os parametros BRs - DD/MM/AAAA
     let date = new Date().toLocaleDateString("pt-br");
-
 
     var teste = JSONServer.novoUsuario(nome.value,senha.value,email.value,1,date,contato.value) 
 
@@ -72,7 +68,6 @@ criarContaBtn?.addEventListener("click", () => {
       });
       // setTimeout(window.location.href = '../pages/login.html',3000)
       
-    
     } else {
 
       // A conta ja existe
