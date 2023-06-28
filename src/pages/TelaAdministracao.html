@@ -17,10 +17,20 @@
 
     <!-- Monserrat -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
+    <!-- Trash Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <!-- Edit Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Swal -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+
 </head>
 
 <body>
-
     <header class="header">
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">
@@ -73,22 +83,143 @@
             </div>
         </nav>
     </header>
-
+    
     <main class="container-fluid p-0">
         <div class="d-flex bg-secondary w-100 m-0" id="retangulo-titulo">
             <h2 class="mx-auto" style="color: white;">
                 Gerência
             </h2>
         </div>
-        <div class="row">
-            <div id="controle-barbeiros" class="col-md-6 p-0">
-                <h2 class="row d-block mt-3">
-                    Equipe
-                </h2>
-                <!-- Aqui os cards dos barbeiros são inseridos via JS -->
+        <div class="row px-2 my-3 d-flex justify-content-center">
+            <div id="controle-usuario" style="text-align: center;">
+                <h2>Controle Usuário</h2>
+                <div class="container bg-secondary p-4" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <input type="text" class="form-control" placeholder="Nome de usuário" id="nome-usuario">
+                    <button class="btn bg-dark mt-3" style="color: white;" id="busca-usuario">
+                        Pesquisar
+                    </button>
+                    <!-- ID -->
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">ID</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="ID" id="show-id" disabled>
+                    </div>
+                    <!-- Permissão -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text">Nível</label>
+                        </div>
+                        <select class="custom-select" id="select-permissions" disabled>
+                          <option value="1" selected>Usuário Comum</option>
+                          <option value="2">Barbeiro</option>
+                          <option value="3">Administrador</option>
+                        </select>
+                    </div>
+                    <!-- Email -->
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Email</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Email" id="show-email" disabled>
+                    </div>
+                    <!-- Telefone -->
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Telefone</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Telefone" id="show-phone" disabled>
+                    </div>
+                    <!-- Data de criação -->
+                    <div class="input-group my-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Criação</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Data de criação" id="show-creation" disabled>
+                    </div>
+                    <div class="row d-flex justify-content-center" id="user-action-buttons">
+                        <button class="btn bg-dark col-3" id="salvar-alteracoes" style="color: white;" disabled>
+                            Salvar
+                        </button>
+                        <button class="btn bg-danger col-3" id="apagar-usuario" style="color: white;" disabled>
+                            Apagar
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div id="controle-usuario" class="col-md-6">
-                
+            <!-- <div id="controle-barbeiros" class="col-md-6 col-sm-12" style="text-align: center;">
+                <h2>Agendamentos ativos</h2>
+                 Agendamentos
+            </div-->
+        </div>
+
+        <!-- Categories Modal -->
+        <div class="modal fade" id="CategoryModal" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="TituloModalCentralizado">Status do Agendamento</h5>
+                        <button type="button" class="closeModal" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radios" value="1">
+                            <label class="form-check-label" for="catRadio"> Ativo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radios" value="2">
+                            <label class="form-check-label" for="catRadio"> Finalizado
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radios" value="3">
+                            <label class="form-check-label" for="catRadio"> Cancelado
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radios" value="4">
+                            <label class="form-check-label" for="catRadio"> Remarcado
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="save-ag-edit" type="button" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center" style="text-align: center;">
+            <!-- Tabela de agendamentos -->
+            <h2>Agendamentos</h2>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar my-3 w-75">
+                <table class="table align-middle table-dark table-striped table-hover m-0" id="t-agen">
+                    <tr>
+                        <th class="table-dark">ID</td>
+                        <th class="table-dark">Data</td>
+                        <th class="table-dark">Horário</td>
+                        <th class="table-dark">Cliente</td>
+                        <th class="table-dark">Barbeiro</td>
+                        <!--<th class="table-dark">Serviço</td>-->
+                        <th class="table-dark">Ações</th>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Tabela de usuários -->
+            <h2>Lista de usuários</h2>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar my-3 w-75">
+                <table class="table align-middle table-dark table-striped table-hover m-0" id="t-users">
+                    <tr>
+                        <th class="table-dark">ID</td>
+                        <th class="table-dark">Nome</td>
+                        <th class="table-dark">Email</td>
+                        <th class="table-dark">Permissao</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </main>
