@@ -1,5 +1,6 @@
 import objConexao from "./ModuloConexao.js";
 import LoginManager from "./ModuloLogin.js";
+
 preencheBarbeiro();
 async function preencheBarbeiro(){
     var todosUsuarios = await objConexao.buscaUsuarios();
@@ -21,12 +22,7 @@ async function preencheBarbeiro(){
     </div>`
     $('#sessaoBarbeiros').append(card)
     }
-
-
-
-
-   
-
+    
 }
 
 function filtraBarbeiros(todosUsuarios){
@@ -38,7 +34,7 @@ function filtraBarbeiros(todosUsuarios){
     }
     return barbeiros;
 }
-document.addEventListener("DOMContentLoaded", function() {
+/*function pesquisaBarbeiro() {
     var searchBar = document.querySelector(".search-bar input");
     var searchButton = document.querySelector(".search-bar button");
     var cards = document.querySelectorAll(".card");
@@ -72,4 +68,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
     });
-  });
+  };*/
