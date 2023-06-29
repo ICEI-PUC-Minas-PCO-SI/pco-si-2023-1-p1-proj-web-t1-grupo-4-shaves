@@ -116,9 +116,15 @@ class Conexao {
         this.salvar();
     }
 
-    busca_agendamento() {
-
+    busca_agendamento(email) {
+        let index = -1;
+        this.lista_usuarios_json.forEach((user,i)=>{
+            if (user.email == email)
+                index = i;
+        })
+        return this.lista_usuarios_json[index];
     }
+    
     // -------------------------
     #valida_parametros_novo_usuario(username, password) {
 

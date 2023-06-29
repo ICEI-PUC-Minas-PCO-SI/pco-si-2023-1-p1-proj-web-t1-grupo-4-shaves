@@ -7,7 +7,7 @@ class LoginManager {
         LoginManager.instance = this;
     }
 
-    static loginPath() {return 'UsuarioLogado'};
+    static loginPath() {return 'usuarioLogado'};
 
     getIdUsuarioLogado() { return localStorage.getItem(LoginManager.loginPath()); }
 
