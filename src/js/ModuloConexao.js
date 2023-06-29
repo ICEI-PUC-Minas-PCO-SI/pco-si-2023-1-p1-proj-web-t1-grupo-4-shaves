@@ -195,25 +195,31 @@ class JSONServer {
             return await fetch(JSONServer.urlAgendamentos() + "/" + idAgendamento).then(res=>res.json());
     }
 
-    async verificarContaExistente(email, senha) {
-        // Chama o metodo do JSONSERVER
-        var usuarios = await JSONServer.buscaUsuarios();
+    async verificarContaExistente(email) {
+        var usuarios = await this.buscaUsuarios();
       
-        // Verifica por email igual
-        var usuarioExistente = usuarios.find(
-          (usuario) => usuario.email === email
-        );
+        var usuarioExistente = null;
+
+        usuarios.forEach(usuario => {
+            console.log(usuario.email);
+            if(usuario.email == email){
+                usuarioExistente = usuario;
+            }
+        });
+
+        return usuarioExistente;
+
+        // console.log(usuarioExistente.email);
+
+        // var usuarioExistente = usuarios.find(
+        //     (usuario) => usuario.email == email
+        // );
       
-        if (usuarioExistente) {
-            // Verifica se senha é igual
-          if (usuarioExistente.senha === senha) {
-            return true;
-          } else {
-            return false;
-          }
-        } else {
-          return false;
-        }
+        // if (usuarioExistente == null) {
+        //     return false;
+        // } else {
+        //     return true;
+        // }
       }
       
     // ----------------------------------
