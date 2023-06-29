@@ -131,7 +131,7 @@
                                 <textarea class="form-control" id="descricao" rows="3"></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary" id="agendar">Agendar</button>
+                                <button class="btn btn-primary" id="agendar">Agendar</button>
                             </div>
 
                         </form>
@@ -146,7 +146,7 @@
                     <p>Serviço: <span id="servico-confirmacao"></span></p>
 
                     <p>Descrição: <span id="descricao-confirmacao"></span></p>
-                    <button id="confirmar-agendamento">Confirmar Agendamento</button>
+                    <button type="submit" id="confirmar-agendamento">Confirmar Agendamento</button>
                 </div>
 
                 <script>
@@ -180,8 +180,9 @@
                     });
 
                     // Ao clicar no botão "Confirmar Agendamento", envia os dados para o servidor
-                    $("#confirmar-agendamento").submit(function () {
+                    $("#confirmar-agendamento").click(function () {
                         event.preventDefault();
+                        alert("Agendamento confirmado!");
 
                     });
                 </script>

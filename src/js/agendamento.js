@@ -30,12 +30,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         event.preventDefault();
 
         var data = document.getElementById("data").value;
+        var cliente = buscaUsuario(idUsuarioLogado);
         var horario = document.getElementById("horario").value;
         var profissional = document.getElementById("profissional").value;
         var servico = document.getElementById("servico").value;
         var descricao = document.getElementById("descricao").value;
 
         console.log("Data: " + data);
+        console.log("Cliente:" + cliente);
         console.log("Horário: " + horario);
         console.log("Profissional: " + profissional);
         console.log("Serviço: " + servico);
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         var formData = {
             data: data,
             horario: horario,
+            cliente: 1,
             profissional: profissional,
             servico: servico,
             descricao: descricao
@@ -70,7 +73,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             .catch(error => {
                 console.log("Erro ao enviar os dados:", error);
             });
-        alert("Agendamento confirmado!");
 
         // Limpa o formulário após a submissão
         form.reset();
