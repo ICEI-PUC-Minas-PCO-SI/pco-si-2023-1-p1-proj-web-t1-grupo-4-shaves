@@ -8,7 +8,7 @@ if (idUsuarioLogado == "") {
     console.log("Ninguem logado");
     window.location.href = "../pages/login.html";
 } else {
-    console.log("usuario " + idUsuarioLogado + " logado");
+    console.log("usuario otario " + idUsuarioLogado + " logado");
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     // Evento de envio do formulário
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
         var data = document.getElementById("data").value;
-        var cliente = buscaUsuario(idUsuarioLogado);
+        var cliente = await buscaUsuario(idUsuarioLogado);
         var horario = document.getElementById("horario").value;
         var profissional = document.getElementById("profissional").value;
         var servico = document.getElementById("servico").value;
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         var formData = {
             data: data,
             horario: horario,
-            cliente: 1,
+            cliente: cliente,
             profissional: profissional,
             servico: servico,
             descricao: descricao
