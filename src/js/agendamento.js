@@ -26,16 +26,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     // Evento de envio do formulário
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
         var data = document.getElementById("data").value;
+        var cliente = await buscaUsuario(idUsuarioLogado);
         var horario = document.getElementById("horario").value;
         var profissional = document.getElementById("profissional").value;
         var servico = document.getElementById("servico").value;
         var descricao = document.getElementById("descricao").value;
 
         console.log("Data: " + data);
+        console.log("Cliente:" + cliente);
         console.log("Horário: " + horario);
         console.log("Profissional: " + profissional);
         console.log("Serviço: " + servico);
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         var formData = {
             data: data,
             horario: horario,
+            cliente: cliente,
             profissional: profissional,
             servico: servico,
             descricao: descricao
@@ -61,18 +64,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             .then(response => {
                 if (response.ok) {
                     console.log("Dados enviados com sucesso!");
-                    // Aqui você pode adicionar lógica adicional após o envio dos dados para o servidor
                 } else {
                     console.log("Erro ao enviar os dados. Status: " + response.status);
-                    // Aqui você pode adicionar lógica para lidar com erros
                 }
             })
             .catch(error => {
                 console.log("Erro ao enviar os dados:", error);
             });
-        alert("Agendamento confirmado!");
 
-        // Limpa o formulário após a submissão
         form.reset();
     });
 });
@@ -80,23 +79,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function buscaUsuario(id) {
     if (id == "" || id == null) { return null }
     return await JSONServer.buscaUsuarios(id);
-    /* try {
-        const response = await fetch(`http://localhost:3000/usuarios/${id}`);
-        if (response.ok) {
-            const usuario = await response.json();
-            return usuario;
-        } else {
-            console.log("Erro ao buscar usuário. Status: " + response.status);
-            return null;
-        }
-    } catch (error) {
-        console.log("Erro ao buscar usuário:", error);
-        return null;
-    } */
 }
-
-
-
 
 async function validaUsuario() {
     var id = LoginManager.getIdUsuarioLogado();
@@ -106,11 +89,7 @@ async function validaUsuario() {
         return 1;
     }
     var usuario = await buscaUsuario(id);
-    /*   if (usuario.permissao != 2) { // Verifica se o usuário tem permissão de barbeiro
-          $('main').empty();
-          $('main').append('<h3>Sem permissão para acessar essa página.</h3>');
-          return 2;
-      } */
+   
 
     // Buscar lista de usuários com permissão igual a 2
     var usuarios = await buscaUsuariosPorPermissao(2);

@@ -9,7 +9,7 @@ class LoginManager {
 
     static loginPath() {return 'usuarioLogado'};
 
-    getIdUsuarioLogado() { return  JSON.parse(localStorage.getItem(LoginManager.loginPath())); }
+    getIdUsuarioLogado() { return localStorage.getItem(LoginManager.loginPath()); }
 
     login(idUsuário, reload = false) { 
         localStorage.setItem(LoginManager.loginPath(), idUsuário); 

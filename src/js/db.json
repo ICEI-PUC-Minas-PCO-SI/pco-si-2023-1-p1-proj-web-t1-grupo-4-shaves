@@ -58,13 +58,24 @@
     {
       "nome": "Felipe Melo",
       "senha": "123",
-      "email": "felipe@gmail.com",
+      "email": "user3@gmail.com",
       "permissao": "2",
       "dataCriacao": "26/06/2023",
       "telefone": "31988889328",
       "trabalhos": "0",
       "imagem_perfil": "",
       "id": 6
+    },
+    {
+      "nome": "Guilherme Simao Primeiro",
+      "senha": "simao11",
+      "email": "guisimao1@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "27/06/2023",
+      "telefone": "31 999998888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 7
     }
   ],
   "agendamentos": [
@@ -193,6 +204,151 @@
       "servico": "Relaxamento",
       "descricao": "",
       "id": 14
+    },
+    {
+      "data": "11/06/2023",
+      "horario": "08:30",
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 15
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "09:45",
+      "profissional": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 16
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "09:45",
+      "profissional": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 17
+    },
+    {
+      "data": "17/06/2023",
+      "horario": "09:45",
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 18
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "08:30",
+      "profissional": "2",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 19
+    },
+    {
+      "data": "23/06/2023",
+      "horario": "15:30",
+      "profissional": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 20
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "15:30",
+      "profissional": "2",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 21
+    },
+    {
+      "data": "24/06/2023",
+      "horario": "15:30",
+      "profissional": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 22
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "10:00",
+      "profissional": "2",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 23
+    },
+    {
+      "data": "21/06/2023",
+      "horario": "08:00",
+      "cliente": 1,
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 24
+    },
+    {
+      "data": "21/06/2023",
+      "horario": "15:45",
+      "cliente": 1,
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 25
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "17:00",
+      "cliente": 1,
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 26
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "21:00",
+      "cliente": 1,
+      "profissional": "2",
+      "servico": "Teste",
+      "descricao": "",
+      "id": 27
+    },
+    {
+      "data": "15/06/2023",
+      "horario": "15:00",
+      "cliente": 1,
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 28
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "15:00",
+      "cliente": 1,
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 29
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "15:00",
+      "cliente": {
+        "nome": "Usuario3",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988888888",
+        "trabalhos": "0",
+        "imagem_perfil": "",
+        "id": 3
+      },
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 30
     }
   ]
 }
