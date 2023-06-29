@@ -153,6 +153,46 @@
       "servico": "Corte",
       "descricao": "",
       "id": 9
+    },
+    {
+      "data": "08/06/2023",
+      "horario": "09:45",
+      "profissional": "2",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 10
+    },
+    {
+      "data": "16/06/2023",
+      "horario": "09:45",
+      "profissional": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 11
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "09:45",
+      "profissional": "2",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 12
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "09:45",
+      "profissional": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 13
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "08:30",
+      "profissional": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 14
     }
   ]
 }
