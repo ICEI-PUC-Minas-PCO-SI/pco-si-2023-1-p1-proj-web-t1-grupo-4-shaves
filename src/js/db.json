@@ -65,6 +65,17 @@
       "trabalhos": "0",
       "imagem_perfil": "",
       "id": 6
+    },
+    {
+      "nome": "Guilherme Simao Primeiro",
+      "senha": "simao11",
+      "email": "guisimao1@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "27/06/2023",
+      "telefone": "31 999998888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 7
     }
   ],
   "agendamentos": [

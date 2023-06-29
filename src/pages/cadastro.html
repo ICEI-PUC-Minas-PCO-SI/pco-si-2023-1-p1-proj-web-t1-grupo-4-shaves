@@ -13,11 +13,13 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/98eb266920.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../template.css">
-
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <style>
         .campo-vazio {
             border: 2px solid red;
         }
+
         .form-check-input:checked {
             background-color: orange;
             border-color: black;
@@ -144,7 +146,7 @@
             <div class="col-sm-12 col-md-10 col-lg-7">
                 <label for="inputContato" class="form-label h5">Contato</label>
                 <input type="tel" class="form-control form-control-lg" id="inputContato" placeholder="DDD XXXXXXXXX"
-                    required maxlength="13">
+                    required maxlength="12">
                 <div class="col-sm-12 col-md-10 col-lg-7 form-text">
                     Forneça o DDD do número e em seguida adicione o seu número, por exemplo: 31 98765432
                 </div>
@@ -204,7 +206,7 @@
         </script>
 
         <!-- Buttons -->
-        <div class="row justify-content-sm-between justify-content-md-center justify-content-lg-center" >
+        <div class="row justify-content-sm-between justify-content-md-center justify-content-lg-center">
             <div class="col-6 col-md-2 col-lg-1">
                 <a href="./Login.html">
                     <button type="button" class="btn btn-outline-danger btn-lg">Voltar</button>

@@ -11,6 +11,8 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/98eb266920.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../template.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <style>
         .form-check-input:checked {
             background-color: orange;
@@ -48,14 +50,14 @@
                             <div class="nav_bar mt-4 mb-4">
                                 <ul class="nav nav-pills nav-fill breadcrumb">
                                     <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#"><i class="far fa-star"
+                                        <a class="nav-link h5" href="./HomePage.html"><i class="far fa-star"
                                                 style="display: none;"></i>HomePage</a>
                                     </li>
                                     <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Barbeiros</a>
+                                        <a class="nav-link h5" href="./telaBarbeiros.html">Barbeiros</a>
                                     </li>
                                     <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Agenda</a>
+                                        <a class="nav-link h5" href="./agendamento.html">Agenda</a>
                                     </li>
                                     <li class="nav-item breadcrumb-item">
                                         <a class="nav-link h5" href="#">Contato</a>
@@ -77,11 +79,11 @@
                                         class="fas fa-bars"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                                    <li><button class="dropdown-item" type="button">HomePage</button></li>
-                                    <li><button class="dropdown-item" type="button">Barbeiros</button></li>
-                                    <li><button class="dropdown-item" type="button">Agenda</button></li>
-                                    <li><button class="dropdown-item" type="button">Contato</button></li>
-                                    <li><button class="dropdown-item" type="button">Minha Conta</button></li>
+                                    <li><a href="./HomePage.html"><button class="dropdown-item" type="button">HomePage</button></a></li>
+                                    <li><a href="./telaBarbeiros.html"><button class="dropdown-item" type="button">Barbeiros</button></a></li>
+                                    <li><a href="./agendamento.html"><button class="dropdown-item" type="button">Agenda</button></a></li>
+                                    <li><a href="#"><button class="dropdown-item" type="button">Contato</button></a></li>
+                                    <li><a href="#"><button class="dropdown-item" type="button">Minha Conta</button></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -104,7 +106,7 @@
         <!-- Input Email -->
         <div class="row justify-content-center" style="padding: 3vh 0vh;">
             <div class="col-sm-12 col-md-9 col-lg-7 input-group-lg">
-                <label for="inputEmail" class="form-label h4" >Email</label>
+                <label for="inputEmail" class="form-label h4">Email</label>
                 <input type="email" class="form-control form-control-lg" id="inputEmail">
             </div>
             <span class="col-sm-12 col-md-9 col-lg-7 form-text">
