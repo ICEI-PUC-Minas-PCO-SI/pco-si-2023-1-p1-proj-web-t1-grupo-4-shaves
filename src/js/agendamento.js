@@ -8,7 +8,7 @@ if (idUsuarioLogado == "") {
     console.log("Ninguem logado");
     window.location.href = "../pages/login.html";
 } else {
-    console.log("usuario otario " + idUsuarioLogado + " logado");
+    console.log("usuario " + idUsuarioLogado + " logado");
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -64,17 +64,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             .then(response => {
                 if (response.ok) {
                     console.log("Dados enviados com sucesso!");
-                    // Aqui você pode adicionar lógica adicional após o envio dos dados para o servidor
                 } else {
                     console.log("Erro ao enviar os dados. Status: " + response.status);
-                    // Aqui você pode adicionar lógica para lidar com erros
                 }
             })
             .catch(error => {
                 console.log("Erro ao enviar os dados:", error);
             });
 
-        // Limpa o formulário após a submissão
         form.reset();
     });
 });
@@ -82,23 +79,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 async function buscaUsuario(id) {
     if (id == "" || id == null) { return null }
     return await JSONServer.buscaUsuarios(id);
-    /* try {
-        const response = await fetch(`http://localhost:3000/usuarios/${id}`);
-        if (response.ok) {
-            const usuario = await response.json();
-            return usuario;
-        } else {
-            console.log("Erro ao buscar usuário. Status: " + response.status);
-            return null;
-        }
-    } catch (error) {
-        console.log("Erro ao buscar usuário:", error);
-        return null;
-    } */
 }
-
-
-
 
 async function validaUsuario() {
     var id = LoginManager.getIdUsuarioLogado();
@@ -108,11 +89,7 @@ async function validaUsuario() {
         return 1;
     }
     var usuario = await buscaUsuario(id);
-    /*   if (usuario.permissao != 2) { // Verifica se o usuário tem permissão de barbeiro
-          $('main').empty();
-          $('main').append('<h3>Sem permissão para acessar essa página.</h3>');
-          return 2;
-      } */
+   
 
     // Buscar lista de usuários com permissão igual a 2
     var usuarios = await buscaUsuariosPorPermissao(2);
