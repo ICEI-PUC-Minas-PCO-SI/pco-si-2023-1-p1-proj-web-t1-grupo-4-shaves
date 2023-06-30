@@ -36,6 +36,29 @@ document.addEventListener("DOMContentLoaded", async function () {
         var servico = document.getElementById("servico").value;
         var descricao = document.getElementById("descricao").value;
 
+
+        // Verificar se os campos estão preenchidos
+        if (data === "" || horario === "" || profissional === "") {
+            alert("Por favor, preencha todos os campos obrigatórios.");
+            return;
+        }
+
+        // Verificar se já existe um agendamento com os mesmos dados
+        
+        var agendamentos = await buscaAgendamentos();
+        var agendamentoExistente = agendamentos.find(function (agendamento) {
+            return (
+                agendamento.data === data &&
+                agendamento.horario === horario &&
+                agendamento.barbeiro === profissional
+            );
+        });
+
+        if (agendamentoExistente) {
+            alert("Já existe um agendamento para a data, horário e barbeiro selecionados.");
+            return;
+        }
+
         console.log("Data: " + data);
         console.log("Cliente:" + cliente);
         console.log("Horário: " + horario);
@@ -48,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             data: data,
             horario: horario,
             cliente: cliente,
-            profissional: profissional,
+            barbeiro: profissional,
             servico: servico,
             descricao: descricao
         };
@@ -75,7 +98,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         form.reset();
     });
 });
-
+async function buscaAgendamentos() {
+    var response = await fetch("http://localhost:3000/agendamentos");
+    var agendamentos = await response.json();
+    return agendamentos;
+}
 async function buscaUsuario(id) {
     if (id == "" || id == null) { return null }
     return await JSONServer.buscaUsuarios(id);
@@ -89,7 +116,7 @@ async function validaUsuario() {
         return 1;
     }
     var usuario = await buscaUsuario(id);
-   
+
 
     // Buscar lista de usuários com permissão igual a 2
     var usuarios = await buscaUsuariosPorPermissao(2);

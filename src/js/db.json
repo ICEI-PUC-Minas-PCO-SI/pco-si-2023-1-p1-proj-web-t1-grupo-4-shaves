@@ -349,6 +349,291 @@
       "servico": "Barba",
       "descricao": "",
       "id": 30
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "10:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 31
+    },
+    {
+      "data": "23/06/2023",
+      "horario": "10:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 32
+    },
+    {
+      "data": "23/06/2023",
+      "horario": "11:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 33
+    },
+    {
+      "data": "16/06/2023",
+      "horario": "10:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 34
+    },
+    {
+      "data": "08/06/2023",
+      "horario": "14:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Teste",
+      "descricao": "",
+      "id": 35
+    },
+    {
+      "data": "23/06/2023",
+      "horario": "14:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 36
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "11:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 37
+    },
+    {
+      "data": "15/06/2023",
+      "horario": "10:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 38
+    },
+    {
+      "data": "08/06/2023",
+      "horario": "14:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "5",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 39
+    },
+    {
+      "data": "23/06/2023",
+      "horario": "15:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 40
+    },
+    {
+      "data": "08/06/2023",
+      "horario": "11:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 41
+    },
+    {
+      "data": "15/06/2023",
+      "horario": "11:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 42
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "09:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "2",
+      "servico": "Barba",
+      "descricao": "",
+      "id": 43
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "10:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "5",
+      "servico": "Relaxamento",
+      "descricao": "",
+      "id": 44
+    },
+    {
+      "data": "30/06/2023",
+      "horario": "15:00",
+      "cliente": {
+        "nome": "Samuel Nogueira",
+        "senha": "123",
+        "email": "user3@gmail.com",
+        "permissao": "3",
+        "dataCriacao": "26/06/2023",
+        "telefone": "31988884032",
+        "trabalhos": "0",
+        "imagem_perfil": "../Img/barbeiro2.png",
+        "id": 3
+      },
+      "barbeiro": "5",
+      "servico": "Corte",
+      "descricao": "",
+      "id": 45
     }
   ]
 }
