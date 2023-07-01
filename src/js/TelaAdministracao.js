@@ -36,6 +36,9 @@ async function validaUsuario() {
 async function preencheAgendamentos() {
     var table = $('#t-agen');
 
+    // Limpa tabela
+    $('#t-agen tr').each((index, elem)=>{ if (index != 0) {elem.remove()} });
+
     objConexao.buscaAgendamentos()
     .then(agendamentos=>{
         todosAgendamentos = agendamentos;
@@ -83,6 +86,10 @@ async function preencheAgendamentos() {
 
 async function preencheUsuarios() {
     var table = $('#t-users');
+
+    // Limpa tabela
+    $('#t-users tr').each((index, elem)=>{ if (index != 0) {elem.remove()} });
+
     objConexao.buscaUsuarios()
     .then(usuarios=>{
         todosUsuarios = usuarios;
@@ -113,6 +120,12 @@ $('#save-ag-edit').on('click',()=>{
     var novoStatus = parseInt($(`#CategoryModal input:checked`).val());
     agendamento.status = novoStatus;
     objConexao.editaAgendamento(id,agendamento);
+    Swal.fire({
+        title: 'Editado!',
+        text: 'As informações foram atualizadas!',
+        icon: 'success',
+    });
+    preencheAgendamentos();
 })
 
 $('#busca-usuario').on('click', pesquisaUsuario);
@@ -141,11 +154,12 @@ async function salvaInfo(event) {
     usuario.telefone = $("#show-phone").val();
     objConexao.editaUsuario(usuario.id,usuario);
     prevSearchedUser = usuario;
-    /* Swal.fire(
-        'Editado!',
-        'As informações foram atualizadas!',
-        'success'
-    ); */
+    Swal.fire({
+        title: 'Editado!',
+        text: 'As informações foram atualizadas!',
+        icon: 'success',
+    });
+    preencheUsuarios();
 }
 
 async function apagaUsuario(event) {
@@ -153,22 +167,57 @@ async function apagaUsuario(event) {
     var idUsuário = $("#show-id").val();
 
     if (idUsuário == "" || idUsuário == null) { return; }
-
-    var usuario = getUsuarioById(parseInt(idUsuário));
-
-    if (usuario == null) { 
-        clearAll();
-        disableAll();
-        return;
-    }
-
-    objConexao.apagaUsuario(idUsuário);
-    disableAll();
-    clearAll();
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: "As informações desse usuário serão apagadas!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim!',
+        cancelButtonText: 'Cancelar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            var usuario = getUsuarioById(idUsuário);
+            if (usuario == null) { 
+                clearAll();
+                disableAll();
+                return;
+            }
+            objConexao.apagaUsuario(idUsuário);
+            disableAll();
+            clearAll();
+            Swal.fire(
+                'Deletado!',
+                'O usuário foi apagado com sucesso.',
+                'success'
+            )
+            preencheUsuarios()
+        }
+    })
 }
 
 async function apagaAgendamento(idAgendamento) {
-    objConexao.apagaAgendamento(idAgendamento);
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: "As informações desse agendamento serão apagadas!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim!',
+        cancelButtonText: 'Cancelar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            objConexao.apagaAgendamento(idAgendamento);
+            Swal.fire(
+                'Deletado!',
+                'O agendamento foi apagado com sucesso.',
+                'success'
+            )
+            preencheAgendamentos()
+        }
+    })
 }
 
 function editaAgendamento(idAgendamento) {
@@ -191,7 +240,7 @@ function getAgendamentoById(idAgendamento) {
 
 function getUsuarioById(idUsuário) {
     var usuarioRetorno = null;
-    for (let i = 0; i < todosUsuarios; i++) {
+    for (let i = 0; i < todosUsuarios.length; i++) {
         if (todosUsuarios[i].id == idUsuário) { usuarioRetorno = todosUsuarios[i]; }
     }
     return usuarioRetorno;
