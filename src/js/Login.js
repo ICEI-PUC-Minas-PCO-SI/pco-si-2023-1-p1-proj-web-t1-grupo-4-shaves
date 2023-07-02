@@ -32,7 +32,7 @@ loginBtn?.addEventListener("click", () => {
     try {
       if (verificarContaExistente(email.value, senha.value)) {
         // redireciona para a homepage
-        window.location.href = "../pages/HomePage.html";
+        //window.location.href = "../pages/HomePage.html";
       } else {
         Swal.fire({
           icon: "error",
