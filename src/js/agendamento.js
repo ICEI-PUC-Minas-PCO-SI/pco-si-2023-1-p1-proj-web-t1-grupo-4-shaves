@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         form.style.display = "none"; // Oculta o formulário de agendamento
         return;
     }
+    var urlParams = new URLSearchParams(window.location.search);
+    var idProfissional = urlParams.get("idProfissional");
+
+    if (idProfissional) {
+        // Caso o idProfissional exista, definir o valor selecionado no campo "profissional"
+        document.getElementById("profissional").value = idProfissional;
+    }
 
     // Evento de envio do formulário
     form.addEventListener("submit", async function (event) {
@@ -44,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         // Verificar se já existe um agendamento com os mesmos dados
-        
+
         var agendamentos = await buscaAgendamentos();
         var agendamentoExistente = agendamentos.find(function (agendamento) {
             return (
@@ -60,7 +67,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
 
         console.log("Data: " + data);
-        console.log("Cliente:" + cliente);
+        console.log("Cliente:" + idUsuarioLogado);
         console.log("Horário: " + horario);
         console.log("Profissional: " + profissional);
         console.log("Serviço: " + servico);
@@ -70,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         var formData = {
             data: data,
             horario: horario,
-            cliente: cliente,
+            cliente: idUsuarioLogado,
             barbeiro: profissional,
             servico: servico,
             descricao: descricao
