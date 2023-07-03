@@ -41,7 +41,7 @@ function setValues(usuario) {
 
     var imgPerfil = usuario.imagem_perfil;
     if (imgPerfil == "")
-        imgPerfil = "../Img/default_barber.jpg";
+        imgPerfil = "../Img/fotobarbeiro.jpg";
 
     $('#fotoBarbeiro').attr('src',imgPerfil);
 }
@@ -75,7 +75,7 @@ function montaTrabalhos() {
             var trabalhos = JSON.parse(localStorage.getItem('cortesBarbeiro'+idurl));
 
             if (trabalhos[index].caminho == "" || trabalhos[index].caminho == null)
-                imgName = "default_cut.jpg"; 
+                imgName = "fotocorte.jpg"; 
             else
                 imgName = trabalhos[index].caminho;
         }
@@ -97,7 +97,7 @@ function exibeTrabalhos() {
     $('.card').each(function(index){
         // Visão comum
         if (trabalhos[index].caminho == "" || trabalhos[index].caminho == null)
-            trabalhos[index].caminho = "default_cut.jpg"; 
+            trabalhos[index].caminho = "fotocorte.jpg"; 
 
         $(this).children('img').attr('src',default_path + trabalhos[index].caminho);
         $(this).children('div').children('h5').text(trabalhos[index].titulo);
