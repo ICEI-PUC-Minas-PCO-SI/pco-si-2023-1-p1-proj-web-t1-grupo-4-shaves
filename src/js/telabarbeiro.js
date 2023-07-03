@@ -1,5 +1,17 @@
 import objConexao from "./ModuloConexao.js";
 import LoginManager from "./ModuloLogin.js";
+// No início do arquivo, adicione o seguinte código para aguardar o carregamento do DOM:
+$(document).ready(function() {
+    // Evento de clique no botão de pesquisa
+    $('#search-button').click(function() {
+        // Obter o valor da barra de pesquisa
+        var searchTerm = $('#search-input').val().toLowerCase();
+        
+        // Chamar uma função para pesquisar com o termo fornecido
+        searchBarber(searchTerm);
+    });
+});
+
 
 preencheBarbeiro();
 async function preencheBarbeiro(){
@@ -34,3 +46,34 @@ function filtraBarbeiros(todosUsuarios){
     }
     return barbeiros;
 }
+
+$(document).ready(function() {
+    // Evento de digitação no campo de pesquisa
+    $('#search-input').on('input', function() {
+       
+        var searchTerm = $(this).val().toLowerCase();
+        
+        if (searchTerm === '') {
+            showAllBarbers(); 
+        } else {
+            searchBarber(searchTerm); 
+        }
+    });
+});
+
+function showAllBarbers() {
+    $('.card').show(); 
+}
+
+function searchBarber(searchTerm) {
+    $('.card').each(function() {
+        var cardBarberName = $(this).find('.card-title').text().toLowerCase();
+        if (cardBarberName.includes(searchTerm)) {
+            $(this).show(); 
+        } else {
+            $(this).hide(); 
+        }
+    });
+}
+
+
