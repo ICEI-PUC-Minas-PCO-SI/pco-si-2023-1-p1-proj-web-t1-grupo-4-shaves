@@ -1,93 +1,104 @@
-import JSONServer from "./ModuloConexao.js";
+import objConexao from "./ModuloConexao.js";
 
-// Inputs
-var email = document.getElementById("inputEmail");
-var senha = document.getElementById("inputSenha");
+const checkbox = document.getElementById("mostrarSenhaCheckbox");
+const email = document.getElementById("inputEmail");
+const senha = document.getElementById("inputSenha");
+const email_validation = document.getElementById("email-validation");
+const senha_validation = document.getElementById("senha-validation");
+const login = document.getElementById("loginBtn");
 
-// Verificar campos e conta
-var loginBtn = document.getElementById("loginBtn");
-loginBtn?.addEventListener("click", () => {
-  // Checar se existem campos vazios e destaca-los
-  if (email.value == "") {
-    email.style.border = "2px solid red";
+email.addEventListener("input", validateEmail);
+senha.addEventListener("input", validatePassword);
+checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+    senha.type = "text";
   } else {
-    email.style.border = "";
-  }
-
-  if (senha.value == "") {
-    senha.style.border = "2px solid red";
-  } else {
-    senha.style.border = "";
-  }
-
-  if (email.value == "" || senha.value == "") {
-    // Campos vazios encontrados
-    Swal.fire({
-      icon: "error",
-      title: "Campos vazios",
-      html: "Por favor preencha todos os campos e tente novamente",
-      confirmButtonColor: "red",
-    });
-  } else {
-    try {
-      if (verificarContaExistente(email.value, senha.value)) {
-        // redireciona para a homepage
-        window.location.href = "../pages/HomePage.html";
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Não foi possível realizar login",
-          html: "Por favor tente novamente mais tarde",
-          showConfirmButton: true,
-          confirmButtonColor: "red",
-        });
-      }
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Ocorreu um erro",
-        html: error,
-        showConfirmButton: true,
-        confirmButtonColor: "red",
-      });
-    }
+    senha.type = "password";
   }
 });
+login.addEventListener("click", searchAccount);
 
-async function verificarContaExistente(email, senha) {
-  // Chama o metodo do JSONSERVER
-  var usuarios = await JSONServer.buscaUsuarios();
-
-  // Verifica por email igual
-  var usuarioExistente = usuarios.find((usuario) => usuario.email === email);
-
-  if (usuarioExistente) {
-    // Usuario encontrado
-    if (usuarioExistente.senha === senha) {
-      //   Senha verificada
-      
-      // guarda conta no localstorage com chave de usuarioLogado
-      localStorage.setItem("usuarioLogado", JSON.stringify(usuarioExistente));
-      
-      return true;
+function validateEmail() {
+  if (email.value.length > 0) {
+    if (email.value.includes("@") && email.value.includes(".com")) {
+      email.classList.remove("is-invalid");
+      email.classList.add("is-valid");
+      document.getElementById("email-validation").innerText = "";
+      document
+        .getElementById("email-validation")
+        .classList.remove("text-danger");
     } else {
-      Swal.fire({
-        icon: "error",
-        title: "Senha Incorreta",
-        html: "Por favor insira a senha correta",
-        showConfirmButton: true,
-        confirmButtonColor: "red",
-      });
+      email.classList.remove("is-valid");
+      email.classList.add("is-invalid");
+      document.getElementById("email-validation").innerText =
+        "Preencha com um email válido, exemplo: usuario@gmail.com";
+      document.getElementById("email-validation").classList.add("text-danger");
       return false;
     }
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "Conta Não Existe",
-      html: "Não encontramos nenhuma conta com esse endereço de email, por favor verifique se o email está correto",
-      showConfirmButton: true,
-      confirmButtonColor: "red",
-    });
+    email.classList.remove("is-valid");
+    email.classList.add("is-invalid");
+    email_validation.innerText = "Preencha com um email válido, exemplo: usuario@gmail.com";
+    email_validation.classList.add("text-danger");
     return false;
   }
+}
+
+function validatePassword() {
+  if (senha.value && senha.value.length > 5) {
+    senha.classList.remove("is-invalid");
+    senha.classList.add("is-valid");
+    senha_validation.innerHTML = "";
+    senha_validation.classList.remove("text-danger");
+    return true;
+  } else {
+    senha.classList.remove("is-valid");
+    senha.classList.add("is-invalid");
+    senha_validation.innerHTML = "Senha inválida";
+    senha_validation.classList.add("text-danger");
+    return false;
+  }
+}
+
+function searchAccount() {
+  objConexao.buscaUsuarios().then((usuarios) => {
+    usuarios.forEach((user) => {
+      if (user.email == email.value && user.senha == senha.value) {
+        // Conta existe
+        email.classList.add("is-valid");
+        email.classList.remove("is-invalid");
+        senha.classList.add("is-valid");
+        senha.classList.remove("is-invalid");
+        email_validation.innerText = "";
+        email_validation.classList.remove("text-danger");
+        senha_validation.innerText = "";
+        senha_validation.classList.remove("text-danger");
+        Swal.fire({
+          icon: "success",
+          title: "Conta encontrada",
+          html: "Agora falta redirecionar",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        return true;
+      } else {
+        // Conta nao existe
+        email.classList.add("is-invalid");
+        email.classList.remove("is-valid");
+        senha.classList.add("is-invalid");
+        senha.classList.remove("is-valid");
+        email_validation.innerText = "Email ou Senha incorretos";
+        email_validation.classList.add("text-danger");
+        senha_validation.innerText = "Email ou Senha incorretos";
+        senha_validation.classList.add("text-danger");
+        Swal.fire({
+          icon: "error",
+          title: "Conta não existe",
+          html: "Não foi possível localizar uma conta com essas credenciais, por favor verifique se o email e senha estão corretos",
+          confirmButtonColor: "red",
+        });
+        return false;
+      }
+    });
+  });
 }

@@ -1,13 +1,13 @@
 import objConexao from "./ModuloConexao.js";
 
-var nome = document.getElementById("inputNome");
-var email = document.getElementById("inputEmail");
-var contato = document.getElementById("inputContato");
-var senha = document.getElementById("inputSenha");
-var confSenha = document.getElementById("inputConfSenha");
+const nome = document.getElementById("inputNome");
+const email = document.getElementById("inputEmail");
+const contato = document.getElementById("inputContato");
+const senha = document.getElementById("inputSenha");
+const confSenha = document.getElementById("inputConfSenha");
 
-var checkbox = document.getElementById("mostrarSenhaCheckbox");
-var submitBtn = document.getElementById("criarContaBtn");
+const checkbox = document.getElementById("mostrarSenhaCheckbox");
+const submitBtn = document.getElementById("criarContaBtn");
 
 checkbox.addEventListener("change", showPassword);
 submitBtn.addEventListener("click", validate);
@@ -83,8 +83,14 @@ function validateContato() {
     return false;
   }
 }
+function hasWhiteSpace() {
+  return !/\s/g.test(senha.value);
+}
+function stripWhiteSpace() {
+  return senha.value.replace(/\s+/g, "");
+}
 function validateSenha() {
-  if (senha.value) {
+  if (senha.value && senha.value.length > 5 && hasWhiteSpace) {
     senha.classList.remove("is-invalid");
     senha.classList.add("is-valid");
     document.getElementById("senha-validation").innerHTML = "";
@@ -93,16 +99,24 @@ function validateSenha() {
     senha.classList.remove("is-valid");
     senha.classList.add("is-invalid");
     document.getElementById("senha-validation").innerHTML =
-      "A senha deve ter de no mínimo <b>6 caracteres</b>, contendo letras e/ou numeros.";
+      "A senha deve ter de no mínimo <b>6 caracteres</b>, contendo letras e/ou números.";
     return false;
   }
 }
 function validateConfSenha() {
   if (confSenha.value) {
-    confSenha.classList.remove("is-invalid");
-    confSenha.classList.add("is-valid");
-    document.getElementById("confSenha-validation").innerHTML = "";
-    return true;
+    if (senha.value == confSenha.value) {
+      confSenha.classList.remove("is-invalid");
+      confSenha.classList.add("is-valid");
+      document.getElementById("confSenha-validation").innerHTML = "";
+      return true;
+    } else {
+      confSenha.classList.remove("is-valid");
+      confSenha.classList.add("is-invalid");
+      document.getElementById("confSenha-validation").innerHTML =
+        "As senhas precisam devem ser iguais";
+      return false;
+    }
   } else {
     confSenha.classList.remove("is-valid");
     confSenha.classList.add("is-invalid");
@@ -134,55 +148,11 @@ function validate() {
       validateSenha &&
       validateConfSenha
     ) {
-      if (verifyPassword()) {
-        // createAccount();
-      }
+      // createAccount();
     }
   }
 }
-/*
-------------------------------------NOTAS------------------------------------ 
-SE POSSIVEL MESCLAR OS VERIFYPASSWORD COM O VALIDATESENHA E VALIDATECONFSENHA
-TAMBEM VERIFICAR POR ESPACOS EM BRANCO
------------------------------------------------------------------------------
-*/
-function verifyPassword() {
-  if (senha.value.length < 6) {
-    senha.classList.add("is-invalid");
-    confSenha.classList.add("is-invalid");
-    senha.classList.remove("is-valid");
-    confSenha.classList.remove("is-valid");
-    document.getElementById("senha-validation").innerHTML =
-      "A senha está muito pequena";
-    Swal.fire({
-      icon: "error",
-      title: "Senha muito pequena",
-      html: "Digite uma senha que tenha pelo menos 6 caracteres",
-      confirmButtonColor: "red",
-    });
-    return false;
-  } else {
-    if (senha.value != confSenha.value) {
-      senha.classList.add("is-invalid");
-      confSenha.classList.add("is-invalid");
-      senha.classList.remove("is-valid");
-      confSenha.classList.remove("is-valid");
-      document.getElementById("senha-validation").innerHTML =
-        "As senhas estão diferentes";
-      document.getElementById("confSenha-validation").innerHTML =
-        "As senhas estão diferentes";
-      return false;
-    } else {
-      senha.classList.add("is-valid");
-      confSenha.classList.add("is-valid");
-      senha.classList.remove("is-invalid");
-      confSenha.classList.remove("is-invalid");
-      document.getElementById("senha-validation").innerHTML = "";
-      document.getElementById("confSenha-validation").innerHTML = "";
-      return true;
-    }
-  }
-}
+
 function createAccount() {
   objConexao.novoUsuario(
     nome.value,
