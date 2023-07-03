@@ -19,9 +19,10 @@
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">
                 <div class="row align-items-center w-100">
-                    <div class="col-2 col-sm-12 col-md-12 col-lg-2 img_area">
-                        <img src="../Img/newlogoCropped.png" alt="">
-                    </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-2">
+                    <a style="background-color: transparent;" href="HomePage.html"><img class="btn"
+                            src="../Img/newlogoCropped.png" alt=""></img></a>
+                </div>
                     <!--Navegacao/tabs-->
                     <div class="col-7 col-lg-7" style="--bs-breadcrumb-divider: '';"
                         aria-label="breadcrumb" id="navegacao">
@@ -43,10 +44,10 @@
                                     <a class="nav-link" href="#">Contato</a>
                                 </li>
                                 -->
-                                <li class="nav-item breadcrumb-item">
+                                <li class="nav-item breadcrumb-item" id="link-conta">
                                     <a class="nav-link" href="telaconta.html">Minha Conta</a>
                                 </li>
-                                <li class="nav-item breadcrumb-item">
+                                <li class="nav-item breadcrumb-item" id="link-gerencia">
                                   <a class="nav-link" href="TelaAdministracao.html">Gerência</a>
                               </li>
                             </ul>
@@ -120,18 +121,21 @@
     </div>
 
     <!--Footer-->
-    <footer class="footer bg-dark">
-        <div class="container">
-            <div class="row align-items-center p-3">
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8 footer_area">
-                    Copyright 2023 - TIAW - Grupo Shaves - <strong>ICEI Puc Minas</strong>
-                </div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                    <img src="../Img/newlogoCropped.png" alt="" style="width: 50%;">
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer bg-dark text-white-50">
+      <div class="container">
+
+          <div class="row align-items-center justify-content-md-between justify-content-lg-between py-2">
+              <div class="col-8 col-sm-6 col-md-8 col-lg-6">
+                  Copyright 2023 - TIAW - Grupo Shaves - <strong>ICEI Puc Minas</strong>
+              </div>
+              <div class="col-4 col-sm-6 col-md-4 col-lg-2">
+                  <img src="../Img/newlogoCropped.png" alt="">
+              </div>
+          </div>
+
+      </div>
+  </footer>
+
 
     <!--Bootstrap Js-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
