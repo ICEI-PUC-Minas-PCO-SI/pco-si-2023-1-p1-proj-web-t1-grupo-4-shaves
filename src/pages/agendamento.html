@@ -118,7 +118,8 @@
                             <p>Descrição: <span id="descricao-confirmacao"></span></p>
                         </div>
                         <script>
-                            function exibirCardConfirmacao() {
+                            // -- Função movida para o arquivo agendamento.js --
+                            /* function exibirCardConfirmacao() {
                                 // Verifica se todos os campos obrigatórios foram preenchidos
                                 if ($("#data").val() && $("#horario").val() && $("#profissional").val() && $("#servico").val()) {
 
@@ -156,7 +157,7 @@
                                 } else {
                                     alert("Por favor, preencha todos os campos obrigatórios.");
                                 }
-                            }
+                            } */
                         </script>
                         <h4 class="card-title">Agendamento</h4>
                         <form id="form-agendamento">
@@ -189,9 +190,16 @@
                                 <label for="servico" class="form-label">Serviço *</label>
                                 <select class="form-control" id="servico" required>
                                     <option value="">Selecione um serviço</option>
-                                    <option value="Corte de cabelo">Corte de cabelo</option>
+                                    <script>
+                                        // Aqui é só pra manter o padrão de serviços que tem na classe do json server
+                                        var servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
+                                        for (let index = 0; index < servicos.length; index++) {
+                                            document.write('<option value="'+ servicos[index] +'">'+ servicos[index] +'</option>');
+                                        }
+                                    </script>
+                                    <!--<option value="Corte de cabelo">Corte de cabelo</option>
                                     <option value="Barba">Barba</option>
-                                    <option value="Corte e barba">Corte e barba</option>
+                                    <option value="Corte e barba">Corte e barba</option>-->
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -218,7 +226,8 @@
 
 
                     // Ao clicar no botão "Agendar", chama a função exibirCardConfirmacao()
-                    $("#agendar").click(function (event) {
+                    //  -- Código movido para o arquivo agendamento.js --
+                    /* $("#agendar").click(function (event) {
                         exibirCardConfirmacao();
                     });
 
@@ -227,7 +236,7 @@
                         event.preventDefault();
                         alert("Agendamento confirmado!");
 
-                    });
+                    }); */
                 </script>
             </div>
         </div>
