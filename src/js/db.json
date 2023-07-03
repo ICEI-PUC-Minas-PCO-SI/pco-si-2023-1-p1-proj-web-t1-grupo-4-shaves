@@ -41,7 +41,7 @@
       "dataCriacao": "26/06/2023",
       "telefone": "31988882380",
       "trabalhos": "0",
-      "imagem_perfil": "",
+      "imagem_perfil": "../Img/corte.jpeg",
       "id": 4
     },
     {
@@ -54,17 +54,6 @@
       "trabalhos": "0",
       "imagem_perfil": "../Img/barbeiro3.png",
       "id": 5
-    },
-    {
-      "nome": "Felipe Melo",
-      "senha": "123",
-      "email": "user3@gmail.com",
-      "permissao": "2",
-      "dataCriacao": "26/06/2023",
-      "telefone": "31988889328",
-      "trabalhos": "0",
-      "imagem_perfil": "",
-      "id": 6
     },
     {
       "nome": "Guilherme Simao Primeiro",
