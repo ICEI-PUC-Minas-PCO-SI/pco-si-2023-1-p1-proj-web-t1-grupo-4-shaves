@@ -14,9 +14,19 @@ var idurl = params.get("id");
 idurl = 6;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-//LoginManager.login(6)
+LoginManager.logoff()
 
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
+if(IdUsuarioLogado == ""){
+    $("#linkConta").remove()
+    $("#linkGerencia").remove()
+}
+else{
+    var usuario = await objConexao.buscaUsuarios(IdUsuarioLogado) 
+    if(usuario.permissao !=3){
+        $("#linkGerencia").remove() 
+    }
+}
 
 $(document).ready(async ()=>{
 
