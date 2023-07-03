@@ -11,10 +11,10 @@ const params = new URLSearchParams(url.search);
 var idurl = params.get("id");
 
 // Enquanto não tiver passando id pela URL, usar essa linha
-idurl = 5;
+idurl = 6;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-LoginManager.login(5)
+LoginManager.login(6)
 
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
 
@@ -74,10 +74,15 @@ function montaTrabalhos() {
         if (imgName == "") { 
             var trabalhos = JSON.parse(localStorage.getItem('cortesBarbeiro'+idurl));
 
-            if (trabalhos[index].caminho == "" || trabalhos[index].caminho == null)
+            if (trabalhos == null) { 
                 imgName = "fotocorte.jpg"; 
-            else
-                imgName = trabalhos[index].caminho;
+            } else {
+                if (trabalhos[index].caminho == "" || trabalhos[index].caminho == null)
+                    imgName = "fotocorte.jpg"; 
+                else
+                    imgName = trabalhos[index].caminho;
+            }
+
         }
 
         var tituloCorte = $(this).children('div').find('input').val();
