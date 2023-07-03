@@ -11,7 +11,7 @@ var submitBtn = document.getElementById("criarContaBtn");
 
 checkbox.addEventListener("change", showPassword);
 submitBtn.addEventListener("click", validate);
-nome.addEventListener("input", validateName);
+nome.addEventListener("input", validateNome);
 email.addEventListener("input", validateEmail);
 contato.addEventListener("input", validateContato);
 senha.addEventListener("input", validateSenha);
@@ -141,9 +141,10 @@ function validate() {
   }
 }
 /*
-
-NOTAS - SE POSSIVEL MESCLAR OS VERIFYPASSWORD COM O VALIDATESENHA E VALIDATECONFSENHA
-
+------------------------------------NOTAS------------------------------------ 
+SE POSSIVEL MESCLAR OS VERIFYPASSWORD COM O VALIDATESENHA E VALIDATECONFSENHA
+TAMBEM VERIFICAR POR ESPACOS EM BRANCO
+-----------------------------------------------------------------------------
 */
 function verifyPassword() {
   if (senha.value.length < 6) {
