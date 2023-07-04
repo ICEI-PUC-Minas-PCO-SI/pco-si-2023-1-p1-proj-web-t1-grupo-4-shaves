@@ -14,7 +14,7 @@ var idurl = params.get("id");
 idurl = 3;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-//LoginManager.login(1);
+//LoginManager.login(4);
 
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
 if(IdUsuarioLogado == ""){
@@ -29,7 +29,12 @@ else{
 }
 
 
-
+if(IdUsuarioLogado == ""){
+    $('.btnApaga').remove()
+}   
+if(usuario.permissao == 1){
+    $('btnApaga').remove()
+}
 
 var btnDelete = document.getElementById("btnApaga");
 btnDelete.addEventListener('click', function(){
