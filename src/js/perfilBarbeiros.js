@@ -28,13 +28,10 @@ else{
     }
 }
 
-
-if(IdUsuarioLogado == ""){
-    $("#btnApaga").remove()
-}   
-if(usuario.permissao == 1){
-    $("#btnApaga").remove()
+function exibirVisaoComum() {
+    $('.limpaCards').each(function(){ $(this).remove(); });
 }
+
 
 var btnDelete = document.getElementById("btnApaga");
 btnDelete.addEventListener('click', function(){
