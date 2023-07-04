@@ -27,6 +27,16 @@ console.log(objConexao.lista_usuarios_json) */
 
 $(document).ready(async function(){
     var usuarioLogado = LoginManager.getIdUsuarioLogado();
+
+    console.log("usuarioLogado", usuarioLogado)
+
+    if (!usuarioLogado) {
+        document.getElementById("ultimoAgendamento").style.display = "none";
+        const minhaConta = document.getElementById("minhaConta")
+        minhaConta.innerText = "Login"
+        minhaConta.href = "login.html"
+    }
+
     var todosUsuarios = await JSONServer.buscaUsuarios();
 
     var barbeiros = todosUsuarios.filter(function(usuario) {
