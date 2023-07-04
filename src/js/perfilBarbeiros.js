@@ -14,7 +14,7 @@ var idurl = params.get("id");
 idurl = 3;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-LoginManager.login(3)
+LoginManager.login(1)
 
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
 if(IdUsuarioLogado == ""){
@@ -27,6 +27,15 @@ else{
         $("#linkGerencia").remove() 
     }
 }
+
+
+if(IdUsuarioLogado == ""){
+    $("#btnApaga").remove()
+}   
+if(usuario.permissao == 1){
+    $("#btnApaga").remove()
+}
+
 
 $(document).ready(async ()=>{
 
