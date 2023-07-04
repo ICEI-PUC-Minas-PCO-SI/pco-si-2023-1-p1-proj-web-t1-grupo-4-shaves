@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         event.preventDefault();
 
         var data = document.getElementById("data").value;
-        // Essa varíável não está sendo usada nessa função
-        //var cliente = await buscaUsuario(idUsuarioLogado);
         var horario = document.getElementById("horario").value;
         var profissional = document.getElementById("profissional").value;
         var servico = document.getElementById("servico").value;
@@ -48,7 +46,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         // Verificar se os campos estão preenchidos
         if (data === "" || horario === "" || profissional === "") {
-            // Sugestão: troca o alert padrão por um Swal
             alert("Por favor, preencha todos os campos obrigatórios.");
             return;
         }
@@ -65,7 +62,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
 
         if (agendamentoExistente) {
-            // Sugestão: troca o alert padrão por um Swal
             alert("Já existe um agendamento para a data, horário e barbeiro selecionados.");
             return;
         }
@@ -80,55 +76,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.log("Serviço: " + servico);
         console.log("Descrição: " + descricao);
 
-        // Comentei aqui pois tava salvando o agendamento sem confirmar -------------------------
-        // Objeto com os dados do formulário
-        /* var formData = {
-            data: data,
-            horario: horario,
-            cliente: idUsuarioLogado,
-            barbeiro: profissional,
-            servico: servico,
-            descricao: descricao
-        }; */
-
-        // Fazer a requisição para o servidor usando o fetch
-        //objConexao.novoAgendamento(data,)
-
-        /* fetch("http://localhost:3000/agendamentos", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        })
-            .then(response => {
-                if (response.ok) {
-                    console.log("Dados enviados com sucesso!");
-                } else {
-                    console.log("Erro ao enviar os dados. Status: " + response.status);
-                }
-            })
-            .catch(error => {
-                console.log("Erro ao enviar os dados:", error);
-            });
-
-        form.reset(); */
+     
     });
 });
 
-// Funções movidas do HTML pra cá ---------------------------------------------------
-
-// Ao clicar no botão "Agendar", chama a função exibirCardConfirmacao()
-// Só exibe o card de confirmação depois da validação feita na função acima
-/* $("#agendar").click(function (event) {
-    exibirCardConfirmacao();
-}); */
-
-// Ao clicar no botão "Confirmar Agendamento", envia os dados para o servidor
-//$("#confirmar-agendamento").click(function () { 
-// Chame essa função no success do Swal
 function confirmarAgendamento() {
-    //event.preventDefault();
     alert("Agendamento confirmado!");
 
     // Buscando valores
@@ -174,24 +126,17 @@ function exibirCardConfirmacao() {
             cancelButtonText: 'Cancelar',
         }).then((result) => {
             if (result.isConfirmed) {
-                // Agendamento confirmado
-                //alert("Agendamento confirmado!");
                 confirmarAgendamento();
             }
         });
     } else {
-        // Sugestão: troca o alert padrão por um Swal
         alert("Por favor, preencha todos os campos obrigatórios.");
     }
 }
 
-// ------------------------------------------------------------------------------
 
 async function buscaAgendamentos() {
-    //var response = await fetch("http://localhost:3000/agendamentos"); (Comentei essa parte só para manter padrão de uso)
     var response = await JSONServer.buscaAgendamentos();
-    // A função já retorna em formato json
-    //var agendamentos = await response.json();
     return response;
 }
 async function buscaUsuario(id) {

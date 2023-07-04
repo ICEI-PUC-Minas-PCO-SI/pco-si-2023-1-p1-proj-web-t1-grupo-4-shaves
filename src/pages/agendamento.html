@@ -118,46 +118,7 @@
                             <p>Descrição: <span id="descricao-confirmacao"></span></p>
                         </div>
                         <script>
-                            // -- Função movida para o arquivo agendamento.js --
-                            /* function exibirCardConfirmacao() {
-                                // Verifica se todos os campos obrigatórios foram preenchidos
-                                if ($("#data").val() && $("#horario").val() && $("#profissional").val() && $("#servico").val()) {
-
-                                    // Obtém os dados do agendamento
-                                    var data = $("#data").val();
-                                    var horario = $("#horario").val();
-                                    var profissional = $("#profissional").val();
-                                    var servico = $("#servico").val();
-                                    var descricao = $("#descricao").val();
-                                    var nomeProfissional = $("#profissional option:selected").text();
-
-
-                                    // Monta a mensagem do popup com os dados do agendamento
-                                    var mensagem = "Dados do agendamento:<br>" +
-                                        "<strong>Data:</strong> " + data + "<br>" +
-                                        "<strong>Hora:</strong> " + horario + "<br>" +
-                                        "<strong>Profissional:</strong> " + nomeProfissional + "<br>" +
-                                        "<strong>Serviço:</strong> " + servico + "<br>" +
-                                        "<strong>Descrição:</strong> " + descricao;
-
-                                    // Exibe o popup com os dados do agendamento
-                                    Swal.fire({
-                                        icon: 'info',
-                                        title: 'Confirmação do Agendamento',
-                                        html: mensagem,
-                                        showCancelButton: true,
-                                        confirmButtonText: 'Confirmar Agendamento',
-                                        cancelButtonText: 'Cancelar',
-                                    }).then((result) => {
-                                        if (result.isConfirmed) {
-                                            // Agendamento confirmado
-                                            alert("Agendamento confirmado!");
-                                        }
-                                    });
-                                } else {
-                                    alert("Por favor, preencha todos os campos obrigatórios.");
-                                }
-                            } */
+                            
                         </script>
                         <h4 class="card-title">Agendamento</h4>
                         <form id="form-agendamento">
@@ -170,7 +131,6 @@
                                 <label for="horario" class="form-label">Horário *</label>
                                 <select class="form-control" id="horario" required>
                                     <option value="">Selecione um horário</option>
-                                    <!-- Loop para gerar as opções -->
                                     <script>
                                         // Define um array com os horários disponíveis
                                         var horariosDisponiveis = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"];
@@ -191,15 +151,12 @@
                                 <select class="form-control" id="servico" required>
                                     <option value="">Selecione um serviço</option>
                                     <script>
-                                        // Aqui é só pra manter o padrão de serviços que tem na classe do json server
                                         var servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
                                         for (let index = 0; index < servicos.length; index++) {
                                             document.write('<option value="'+ servicos[index] +'">'+ servicos[index] +'</option>');
                                         }
                                     </script>
-                                    <!--<option value="Corte de cabelo">Corte de cabelo</option>
-                                    <option value="Barba">Barba</option>
-                                    <option value="Corte e barba">Corte e barba</option>-->
+                                  
                                 </select>
                             </div>
                             <div class="mb-3">
@@ -225,24 +182,12 @@
 
 
 
-                    // Ao clicar no botão "Agendar", chama a função exibirCardConfirmacao()
-                    //  -- Código movido para o arquivo agendamento.js --
-                    /* $("#agendar").click(function (event) {
-                        exibirCardConfirmacao();
-                    });
-
-                    // Ao clicar no botão "Confirmar Agendamento", envia os dados para o servidor
-                    $("#confirmar-agendamento").click(function () {
-                        event.preventDefault();
-                        alert("Agendamento confirmado!");
-
-                    }); */
+                   
                 </script>
             </div>
         </div>
     </div>
 
-    <!-- Your JavaScript code -->
     <script src="../js/agendamento.js" type="module"></script>
     <script src="../js/ModuloLogin.js" type="module"></script>
 
