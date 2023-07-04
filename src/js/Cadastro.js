@@ -26,7 +26,6 @@ function showPassword() {
     confSenha.type = "password";
   }
 }
-
 function validateNome() {
   if (nome.value) {
     nome.classList.remove("is-invalid");
@@ -54,6 +53,7 @@ function validateEmail() {
       email.classList.remove("is-invalid");
       email.classList.add("is-valid");
       document.getElementById("email-validation").innerText = "";
+      return true;
     } else {
       email.classList.remove("is-valid");
       email.classList.add("is-invalid");
@@ -125,7 +125,6 @@ function validateConfSenha() {
     return false;
   }
 }
-
 function validate() {
   if (
     nome.value == "" ||
@@ -140,6 +139,31 @@ function validate() {
       html: "Por favor preencha todos os campos e tente novamente",
       confirmButtonColor: "red",
     });
+    if (nome.value == "") {
+      nome.classList.remove("is-valid");
+      nome.classList.add("is-invalid");
+      document.getElementById("nome-validation").innerText = "Campo Vazio";
+    }
+    if (email.value == "") {
+      email.classList.remove("is-valid");
+      email.classList.add("is-invalid");
+      document.getElementById("email-validation").innerText = "Campo Vazio";
+    }
+    if (contato.value == "") {
+      contato.classList.remove("is-valid");
+      contato.classList.add("is-invalid");
+      document.getElementById("contato-validation").innerText = "Campo Vazio";
+    }
+    if (senha.value == "") {
+      senha.classList.remove("is-valid");
+      senha.classList.add("is-invalid");
+      document.getElementById("senha-validation").innerText = "Campo Vazio";
+    }
+    if (confSenha.value == "") {
+      confSenha.classList.remove("is-valid");
+      confSenha.classList.add("is-invalid");
+      document.getElementById("confSenha-validation").innerText = "Campo Vazio";
+    }
   } else {
     if (
       validateNome &&
@@ -148,38 +172,78 @@ function validate() {
       validateSenha &&
       validateConfSenha
     ) {
-      // createAccount();
+      if (createAccount) {
+        Swal.fire({
+          icon: "success",
+          title: "Conta Criada!",
+          text: "Faça o login na sua conta nova",
+          showConfirmButton: false,
+          timer: 2000,
+        }).then(()=>{
+          window.location.replace("../pages/login.html");
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Ocorreu um erro",
+          text: "Não foi possível cadastrar essa conta, tente novamente mais tarde",
+          showConfirmButton: true,
+          timer: 2000,
+        });
+      }
     }
   }
 }
-
-function createAccount() {
-  objConexao.novoUsuario(
-    nome.value,
-    senha.value,
-    email.value,
-    1,
-    new Date().toLocaleDateString("pt-BR"),
-    contato.value
-  );
-}
-function searchAccount() {
-  objConexao.buscaUsuarios().then((usuarios) => {
-    usuarios.forEach((user) => {
-      if (user.email == email.value) {
-        // Conta existe
-        email.classList.add("is-invalid");
-        email.classList.remove("is-valid");
-        document.getElementById("email-validation").innerText =
-          "Email já cadastrado";
-        return false;
-      } else {
-        // Conta nao existe
-        email.classList.add("is-valid");
-        email.classList.remove("is-invalid");
-        document.getElementById("email-validation").innerText = "";
-        return true;
-      }
+async function createAccount() {
+  try {
+    const result = await objConexao.novoUsuario(
+      nome.value,
+      senha.value,
+      email.value,
+      1,
+      new Date().toLocaleDateString("pt-BR"),
+      contato.value
+    );
+    return result;
+  } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Ocorreu um erro",
+      text: "Não foi possível cadastrar essa conta, tente novamente mais tarde",
+      showConfirmButton: true,
+      confirmButtonColor: "red"
     });
-  });
+    console.error("Erro ao criar conta:", error);
+    return false;
+  }
+}
+async function searchAccount() {
+  try {
+    const usuarios = await objConexao.buscaUsuarios();
+    if (usuarios.length > 0) {
+      for (let user of usuarios) {
+        if (user.email === email.value) {
+          email.classList.add("is-invalid");
+          email.classList.remove("is-valid");
+          document.getElementById("email-validation").innerText =
+            "Email já cadastrado";
+          return false; // Conta já existe, retorna false
+        }
+      }
+    }
+    email.classList.add("is-valid");
+    email.classList.remove("is-invalid");
+    document.getElementById("email-validation").innerText = "";
+    return true; // Conta não existe, retorna true
+  } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Ocorreu um erro",
+      text: "Não foi possível cadastrar essa conta, tente novamente mais tarde",
+      showConfirmButton: true,
+      confirmButtonColor: "red"
+    });
+    console.error("Erro ao buscar usuários:", error);
+    return false;
+  }
 }

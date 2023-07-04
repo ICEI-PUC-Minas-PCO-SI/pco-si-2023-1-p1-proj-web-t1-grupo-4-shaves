@@ -1,4 +1,5 @@
 import objConexao from "./ModuloConexao.js";
+import loginManager from "./ModuloLogin.js";
 
 const checkbox = document.getElementById("mostrarSenhaCheckbox");
 const email = document.getElementById("inputEmail");
@@ -19,6 +20,9 @@ checkbox.addEventListener("change", () => {
 login.addEventListener("click", searchAccount);
 
 function validateEmail() {
+  if(!email.value){
+    return false;
+  }
   if (email.value.length > 0) {
     if (email.value.includes("@") && email.value.includes(".com")) {
       email.classList.remove("is-invalid");
@@ -62,43 +66,36 @@ function validatePassword() {
 
 function searchAccount() {
   objConexao.buscaUsuarios().then((usuarios) => {
-    usuarios.forEach((user) => {
-      if (user.email == email.value && user.senha == senha.value) {
+    for (let user of usuarios) {
+      if (user.email === email.value && user.senha === senha.value) {
         // Conta existe
-        email.classList.add("is-valid");
-        email.classList.remove("is-invalid");
-        senha.classList.add("is-valid");
-        senha.classList.remove("is-invalid");
-        email_validation.innerText = "";
-        email_validation.classList.remove("text-danger");
-        senha_validation.innerText = "";
-        senha_validation.classList.remove("text-danger");
+        loginManager.login(user.id);
         Swal.fire({
           icon: "success",
-          title: "Conta encontrada",
-          html: "Agora falta redirecionar",
+          title: "Realizando Login...",
           showConfirmButton: false,
           timer: 2000,
+        }).then(() => {
+          window.location.replace("../pages/HomePage.html");
         });
-        return true;
-      } else {
-        // Conta nao existe
-        email.classList.add("is-invalid");
-        email.classList.remove("is-valid");
-        senha.classList.add("is-invalid");
-        senha.classList.remove("is-valid");
-        email_validation.innerText = "Email ou Senha incorretos";
-        email_validation.classList.add("text-danger");
-        senha_validation.innerText = "Email ou Senha incorretos";
-        senha_validation.classList.add("text-danger");
-        Swal.fire({
-          icon: "error",
-          title: "Conta não existe",
-          html: "Não foi possível localizar uma conta com essas credenciais, por favor verifique se o email e senha estão corretos",
-          confirmButtonColor: "red",
-        });
-        return false;
+        return; // Encerra o loop após encontrar uma conta válida
       }
+    }
+    // Conta não existe
+    email.classList.add("is-invalid");
+    email.classList.remove("is-valid");
+    senha.classList.add("is-invalid");
+    senha.classList.remove("is-valid");
+    email_validation.innerText = "Email ou Senha incorretos";
+    email_validation.classList.add("text-danger");
+    senha_validation.innerText = "Email ou Senha incorretos";
+    senha_validation.classList.add("text-danger");
+    Swal.fire({
+      icon: "error",
+      title: "Conta não existe",
+      html:
+        "Por favor verifique se o email e senha estão corretos",
+      confirmButtonColor: "red",
     });
   });
 }

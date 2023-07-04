@@ -11,7 +11,7 @@ class LoginManager {
 
     getIdUsuarioLogado() { return localStorage.getItem(LoginManager.loginPath()); }
 
-    login(idUsuário, reload = false) { 
+    async login(idUsuário, reload = false) { 
         localStorage.setItem(LoginManager.loginPath(), idUsuário); 
         if (reload) { window.location.reload(); }
     }
