@@ -36,6 +36,13 @@ if(usuario.permissao == 1){
     $('btnApaga').remove()
 }
 
+//var btnDelete = document.getElementById("btnApaga");
+//btnDelete.addEventListener('click', function(){
+
+
+
+//},false);
+
 
 $(document).ready(async ()=>{
 
@@ -116,6 +123,13 @@ function montaTrabalhos() {
     return z;
 }
 
+function botaoDelete(){
+
+    $('#btnApaga').on('click',function(){  
+    erase = document.getElementById('#idCard').value = "";
+    })
+    return console.log("teste")
+}
 
 
 
