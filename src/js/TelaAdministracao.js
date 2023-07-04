@@ -20,6 +20,7 @@ $( document ).ready(async function() {
 async function validaUsuario() {
     var id = LoginManager.getIdUsuarioLogado();
     if (id == "") {
+        $('#link-conta').remove()
         $('main').empty();
         $('main').append('<h3>Sem permissão para acessar essa página.</h3>')
         return 1;
