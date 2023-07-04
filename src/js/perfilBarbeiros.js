@@ -126,14 +126,6 @@ function montaTrabalhos() {
     return z;
 }
 
-function botaoDelete(){
-
-    $('#btnApaga').on('click',function(){  
-    erase = document.getElementById('#idCard').value = "";
-    })
-    return console.log("teste")
-}
-
 // Aqui é minha versão
 $('.limpa-card').on('click',function(){
     // Coloquei essa propriedade idcard em cada botão no html, indo de 0 a 5 (6 cards)
