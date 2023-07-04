@@ -3,7 +3,7 @@ import LoginManager from "./ModuloLogin.js";
 
 $(document).ready(async function() {
     var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
- 
+    LoginManager.login(2)
 
     if(IdUsuarioLogado==""){
         $("#link-conta").remove()
@@ -15,7 +15,7 @@ $(document).ready(async function() {
         }
     }
     $('#search-button').click(function() {
-        // Obter o valor da barra de pesquisa
+       
         var searchTerm = $('#search-input').val().toLowerCase();
         
         
@@ -59,7 +59,7 @@ function filtraBarbeiros(todosUsuarios){
 }
 
 $(document).ready(function() {
-    // Evento de digitação no campo de pesquisa
+    
     $('#search-input').on('input', function() {
        
         var searchTerm = $(this).val().toLowerCase();
