@@ -14,46 +14,7 @@ checkbox.addEventListener("change", () => {
   if (checkbox.checked) {
     senha.type = "text";
   } else {
-    email.style.border = "";
-  }
-
-  if (senha.value == "") {
-    senha.style.border = "2px solid red";
-  } else {
-    senha.style.border = "";
-  }
-
-  if (email.value == "" || senha.value == "") {
-    // Campos vazios encontrados
-    Swal.fire({
-      icon: "error",
-      title: "Campos vazios",
-      html: "Por favor preencha todos os campos e tente novamente",
-      confirmButtonColor: "red",
-    });
-  } else {
-    try {
-      if (verificarContaExistente(email.value, senha.value)) {
-        // redireciona para a homepage
-        //window.location.href = "../pages/HomePage.html";
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Não foi possível realizar login",
-          html: "Por favor tente novamente mais tarde",
-          showConfirmButton: true,
-          confirmButtonColor: "red",
-        });
-      }
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Ocorreu um erro",
-        html: error,
-        showConfirmButton: true,
-        confirmButtonColor: "red",
-      });
-    }
+    senha.type = "password";
   }
 });
 login.addEventListener("click", searchAccount);
@@ -86,7 +47,6 @@ function validateEmail() {
     return false;
   }
 }
-
 function validatePassword() {
   if (senha.value && senha.value.length > 5) {
     senha.classList.remove("is-invalid");
@@ -102,7 +62,6 @@ function validatePassword() {
     return false;
   }
 }
-
 function searchAccount() {
   objConexao.buscaUsuarios().then((usuarios) => {
     for (let user of usuarios) {
