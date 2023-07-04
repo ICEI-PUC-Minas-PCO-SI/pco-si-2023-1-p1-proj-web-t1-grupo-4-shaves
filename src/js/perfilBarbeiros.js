@@ -28,9 +28,7 @@ else{
     }
 }
 
-function exibirVisaoComum() {
-    $('.limpaCards').each(function(){ $(this).remove(); });
-}
+
 
 
 var btnDelete = document.getElementById("btnApaga");
