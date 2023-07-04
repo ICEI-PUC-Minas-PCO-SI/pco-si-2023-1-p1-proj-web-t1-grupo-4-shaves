@@ -14,7 +14,7 @@ var idurl = params.get("id");
 idurl = 3;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-//LoginManager.login(4);
+LoginManager.login(3);
 
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
 if(IdUsuarioLogado == ""){
@@ -35,15 +35,6 @@ if(IdUsuarioLogado == ""){
 if(usuario.permissao == 1){
     $('btnApaga').remove()
 }
-
-var btnDelete = document.getElementById("btnApaga");
-btnDelete.addEventListener('click', function(){
-
-    alert(montaTrabalhos().val());
-
-    montaTrabalhos().val("");
-
-},false);
 
 
 $(document).ready(async ()=>{
@@ -120,9 +111,13 @@ function montaTrabalhos() {
             "descricao": descCorte,
             "titulo":tituloCorte
         })
+        
     });
     return z;
 }
+
+
+
 
 function exibeTrabalhos() {
     var trabalhos = JSON.parse(localStorage.getItem('cortesBarbeiro'+idurl));
