@@ -108,7 +108,10 @@ function montaTrabalhos() {
                 else
                     imgName = trabalhos[index].caminho;
             }
-
+            var imagemTagSrc = $(this).children('img').attr('src');
+            if (imagemTagSrc.includes('fotocorte.jpg')) {
+                imgName = "fotocorte.jpg";
+            }
         }
 
         var tituloCorte = $(this).children('div').find('input').val();
@@ -130,6 +133,20 @@ function botaoDelete(){
     })
     return console.log("teste")
 }
+
+// Aqui é minha versão
+$('.limpa-card').on('click',function(){
+    // Coloquei essa propriedade idcard em cada botão no html, indo de 0 a 5 (6 cards)
+    var cardId = $(this).attr('idcard');
+    // Depois é só percorrer os cards, verificar se a posição é igual ao id, e se for, limpa o card
+    $('.card').each(function(index){
+        if (index == cardId) {
+            $(this).children('img').attr('src',default_path +"fotocorte.jpg"); // Reseta imagem pra padrão
+            $(this).children('div').find('input').val(""); // Limpa título
+            $(this).children('div').children('textarea').val(""); // Limpa descrição
+        }
+    })
+})  
 
 
 
