@@ -172,7 +172,7 @@ function validate() {
       validateSenha &&
       validateConfSenha
     ) {
-      if (createAccount) {
+      if (createAccount()) {
         Swal.fire({
           icon: "success",
           title: "Conta Criada!",
