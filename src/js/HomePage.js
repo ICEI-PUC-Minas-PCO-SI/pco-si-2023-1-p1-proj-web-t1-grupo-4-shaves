@@ -26,12 +26,14 @@ console.log(objConexao.lista_usuarios_json) */
 
 
 $(document).ready(async function(){
-    var usuarioLogado = LoginManager.getIdUsuarioLogado();
+    var usuarioLogado = JSON.parse(LoginManager.getIdUsuarioLogado())
 
     console.log("usuarioLogado", usuarioLogado)
 
-    if (!usuarioLogado) {
+    if (!usuarioLogado || usuarioLogado.permissao == '3')
         document.getElementById("ultimoAgendamento").style.display = "none";
+    
+    if (!usuarioLogado) {
         const minhaConta = document.getElementById("minhaConta")
         minhaConta.innerText = "Login"
         minhaConta.href = "login.html"
@@ -80,7 +82,7 @@ $(document).ready(async function(){
         console.log("Lista ordenada de  quantidades por barbeiro:", listaQuantidadesBarbeiros);  
     } 
 
-    for(let i=0; i<3; i++){
+    for(let i=0; i < listaQuantidadesBarbeiros.length; i++){
         console.log('lista', listaQuantidadesBarbeiros[i].barbeiro);
         for(let j=0; j<barbeiros.length; j++) {
             
@@ -92,49 +94,64 @@ $(document).ready(async function(){
             }
         }
     }
+    
+    if (usuarioLogado) {
 
-    var ultimoAgendamento = [];
-
-    for (let i=0; i<agendamentos.length;i++) {
-        if (agendamentos[i].status == "1" && parseInt(agendamentos[i].cliente) == usuarioLogado.id)
-        ultimoAgendamento = agendamentos[i];
-    }
+        var ultimoAgendamento = [];
         
-    var barbeiroAgendado = await JSONServer.buscaUsuarios(parseInt(ultimoAgendamento.barbeiro));
-    console.log("filtro", ultimoAgendamento,barbeiroAgendado)
-    CriarUltimo(ultimoAgendamento, barbeiroAgendado)
+        for (let i=0; i<agendamentos.length;i++) {
+            console.log('status:',agendamentos[i].status, agendamentos[i].cliente, usuarioLogado.id)
+            if (agendamentos[i].status == "1" && parseInt(agendamentos[i].cliente) == usuarioLogado.id)
+                ultimoAgendamento = agendamentos[i];
+            else
+                ultimoAgendamento = null;    
+        }
+        
+        console.log('aqui', ultimoAgendamento)
+        if (ultimoAgendamento) {
+            var barbeiroAgendado = await JSONServer.buscaUsuarios(parseInt(ultimoAgendamento.barbeiro));
+            console.log("filtro", ultimoAgendamento,barbeiroAgendado)
+        }
+        CriarUltimo(ultimoAgendamento, barbeiroAgendado)
+        
+    }
 })
 
 function CriarCard(barbeiro){
     var card= ` <div class=" col-lg-4  col-sm-12  mb-3 ">
-            <div class="card  mt-3 h-100 ">
-                <div class="card-header bg-light mt-1 mx-1">
-                    <img class="img-fluid  rounded " id="barbeiro" src="${barbeiro.imagem_perfil}">
-                </div>
-                <div class="card-body bg-light mb-1 mx-1 ">
-                    <a class="h5 text-decoration-none text-dark text-center" >${barbeiro.nome}</a>
-                    <p></p>
-                    <p> <b>e-mail:</b> ${barbeiro.email}</p>
-                    <p> <b>Contato:</b> ${barbeiro.telefone}
-                    <p></p>
-                
-                </div>
-            </div>
-        </div>`
-        $("#cardLabel").append(card)
+    <div class="card  mt-3 h-100 ">
+    <div class="card-header bg-light mt-1 mx-1">
+    <img class="img-fluid  rounded " id="barbeiro" src="${barbeiro.imagem_perfil}">
+    </div>
+    <div class="card-body bg-light mb-1 mx-1 ">
+    <a class="h5 text-decoration-none text-dark text-center" >${barbeiro.nome}</a>
+    <p></p>
+    <p> <b>e-mail:</b> ${barbeiro.email}</p>
+    <p> <b>Contato:</b> ${barbeiro.telefone}
+    <p></p>
+    
+    </div>
+    </div>
+    </div>`
+    $("#cardLabel").append(card)
 }
 
-    //Botao Agendar Horario
-    /* <a href="segundoPerfil.html" class="btn btn-dark">Agendar horário</a> */
+//Botao Agendar Horario
+/* <a href="segundoPerfil.html" class="btn btn-dark">Agendar horário</a> */
 
 function CriarUltimo(ultimoAgendamento, barbeiroAgendado){
-    var card= `                                 <p class="h4">Barbeiro:</p>
-    <p>${barbeiroAgendado.nome}</p>
-    <hr>
-    <p class="h4">Data e Hora:</p>
-    <p>${ultimoAgendamento.data} às ${ultimoAgendamento.horario}</p>
-    <hr>
-    <p class="h4">Serviço:</p>
-    <p>${ultimoAgendamento.servico} - ${ultimoAgendamento.descricao}</p> `
-        $("#cardUltimo").append(card)
+    console.log('ultimoAgendamento', ultimoAgendamento);
+    if (ultimoAgendamento) {
+        var card= `                                 <p class="h4">Barbeiro:</p>
+        <p>${barbeiroAgendado.nome}</p>
+        <hr>
+        <p class="h4">Data e Hora:</p>
+        <p>${ultimoAgendamento.data} às ${ultimoAgendamento.horario}</p>
+        <hr>
+        <p class="h4">Serviço:</p>
+        <p>${ultimoAgendamento.servico} - ${ultimoAgendamento.descricao}</p> `
+    } else {
+        var card=`<p class="h5">Você não possui agendamento</p>`
+    } 
+    $("#cardUltimo").append(card)
 }
