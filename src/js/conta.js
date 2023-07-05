@@ -2,7 +2,13 @@ import JSONServer from "./ModuloConexao.js";
 import LoginManager from "./ModuloLogin.js";
 
 $(document).ready(async function(){
-    var usuarioLogado = JSON.parse(LoginManager.getIdUsuarioLogado());
+  var usuarioId = LoginManager.getIdUsuarioLogado();
+  var usuarioLogado = null;
+
+  console.log(usuarioId)
+
+  if (usuarioId)
+      var usuarioLogado = await JSONServer.buscaUsuarios(usuarioId);
 
     let inputNome = document.getElementById("nome");
     let inputEmail = document.getElementById("email");

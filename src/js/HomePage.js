@@ -26,7 +26,13 @@ console.log(objConexao.lista_usuarios_json) */
 
 
 $(document).ready(async function(){
-    var usuarioLogado = JSON.parse(LoginManager.getIdUsuarioLogado())
+    var usuarioId = LoginManager.getIdUsuarioLogado();
+    var usuarioLogado = null;
+
+    console.log(usuarioId)
+
+    if (usuarioId)
+        var usuarioLogado = await JSONServer.buscaUsuarios(usuarioId);
 
     console.log("usuarioLogado", usuarioLogado)
 
@@ -168,17 +174,6 @@ function CriarUltimo(ultimoAgendamento, barbeiroAgendado){
     }
   }, 3000); // Define o intervalo de tempo em milissegundos (3000 = 3 segundos)
 
-  // Pausa a rolagem automática ao passar o mouse sobre o carrossel
-  carousel.addEventListener('mouseenter', function() {
-    clearInterval(carouselInterval);
-  });
+ 
 
-  // Retoma a rolagem automática ao remover o mouse do carrossel
-  carousel.addEventListener('mouseleave', function() {
-    carouselInterval = setInterval(function() {
-      if (document.visibilityState === 'visible') {
-        var nextButton = carousel.querySelector('.carousel-control-next');
-        nextButton.click();
-      }
-    }, 3000);
-  });
+  
