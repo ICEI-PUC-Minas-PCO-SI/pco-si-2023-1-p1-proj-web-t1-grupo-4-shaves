@@ -3,9 +3,12 @@ import LoginManager from "./ModuloLogin.js";
 
 $(document).ready(async function(){
     var usuarioLogado = LoginManager.getIdUsuarioLogado();
+
+    if (usuarioLogado == null || usuarioLogado == "") { return; } // Se ninguém está logado para por aqui
+
     var objetousuario = await JSONServer.buscaUsuarios(parseInt(usuarioLogado))
-    console.log(objetousuario)
-  
+
+    if (objetousuario == null) { return; } // Isso aqui não deve acontecer, mas se acontecer parar por aqui
 
     let inputNome = document.getElementById("nome");
     let inputEmail = document.getElementById("email");
