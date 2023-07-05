@@ -1,3 +1,19 @@
+/* Dynamic Footer Trick */
+html{
+    height: 100%;
+}
+body { min-height:100%;  margin:0; }
+
+body {
+    display: table;
+    width: 100%;
+}
+
+body > footer{
+    display: table-row;
+}
+/* --------------------- */
+
 .header a {
     color: antiquewhite;
 }
@@ -19,6 +35,8 @@
 .dropdown>button:hover {
     background-color: darkgoldenrod;
 }
+
+
 
 @media screen and (max-width:600px) {
 
@@ -49,7 +67,7 @@
     }
 }
 
-@media screen and (min-width:601px) and (max-width:1000px) {
+@media screen and (min-width:500px) and (max-width:1000px) {
 
     /*Header - Tablet*/
     .header {
@@ -101,9 +119,6 @@
 @media screen and (min-width:1001px) {
     .btn_drop {
         display: none;
-    }
-    .footer{
-        padding: 20px 20px;
     }
     .footer img{
         width: 100%;

@@ -13,7 +13,7 @@
     },
     {
       "nome": "Michael Fernades",
-      "senha": "123",
+      "senha": "1234567",
       "email": "mich123@gmail.com",
       "permissao": "2",
       "dataCriacao": "26/06/2023",
@@ -35,7 +35,7 @@
     },
     {
       "nome": "Romario",
-      "senha": "123",
+      "senha": "123456789",
       "email": "romario@gmail.com",
       "permissao": "1",
       "dataCriacao": "26/06/2023",
@@ -97,7 +97,7 @@
       "servico": "Corte + Barba",
       "descricao": "Corte + Barba",
       "status": "1",
-      "id": 3
+      "id": 2
     },
     {
       "data": "31/07/2023",
@@ -106,6 +106,17 @@
       "barbeiro": "5",
       "servico": "Relaxamento",
       "descricao": "asddfs",
+      "status": "1",
+      "id": 4
+      "id": 3
+    },
+    {
+      "data": "18/07/2023",
+      "horario": "09:00",
+      "cliente": "3",
+      "barbeiro": "5",
+      "servico": "Corte",
+      "descricao": "Corte Afro",
       "status": "1",
       "id": 4
     }
