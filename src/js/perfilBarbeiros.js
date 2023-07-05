@@ -14,7 +14,7 @@ var idurl = params.get("id");
 idurl = 3;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-LoginManager.logoff();
+LoginManager.login(2);
 
 
 
