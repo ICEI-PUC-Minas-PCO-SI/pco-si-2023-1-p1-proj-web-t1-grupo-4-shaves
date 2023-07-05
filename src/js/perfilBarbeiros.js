@@ -14,33 +14,32 @@ var idurl = params.get("id");
 idurl = 3;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-LoginManager.login(3);
+LoginManager.logoff();
 
 
 
+//Verificar se os usuários estão logados e tem permissão ou não para realizar funções:
 $(document).ready(async () => {
-    var usuario = null; // Inicialize a variável do usuário como nulo
+    var usuario = null;
 
-    // Verifique se o usuário está logado
     if (IdUsuarioLogado) {
         usuario = await objConexao.buscaUsuarios(idurl);
         setValues(usuario);
         exibeTrabalhos();
 
-        // Verifique se o usuário logado tem permissão para alterar os trabalhos
         if (IdUsuarioLogado == idurl && (usuario.permissao == 2 || usuario.permissao == 3)) {
             exibirVisaoBarbeiro();
         } else {
             exibirVisaoComum();
         }
     } else {
-        // Se o usuário estiver deslogado, exiba a visão comum
+        exibeTrabalhos();
         exibirVisaoComum();
     }
 });
 
 
-
+//Verifica se o usuário está logado ou tem permissão. Esse código faz aparecer o "Minha Conta" ou o "Gerência" de acordo com as permissões do usuário.
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
 if(IdUsuarioLogado == ""){
     $('.linkConta').remove()
@@ -53,7 +52,7 @@ else{
     }
 }
 
-
+//Verifica se o usuário está logado ou tem permissão para ver o botão delete.
 if(IdUsuarioLogado == ""){
     $('#btnApaga').remove()
 }   
@@ -61,7 +60,7 @@ if(usuario.permissao == 1){
     $('#btnApaga').remove()
 }
 
-
+//Define qual visão os usuários terão da página:
 $(document).ready(async ()=>{
 
     var usuario = await objConexao.buscaUsuarios(idurl);
@@ -78,6 +77,7 @@ $(document).ready(async ()=>{
 
 })
 
+//Carrega a parte de cima do perfil com a imagem, nome, contato e email do usuário:
 function setValues(usuario) {
     $('#nomeBarbeiro').text(usuario.nome);
     $('#contatoBarbeiro').text(usuario.telefone);
@@ -90,10 +90,12 @@ function setValues(usuario) {
     $('#fotoBarbeiro').attr('src',imgPerfil);
 }
 
+//Mostra a visão de permissão comum de acordo com o HTML (e de acordo com a permissão do usuário):
 function exibirVisaoComum() {
     $('.visao-barbeiro').each(function(){ $(this).remove(); });
 }
 
+//Mostra a visão de permissão barbeiro de acordo com o HTML (e de acordo com a permissão do usuário), além de conter a função para salvar as alterações dos cards:
 function exibirVisaoBarbeiro() {
     $('.visao-comum').each(function(){ $(this).remove(); });
     $('#salvar-trabalhos').on('click',function(){
@@ -110,6 +112,7 @@ function exibirVisaoBarbeiro() {
     })
 }
 
+//Monta os cards do portfólio e guarda no banco de dados:
 function montaTrabalhos() {
     var z = [];
     $('.card').each(function(index){
@@ -140,11 +143,12 @@ function montaTrabalhos() {
             "titulo":tituloCorte
         })
         
-    }); console.log(z)
+    }); 
     return z;
 }
 
-// Aqui é minha versão
+
+//Torna funcional o botão delete:
 $('.limpa-card').on('click',function(){
     // Coloquei essa propriedade idcard em cada botão no html, indo de 0 a 5 (6 cards)
     var cardId = $(this).attr('idcard');
@@ -159,7 +163,7 @@ $('.limpa-card').on('click',function(){
 })  
 
 
-
+//Mostra os trabalhos de acordo com o que foi salvo no banco de dados:
 function exibeTrabalhos() {
     var trabalhos = JSON.parse(localStorage.getItem('cortesBarbeiro'+idurl));
     if (trabalhos == null) {return;}
