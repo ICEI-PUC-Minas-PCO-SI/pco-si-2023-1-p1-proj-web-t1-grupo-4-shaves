@@ -11,10 +11,35 @@ const params = new URLSearchParams(url.search);
 var idurl = params.get("id");
 
 // Enquanto não tiver passando id pela URL, usar essa linha
-//idurl = 3;
+idurl = 3;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-//LoginManager.login(1);
+LoginManager.login(3);
+
+
+
+$(document).ready(async () => {
+    var usuario = null; // Inicialize a variável do usuário como nulo
+
+    // Verifique se o usuário está logado
+    if (IdUsuarioLogado) {
+        usuario = await objConexao.buscaUsuarios(idurl);
+        setValues(usuario);
+        exibeTrabalhos();
+
+        // Verifique se o usuário logado tem permissão para alterar os trabalhos
+        if (IdUsuarioLogado == idurl && (usuario.permissao == 2 || usuario.permissao == 3)) {
+            exibirVisaoBarbeiro();
+        } else {
+            exibirVisaoComum();
+        }
+    } else {
+        // Se o usuário estiver deslogado, exiba a visão comum
+        exibirVisaoComum();
+    }
+});
+
+
 
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
 if(IdUsuarioLogado == ""){
@@ -115,7 +140,7 @@ function montaTrabalhos() {
             "titulo":tituloCorte
         })
         
-    });
+    }); console.log(z)
     return z;
 }
 
