@@ -3,15 +3,15 @@ import LoginManager from "./ModuloLogin.js";
 
 $(document).ready(async function() {
     var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
-    LoginManager.login(2)
+    LoginManager.login(1)
 
     if(IdUsuarioLogado==""){
-        $("#link-conta").remove()
-        $("#link-gerencia").remove()
+        $(".link-conta").remove()
+        $(".link-gerencia").remove()
     }else{
         var usuario = await objConexao.buscaUsuarios(IdUsuarioLogado)
         if(usuario.permissao !=3){
-            $("#link-gerencia").remove() 
+            $(".link-gerencia").remove() 
         }
     }
     $('#search-button').click(function() {
