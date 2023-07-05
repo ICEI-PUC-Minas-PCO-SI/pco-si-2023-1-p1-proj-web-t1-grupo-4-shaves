@@ -65,28 +65,50 @@
       "trabalhos": "0",
       "imagem_perfil": "",
       "id": 7
+    },
+    {
+      "nome": "Matheus",
+      "senha": "123",
+      "email": "matheus@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "04/07/2023",
+      "telefone": "313131313",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 8
     }
   ],
   "agendamentos": [
     {
       "data": "11/10/2021",
       "horario": "09:00",
-      "cliente": "3",
-      "barbeiro": "2",
+      "cliente": "4",     
+       "barbeiro": "2",
       "servico": "Corte de cabelo",
       "descricao": "a1",
       "status": "1",
       "id": 1
     },
     {
-      "data": "11/10/2021",
+      "data": "31/07/2023",
       "horario": "09:00",
       "cliente": "3",
       "barbeiro": "5",
       "servico": "Corte + Barba",
-      "descricao": "Novo",
+      "descricao": "Corte + Barba",
       "status": "1",
       "id": 2
+    },
+    {
+      "data": "31/07/2023",
+      "horario": "16:00",
+      "cliente": "8",
+      "barbeiro": "5",
+      "servico": "Relaxamento",
+      "descricao": "asddfs",
+      "status": "1",
+      "id": 4
+      "id": 3
     },
     {
       "data": "18/07/2023",
@@ -96,7 +118,7 @@
       "servico": "Corte",
       "descricao": "Corte Afro",
       "status": "1",
-      "id": 3
+      "id": 4
     }
   ]
 }
