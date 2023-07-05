@@ -9,6 +9,7 @@ class LoginManager {
 
     static loginPath() {return 'usuarioLogado'};
 
+    // Nulo ou vazia
     getIdUsuarioLogado() { return localStorage.getItem(LoginManager.loginPath()); }
 
     async login(idUsuário, reload = false) { 

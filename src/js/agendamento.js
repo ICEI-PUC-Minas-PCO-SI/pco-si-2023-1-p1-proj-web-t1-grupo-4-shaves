@@ -1,7 +1,6 @@
 import LoginManager from "./ModuloLogin.js";
 import JSONServer from './ModuloConexao.js';
 import objConexao from "./ModuloConexao.js";
-LoginManager.login(3);
 
 var idUsuarioLogado = LoginManager.getIdUsuarioLogado();
 console.log(idUsuarioLogado == "")

@@ -33,7 +33,6 @@
 </head>
 
 <body>
-
     <header class="header">
         <nav class="navbar navbar-dark bg-dark shadow">
             <div class="container">
@@ -56,20 +55,15 @@
                             <div class="nav_bar mt-4 mb-4">
                                 <ul class="nav nav-pills nav-fill breadcrumb">
                                     <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#"><i class="far fa-star"
+                                        <a class="nav-link h5" href="./login.html"><i class="far fa-star"
+                                                style="display: none;"></i>Login</a>
+                                    </li>
+                                    <li class="nav-item breadcrumb-item">
+                                        <a class="nav-link h5" href="./HomePage.html"><i class="far fa-star"
                                                 style="display: none;"></i>HomePage</a>
                                     </li>
                                     <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Barbeiros</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Agenda</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Contato</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Minha Conta</a>
+                                        <a class="nav-link h5" href="./telaBarbeiros.html">Barbeiros</a>
                                     </li>
                                 </ul>
                             </div>
@@ -85,11 +79,12 @@
                                         class="fas fa-bars"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                                    <li><button class="dropdown-item" type="button">HomePage</button></li>
-                                    <li><button class="dropdown-item" type="button">Barbeiros</button></li>
-                                    <li><button class="dropdown-item" type="button">Agenda</button></li>
-                                    <li><button class="dropdown-item" type="button">Contato</button></li>
-                                    <li><button class="dropdown-item" type="button">Minha Conta</button></li>
+                                    <li><a href="./login.html" style="text-decoration: none;"><button
+                                        class="dropdown-item" type="button">Login</button></a></li>
+                                    <li><a href="./HomePage.html" style="text-decoration: none;"><button
+                                                class="dropdown-item" type="button">HomePage</button></a></li>
+                                    <li><a href="./telaBarbeiros.html" style="text-decoration: none;"><button
+                                                class="dropdown-item" type="button">Barbeiros</button></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -101,7 +96,7 @@
 
 
 
-    <main class="container-fluid" id="mainSection" style="margin: 12vh 0vh 5vh 0vh;">
+    <main class="container-fluid" id="mainSection" style="margin: 15vh 0vh 10vh 0vh;">
         <!-- Page Identification -->
         <div class="row justify-content-center">
             <p class="col-12 text-center h1" style="color: orange;font-size: 40px;">Criar Conta</p>
@@ -111,7 +106,7 @@
 
         <form id="form" onsubmit="validate(event)">
             <!-- Input Nome -->
-            <div class="row justify-content-center pt-4">
+            <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-10 col-lg-7">
                     <label for="inputNome" class="form-label h5">Nome</label>
                     <input type="text" class="form-control form-control-lg" id="inputNome"
@@ -184,7 +179,6 @@
     <!--Footer-->
     <footer class="footer bg-dark text-white-50">
         <div class="container">
-
             <div class="row align-items-center justify-content-md-between justify-content-lg-between py-2">
                 <div class="col-8 col-sm-6 col-md-8 col-lg-6">
                     Copyright 2023 - TIAW - Grupo Shaves - <b>ICEI Puc Minas</b>

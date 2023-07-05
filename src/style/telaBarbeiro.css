@@ -71,4 +71,7 @@ body, html {
     height: 50px; 
     border-radius: 50%;
   }*/
- 
+  .dropdown-menu-no-divider .dropdown-item {
+    border-bottom: none;
+  }
+  
