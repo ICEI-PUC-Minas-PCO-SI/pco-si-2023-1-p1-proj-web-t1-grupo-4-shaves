@@ -20,7 +20,7 @@ checkbox.addEventListener("change", () => {
 login.addEventListener("click", searchAccount);
 
 function validateEmail() {
-  if(!email.value){
+  if (!email.value) {
     return false;
   }
   if (email.value.length > 0) {
@@ -42,7 +42,8 @@ function validateEmail() {
   } else {
     email.classList.remove("is-valid");
     email.classList.add("is-invalid");
-    email_validation.innerText = "Preencha com um email válido, exemplo: usuario@gmail.com";
+    email_validation.innerText =
+      "Preencha com um email válido, exemplo: usuario@gmail.com";
     email_validation.classList.add("text-danger");
     return false;
   }
@@ -91,8 +92,7 @@ function searchAccount() {
     Swal.fire({
       icon: "error",
       title: "Conta não existe",
-      html:
-        "Por favor verifique se o email e senha estão corretos",
+      html: "Por favor verifique se o email e senha estão corretos",
       confirmButtonColor: "red",
     });
   });
