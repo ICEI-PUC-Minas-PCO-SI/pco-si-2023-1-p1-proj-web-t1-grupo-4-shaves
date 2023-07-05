@@ -13,7 +13,7 @@
     },
     {
       "nome": "Michael Fernades",
-      "senha": "123",
+      "senha": "1234567",
       "email": "mich123@gmail.com",
       "permissao": "2",
       "dataCriacao": "26/06/2023",
@@ -35,13 +35,13 @@
     },
     {
       "nome": "Romario",
-      "senha": "123",
+      "senha": "123456789",
       "email": "romario@gmail.com",
       "permissao": "1",
       "dataCriacao": "26/06/2023",
       "telefone": "31988882380",
       "trabalhos": "0",
-      "imagem_perfil": "",
+      "imagem_perfil": "../Img/corte.jpeg",
       "id": 4
     },
     {
@@ -56,17 +56,6 @@
       "id": 5
     },
     {
-      "nome": "Felipe Melo",
-      "senha": "123",
-      "email": "user3@gmail.com",
-      "permissao": "2",
-      "dataCriacao": "26/06/2023",
-      "telefone": "31988889328",
-      "trabalhos": "0",
-      "imagem_perfil": "",
-      "id": 6
-    },
-    {
       "nome": "Guilherme Simao Primeiro",
       "senha": "simao11",
       "email": "guisimao1@gmail.com",
@@ -76,279 +65,59 @@
       "trabalhos": "0",
       "imagem_perfil": "",
       "id": 7
+    },
+    {
+      "nome": "Matheus",
+      "senha": "123",
+      "email": "matheus@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "04/07/2023",
+      "telefone": "313131313",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 8
     }
   ],
   "agendamentos": [
     {
-      "data": "26/06/2023",
-      "horario": "18:00",
-      "cliente": "4",
-      "barbeiro": "2",
-      "servico": "Corte",
-      "descricao": "Descrição teste",
-      "status": "2",
+      "data": "11/10/2021",
+      "horario": "09:00",
+      "cliente": "4",     
+       "barbeiro": "2",
+      "servico": "Corte de cabelo",
+      "descricao": "a1",
+      "status": "1",
       "id": 1
     },
     {
-      "data": "28/06/2023",
-      "horario": "18:00",
-      "cliente": "4",
+      "data": "31/07/2023",
+      "horario": "09:00",
+      "cliente": "3",
       "barbeiro": "5",
-      "servico": "Corte",
-      "descricao": "Descrição teste",
+      "servico": "Corte + Barba",
+      "descricao": "Corte + Barba",
       "status": "1",
       "id": 2
     },
     {
-      "data": "30/06/2023",
-      "horario": "18:00",
-      "cliente": "4",
+      "data": "31/07/2023",
+      "horario": "16:00",
+      "cliente": "8",
       "barbeiro": "5",
-      "servico": "Corte",
-      "descricao": "Descrição teste",
-      "status": "2",
-      "id": 3
-    },
-    {
-      "data": "04/07/2023",
-      "horario": "18:00",
-      "cliente": "1",
-      "barbeiro": "3",
-      "servico": "Corte",
-      "descricao": "Descrição teste",
-      "status": "2",
+      "servico": "Relaxamento",
+      "descricao": "asddfs",
+      "status": "1",
       "id": 4
     },
     {
-      "data": "07/07/2023",
-      "horario": "18:00",
-      "cliente": "1",
+      "data": "18/07/2023",
+      "horario": "09:00",
+      "cliente": "3",
       "barbeiro": "5",
       "servico": "Corte",
-      "descricao": "Descrição teste",
+      "descricao": "Corte Afro",
       "status": "1",
-      "id": 5
-    },
-    {
-      "data": "26/06/2023",
-      "horario": "18:00",
-      "cliente": "4",
-      "barbeiro": "5",
-      "servico": "Corte",
-      "descricao": "Descrição teste",
-      "status": "3",
-      "id": 6
-    },
-    {
-      "data": "01/08/2023",
-      "horario": "18:00",
-      "cliente": "1",
-      "barbeiro": "2",
-      "servico": "Corte",
-      "descricao": "Descrição teste",
-      "status": "4",
-      "id": 7
-    },
-    {
-      "data": "05/19/2023",
-      "horario": "10:00",
-      "profissional": "William",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 8
-    },
-    {
-      "data": "05/19/2023",
-      "horario": "10:00",
-      "profissional": "Samuel",
-      "servico": "Corte",
-      "descricao": "",
-      "id": 9
-    },
-    {
-      "data": "08/06/2023",
-      "horario": "09:45",
-      "profissional": "2",
-      "servico": "Corte",
-      "descricao": "",
-      "id": 10
-    },
-    {
-      "data": "16/06/2023",
-      "horario": "09:45",
-      "profissional": "2",
-      "servico": "Relaxamento",
-      "descricao": "",
-      "id": 11
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "09:45",
-      "profissional": "2",
-      "servico": "Corte",
-      "descricao": "",
-      "id": 12
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "09:45",
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 13
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "08:30",
-      "profissional": "2",
-      "servico": "Relaxamento",
-      "descricao": "",
-      "id": 14
-    },
-    {
-      "data": "11/06/2023",
-      "horario": "08:30",
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 15
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "09:45",
-      "profissional": "2",
-      "servico": "Relaxamento",
-      "descricao": "",
-      "id": 16
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "09:45",
-      "profissional": "2",
-      "servico": "Relaxamento",
-      "descricao": "",
-      "id": 17
-    },
-    {
-      "data": "17/06/2023",
-      "horario": "09:45",
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 18
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "08:30",
-      "profissional": "2",
-      "servico": "Corte",
-      "descricao": "",
-      "id": 19
-    },
-    {
-      "data": "23/06/2023",
-      "horario": "15:30",
-      "profissional": "2",
-      "servico": "Relaxamento",
-      "descricao": "",
-      "id": 20
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "15:30",
-      "profissional": "2",
-      "servico": "Corte",
-      "descricao": "",
-      "id": 21
-    },
-    {
-      "data": "24/06/2023",
-      "horario": "15:30",
-      "profissional": "2",
-      "servico": "Relaxamento",
-      "descricao": "",
-      "id": 22
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "10:00",
-      "profissional": "2",
-      "servico": "Corte",
-      "descricao": "",
-      "id": 23
-    },
-    {
-      "data": "21/06/2023",
-      "horario": "08:00",
-      "cliente": 1,
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 24
-    },
-    {
-      "data": "21/06/2023",
-      "horario": "15:45",
-      "cliente": 1,
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 25
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "17:00",
-      "cliente": 1,
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 26
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "21:00",
-      "cliente": 1,
-      "profissional": "2",
-      "servico": "Teste",
-      "descricao": "",
-      "id": 27
-    },
-    {
-      "data": "15/06/2023",
-      "horario": "15:00",
-      "cliente": 1,
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 28
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "15:00",
-      "cliente": 1,
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 29
-    },
-    {
-      "data": "30/06/2023",
-      "horario": "15:00",
-      "cliente": {
-        "nome": "Usuario3",
-        "senha": "123",
-        "email": "user3@gmail.com",
-        "permissao": "3",
-        "dataCriacao": "26/06/2023",
-        "telefone": "31988888888",
-        "trabalhos": "0",
-        "imagem_perfil": "",
-        "id": 3
-      },
-      "profissional": "2",
-      "servico": "Barba",
-      "descricao": "",
-      "id": 30
+      "id": 4
     }
   ]
 }

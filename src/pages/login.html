@@ -38,7 +38,7 @@
 
                         <!-- Logo -->
                         <div class="col-6 col-sm-6 col-md-5 col-lg-2">
-                            <a style="background-color: transparent;" href="login.html"><img class="btn"
+                            <a style="background-color: transparent;" href="HomePage.html"><img class="btn"
                                     src="../Img/newlogoCropped.png" alt=""></img></a>
                         </div>
 
@@ -47,26 +47,23 @@
                         <!--Navegacao/tabs-->
                         <div class="col-9 col-lg-9" style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb"
                             id="navegacao">
-                            <div class="nav_bar mt-4 mb-4">
-                                <ul class="nav nav-pills nav-fill breadcrumb">
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="./HomePage.html"><i class="far fa-star"
-                                                style="display: none;"></i>HomePage</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="./telaBarbeiros.html">Barbeiros</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="./agendamento.html">Agenda</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Contato</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Minha Conta</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <form onsubmit="return false" id="form">
+                                <div class="nav_bar mt-4 mb-4">
+                                    <ul class="nav nav-pills nav-fill breadcrumb">
+                                        <li class="nav-item breadcrumb-item">
+                                            <a class="nav-link h5" href="./cadastro.html"><i class="far fa-star"
+                                                    style="display: none;"></i>Criar Conta</a>
+                                        </li>
+                                        <li class="nav-item breadcrumb-item">
+                                            <a class="nav-link h5" href="./HomePage.html"><i class="far fa-star"
+                                                    style="display: none;"></i>HomePage</a>
+                                        </li>
+                                        <li class="nav-item breadcrumb-item">
+                                            <a class="nav-link h5" href="./telaBarbeiros.html">Barbeiros</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
                         </div>
 
 
@@ -79,11 +76,12 @@
                                         class="fas fa-bars"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                                    <li><a href="./HomePage.html"><button class="dropdown-item" type="button">HomePage</button></a></li>
-                                    <li><a href="./telaBarbeiros.html"><button class="dropdown-item" type="button">Barbeiros</button></a></li>
-                                    <li><a href="./agendamento.html"><button class="dropdown-item" type="button">Agenda</button></a></li>
-                                    <li><a href="#"><button class="dropdown-item" type="button">Contato</button></a></li>
-                                    <li><a href="#"><button class="dropdown-item" type="button">Minha Conta</button></a></li>
+                                    <li><a href="./cadastro.html" style="text-decoration: none;"><button class="dropdown-item" type="button"
+                                                >Criar Conta</button></a></li>
+                                    <li><a href="./HomePage.html" style="text-decoration: none;"><button class="dropdown-item" type="button"
+                                                >HomePage</button></a></li>
+                                    <li><a href="./telaBarbeiros.html" style="text-decoration: none;"><button class="dropdown-item" type="button"
+                                                >Barbeiros</button></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -95,7 +93,7 @@
 
 
     <!-- Body -->
-    <main class="container-fluid" style="padding: 5vh;" id="body">
+    <main class="container-fluid" style="margin: 15vh 0vh 10vh 0vh;" id="body">
 
         <!-- Page Identification -->
         <div class="row justify-content-center">
@@ -108,10 +106,8 @@
             <div class="col-sm-12 col-md-9 col-lg-7 input-group-lg">
                 <label for="inputEmail" class="form-label h4">Email</label>
                 <input type="email" class="form-control form-control-lg" id="inputEmail">
+                <small id="email-validation">Digite o email da sua conta</small>
             </div>
-            <span class="col-sm-12 col-md-9 col-lg-7 form-text">
-                Digite o email da sua conta
-            </span>
         </div>
 
 
@@ -121,10 +117,8 @@
             <div class="col-sm-12 col-md-9 col-lg-7 input-group-lg">
                 <label for="inputSenha" class="form-label h4">Senha</label>
                 <input type="password" class="form-control form-control-lg" id="inputSenha">
+                <small id="senha-validation">Digite sua senha</small>
             </div>
-            <span class="col-sm-12 col-md-9 col-lg-7 form-text">
-                Digite sua senha
-            </span>
         </div>
 
 
@@ -139,25 +133,12 @@
                 </div>
             </div>
         </div>
-        <script>
-            const mostrarSenhaCheckbox = document.getElementById("mostrarSenhaCheckbox");
-            const inputSenha = document.getElementById("inputSenha");
-
-            mostrarSenhaCheckbox.addEventListener("change", function () {
-                if (mostrarSenhaCheckbox.checked) {
-                    inputSenha.type = "text";
-                } else {
-                    inputSenha.type = "password";
-                }
-            });
-        </script>
-
 
 
         <!-- Buttons -->
         <div class="row justify-content-center">
             <div class="col-6 col-sm-6 col-md-4 col-lg-2">
-                <a href="/pages/cadastro.html">
+                <a href="./cadastro.html">
                     <button type="button" class="btn btn-dark btn-lg">Criar Conta</button>
                 </a>
             </div>
@@ -172,7 +153,7 @@
 
 
     <!--Footer-->
-    <footer class="footer bg-dark text-white-50 fixed-bottom position-absolute">
+    <footer class="footer bg-dark text-white-50">
         <div class="container">
 
             <div class="row align-items-center justify-content-md-between justify-content-lg-between py-2">

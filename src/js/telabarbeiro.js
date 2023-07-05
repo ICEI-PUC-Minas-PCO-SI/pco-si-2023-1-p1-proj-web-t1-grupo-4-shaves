@@ -1,6 +1,28 @@
 import objConexao from "./ModuloConexao.js";
 import LoginManager from "./ModuloLogin.js";
 
+$(document).ready(async function() {
+    var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
+   
+    if(IdUsuarioLogado==""){
+        $(".link-conta").remove()
+        $(".link-gerencia").remove()
+    }else{
+        var usuario = await objConexao.buscaUsuarios(IdUsuarioLogado)
+        if(usuario.permissao !=3){
+            $(".link-gerencia").remove() 
+        }
+    }
+    $('#search-button').click(function() {
+       
+        var searchTerm = $('#search-input').val().toLowerCase();
+        
+        
+        searchBarber(searchTerm);
+    });
+});
+
+
 preencheBarbeiro();
 async function preencheBarbeiro(){
     var todosUsuarios = await objConexao.buscaUsuarios();
@@ -34,3 +56,34 @@ function filtraBarbeiros(todosUsuarios){
     }
     return barbeiros;
 }
+
+$(document).ready(function() {
+    
+    $('#search-input').on('input', function() {
+       
+        var searchTerm = $(this).val().toLowerCase();
+        
+        if (searchTerm === '') {
+            showAllBarbers(); 
+        } else {
+            searchBarber(searchTerm); 
+        }
+    });
+});
+
+function showAllBarbers() {
+    $('.card').show(); 
+}
+
+function searchBarber(searchTerm) {
+    $('.card').each(function() {
+        var cardBarberName = $(this).find('.card-title').text().toLowerCase();
+        if (cardBarberName.includes(searchTerm)) {
+            $(this).show(); 
+        } else {
+            $(this).hide(); 
+        }
+    });
+}
+
+
