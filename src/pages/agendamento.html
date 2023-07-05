@@ -25,6 +25,10 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="agendamento.js"></script>
+
+
 
 </head>
 
@@ -36,7 +40,7 @@
 
                 <div class="row align-items-center w-100">
                     <div class="col-2 col-sm-12 col-md-12 col-lg-2 img_area">
-                        <img src="../Img/newlogo.png" alt="">
+                        <img src="../Img/newlogoCropped.png" alt="">
                     </div>
                     <!--Navegacao/tabs-->
                     <div class="col-7 col-lg-7" style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb"
@@ -105,6 +109,17 @@
             <div class="col-lg-8 col-sm-12 offset-lg-2">
                 <div class="card bg-light mb-3">
                     <div class="card-body">
+                        <div id="card-confirmacao" style="display: none;">
+                            <h2>Dados do agendamento:</h2>
+                            <p>Data: <span id="data-confirmacao"></span></p>
+                            <p>Hora: <span id="hora-confirmacao"></span></p>
+                            <p>Profissional: <span id="profissional-confirmacao"></span></p>
+                            <p>Serviço: <span id="servico-confirmacao"></span></p>
+                            <p>Descrição: <span id="descricao-confirmacao"></span></p>
+                        </div>
+                        <script>
+                            
+                        </script>
                         <h4 class="card-title">Agendamento</h4>
                         <form id="form-agendamento">
 
@@ -114,7 +129,18 @@
                             </div>
                             <div class="mb-3">
                                 <label for="horario" class="form-label">Horário *</label>
-                                <input type="text" class="form-control" id="horario" required>
+                                <select class="form-control" id="horario" required>
+                                    <option value="">Selecione um horário</option>
+                                    <script>
+                                        // Define um array com os horários disponíveis
+                                        var horariosDisponiveis = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"];
+
+                                        // Loop para gerar as opções
+                                        for (var i = 0; i < horariosDisponiveis.length; i++) {
+                                            document.write('<option value="' + horariosDisponiveis[i] + '">' + horariosDisponiveis[i] + '</option>');
+                                        }
+                                    </script>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="profissional" class="form-label">Profissional *</label>
@@ -122,7 +148,16 @@
                             </div>
                             <div class="mb-3">
                                 <label for="servico" class="form-label">Serviço *</label>
-                                <input type="text" class="form-control" id="servico" required>
+                                <select class="form-control" id="servico" required>
+                                    <option value="">Selecione um serviço</option>
+                                    <script>
+                                        var servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
+                                        for (let index = 0; index < servicos.length; index++) {
+                                            document.write('<option value="'+ servicos[index] +'">'+ servicos[index] +'</option>');
+                                        }
+                                    </script>
+                                  
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
@@ -136,16 +171,7 @@
                     </div>
                 </div>
 
-                <div id="card-confirmacao">
-                    <h2>Confirme os dados do agendamento:</h2>
-                    <p>Data: <span id="data-confirmacao"></span></p>
-                    <p>Hora: <span id="hora-confirmacao"></span></p>
-                    <p>Profissional: <span id="profissional-confirmacao"></span></p>
-                    <p>Serviço: <span id="servico-confirmacao"></span></p>
 
-                    <p>Descrição: <span id="descricao-confirmacao"></span></p>
-                    <button type="submit" id="confirmar-agendamento">Confirmar Agendamento</button>
-                </div>
 
                 <script>
 
@@ -153,42 +179,15 @@
                         $("#data").datepicker({ dateFormat: "dd/mm/yy" }); // Inicialização do datepicker quando o documento estiver pronto
                     });
 
-                    function exibirCardConfirmacao() {
-                        // Verifica se todos os campos obrigatórios foram preenchidos
-                        if ($("#data").val() && $("#horario").val() && $("#profissional").val() && $("#servico").val()) {
-
-                            // Preenche os dados do agendamento no card de confirmação
-                            $("#data-confirmacao").text($("#data").val());
-                            $("#hora-confirmacao").text($("#horario").val()); // corrigido aqui
-                            $("#profissional-confirmacao").text($("#profissional").val());
-                            $("#servico-confirmacao").text($("#servico").val());
-                            $("#descricao-confirmacao").text($("#descricao").val());
-
-                            // Exibe o card de confirmação
-                            $("#card-confirmacao").show();
-                        } else {
-                            alert("Por favor, preencha todos os campos obrigatórios.");
-                        }
-                    }
 
 
-                    // Ao clicar no botão "Agendar", chama a função exibirCardConfirmacao()
-                    $("#agendar").click(function (event) {
-                        exibirCardConfirmacao();
-                    });
 
-                    // Ao clicar no botão "Confirmar Agendamento", envia os dados para o servidor
-                    $("#confirmar-agendamento").click(function () {
-                        event.preventDefault();
-                        alert("Agendamento confirmado!");
-
-                    });
+                   
                 </script>
             </div>
         </div>
     </div>
 
-    <!-- Your JavaScript code -->
     <script src="../js/agendamento.js" type="module"></script>
     <script src="../js/ModuloLogin.js" type="module"></script>
 

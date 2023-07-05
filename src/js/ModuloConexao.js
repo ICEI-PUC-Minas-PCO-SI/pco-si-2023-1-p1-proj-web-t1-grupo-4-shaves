@@ -116,9 +116,15 @@ class Conexao {
         this.salvar();
     }
 
-    busca_agendamento() {
-
+    busca_agendamento(email) {
+        let index = -1;
+        this.lista_usuarios_json.forEach((user,i)=>{
+            if (user.email == email)
+                index = i;
+        })
+        return this.lista_usuarios_json[index];
     }
+    
     // -------------------------
     #valida_parametros_novo_usuario(username, password) {
 
@@ -194,27 +200,6 @@ class JSONServer {
         else
             return await fetch(JSONServer.urlAgendamentos() + "/" + idAgendamento).then(res=>res.json());
     }
-
-    async verificarContaExistente(email, senha) {
-        // Chama o metodo do JSONSERVER
-        var usuarios = await JSONServer.buscaUsuarios();
-      
-        // Verifica por email igual
-        var usuarioExistente = usuarios.find(
-          (usuario) => usuario.email === email
-        );
-      
-        if (usuarioExistente) {
-            // Verifica se senha é igual
-          if (usuarioExistente.senha === senha) {
-            return true;
-          } else {
-            return false;
-          }
-        } else {
-          return false;
-        }
-      }
       
     // ----------------------------------
 

@@ -11,6 +11,8 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/98eb266920.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../template.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <style>
         .form-check-input:checked {
             background-color: orange;
@@ -36,7 +38,7 @@
 
                         <!-- Logo -->
                         <div class="col-6 col-sm-6 col-md-5 col-lg-2">
-                            <a style="background-color: transparent;" href="login.html"><img class="btn"
+                            <a style="background-color: transparent;" href="HomePage.html"><img class="btn"
                                     src="../Img/newlogoCropped.png" alt=""></img></a>
                         </div>
 
@@ -45,26 +47,20 @@
                         <!--Navegacao/tabs-->
                         <div class="col-9 col-lg-9" style="--bs-breadcrumb-divider: '';" aria-label="breadcrumb"
                             id="navegacao">
-                            <div class="nav_bar mt-4 mb-4">
-                                <ul class="nav nav-pills nav-fill breadcrumb">
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#"><i class="far fa-star"
-                                                style="display: none;"></i>HomePage</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Barbeiros</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Agenda</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Contato</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Minha Conta</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <form onsubmit="return false" id="form">
+                                <div class="nav_bar mt-4 mb-4">
+                                    <ul class="nav nav-pills nav-fill breadcrumb">
+                                        <li class="nav-item breadcrumb-item">
+                                            <a class="nav-link h5" href="./HomePage.html"><i class="far fa-star"
+                                                    style="display: none;"></i>HomePage</a>
+                                        </li>
+                                        <li class="nav-item breadcrumb-item">
+                                            <a class="nav-link h5" href="./telaBarbeiros.html">Barbeiros</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+
                         </div>
 
 
@@ -77,11 +73,10 @@
                                         class="fas fa-bars"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                                    <li><button class="dropdown-item" type="button">HomePage</button></li>
-                                    <li><button class="dropdown-item" type="button">Barbeiros</button></li>
-                                    <li><button class="dropdown-item" type="button">Agenda</button></li>
-                                    <li><button class="dropdown-item" type="button">Contato</button></li>
-                                    <li><button class="dropdown-item" type="button">Minha Conta</button></li>
+                                    <li><a href="./HomePage.html"><button class="dropdown-item"
+                                                type="button">HomePage</button></a></li>
+                                    <li><a href="./telaBarbeiros.html"><button class="dropdown-item"
+                                                type="button">Barbeiros</button></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -104,12 +99,10 @@
         <!-- Input Email -->
         <div class="row justify-content-center" style="padding: 3vh 0vh;">
             <div class="col-sm-12 col-md-9 col-lg-7 input-group-lg">
-                <label for="inputEmail" class="form-label h4" >Email</label>
+                <label for="inputEmail" class="form-label h4">Email</label>
                 <input type="email" class="form-control form-control-lg" id="inputEmail">
+                <small id="email-validation">Digite o email da sua conta</small>
             </div>
-            <span class="col-sm-12 col-md-9 col-lg-7 form-text">
-                Digite o email da sua conta
-            </span>
         </div>
 
 
@@ -119,10 +112,8 @@
             <div class="col-sm-12 col-md-9 col-lg-7 input-group-lg">
                 <label for="inputSenha" class="form-label h4">Senha</label>
                 <input type="password" class="form-control form-control-lg" id="inputSenha">
+                <small id="senha-validation">Digite sua senha</small>
             </div>
-            <span class="col-sm-12 col-md-9 col-lg-7 form-text">
-                Digite sua senha
-            </span>
         </div>
 
 
@@ -137,19 +128,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            const mostrarSenhaCheckbox = document.getElementById("mostrarSenhaCheckbox");
-            const inputSenha = document.getElementById("inputSenha");
-
-            mostrarSenhaCheckbox.addEventListener("change", function () {
-                if (mostrarSenhaCheckbox.checked) {
-                    inputSenha.type = "text";
-                } else {
-                    inputSenha.type = "password";
-                }
-            });
-        </script>
-
 
 
         <!-- Buttons -->
