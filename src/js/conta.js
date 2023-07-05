@@ -1,14 +1,16 @@
 import JSONServer from "./ModuloConexao.js";
 import LoginManager from "./ModuloLogin.js";
 
+var usuarioLogado = LoginManager.getIdUsuarioLogado();
+var objUsuario = null;
+
 $(document).ready(async function(){
-    var usuarioLogado = LoginManager.getIdUsuarioLogado();
 
     if (usuarioLogado == null || usuarioLogado == "") { return; } // Se ninguém está logado para por aqui
 
-    var objetousuario = await JSONServer.buscaUsuarios(parseInt(usuarioLogado))
+    objUsuario = await JSONServer.buscaUsuarios(parseInt(usuarioLogado))
 
-    if (objetousuario == null) { return; } // Isso aqui não deve acontecer, mas se acontecer parar por aqui
+    if (objUsuario == null) { return; } // Isso aqui não deve acontecer, mas se acontecer parar por aqui
 
     let inputNome = document.getElementById("nome");
     let inputEmail = document.getElementById("email");
@@ -16,9 +18,9 @@ $(document).ready(async function(){
     let inputSenha = document.getElementById("senha");
     /* let inputImagem = document.getElementById("imagem"); */
 
-    inputNome.value = objetousuario.nome;
-    inputEmail.value = objetousuario.email;
-    inputTelefone.value = objetousuario.telefone;
+    inputNome.value = objUsuario.nome;
+    inputEmail.value = objUsuario.email;
+    inputTelefone.value = objUsuario.telefone;
 
     let telefone = inputTelefone.value
     telefone = telefone.replace(/\D/g, "");
@@ -31,8 +33,48 @@ $(document).ready(async function(){
 
     inputTelefone.value = telefone;
 
-    inputSenha.value = objetousuario.senha;
+    inputSenha.value = objUsuario.senha;
    /*  inputImagem.src = usuarioLogado.imagem_perfil; */
 
     /* console.log("usuarioLogado", usuarioLogado.imagem_perfil); */
+    
 });
+
+const botaoEditarConta = document.getElementById("editarContaBtn");
+botaoEditarConta.addEventListener("click", mudarconta);
+
+document.getElementById("apagarConta").addEventListener('click',apagarConta);
+document.getElementById("sairConta").addEventListener('click',sair);
+
+async function mudarconta(){
+  
+  if (usuarioLogado == null || usuarioLogado == "") { return; } // Se ninguém está logado para por aqui
+  
+  var inputNome = document.getElementById("nome").value;
+  var inputEmail = document.getElementById("email").value;
+  var inputTelefone = document.getElementById("telefone").value;
+  var inputSenha = document.getElementById("senha").value;
+
+  var novoUsuario = objUsuario; //await JSONServer.buscaUsuarios(usuarioLogado);
+  novoUsuario.nome = inputNome;
+  novoUsuario.email = inputEmail;
+  novoUsuario.telefone = inputTelefone;
+  novoUsuario.senha = inputSenha;
+
+  JSONServer.editaUsuario(usuarioLogado,novoUsuario)
+  
+  // Exibir uma mensagem de sucesso ou redirecionar para outra pá
+  console.log("As informações da conta foram atualizadas com sucesso!");
+} 
+
+async function apagarConta() {
+  if (usuarioLogado == null || usuarioLogado == "") { return; } // Se ninguém está logado para por aqui
+  await JSONServer.apagaUsuario(usuarioLogado);
+  console.log("Usuário apagado");
+  window.location.href = "../pages/login.html";
+}
+
+function sair() {
+  LoginManager.logoff();
+  window.location.href = "../pages/login.html";
+}
