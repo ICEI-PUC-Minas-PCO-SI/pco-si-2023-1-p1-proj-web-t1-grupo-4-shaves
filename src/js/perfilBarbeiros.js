@@ -14,17 +14,17 @@ var idurl = params.get("id");
 idurl = 3;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-LoginManager.login(3);
+LoginManager.login(2);
 
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
 if(IdUsuarioLogado == ""){
-    $("#linkConta").remove()
-    $("#linkGerencia").remove()
+    $('.linkConta').remove()
+    $('.linkGerencia').remove()
 }
 else{
     var usuario = await objConexao.buscaUsuarios(IdUsuarioLogado) 
     if(usuario.permissao !=3){
-        $("#linkGerencia").remove() 
+        $('.linkGerencia').remove() 
     }
 }
 
@@ -127,8 +127,8 @@ $('.limpa-card').on('click',function(){
     $('.card').each(function(index){
         if (index == cardId) {
             $(this).children('img').attr('src',default_path +"fotocorte.jpg"); // Reseta imagem pra padrão
-            $(this).children('div').find('input').val(""); // Limpa título
-            $(this).children('div').children('textarea').val(""); // Limpa descrição
+            $(this).children('div').find('input').val("Corte."); // Limpa título
+            $(this).children('div').children('textarea').val("Descrição do corte."); // Limpa descrição
         }
     })
 })  
