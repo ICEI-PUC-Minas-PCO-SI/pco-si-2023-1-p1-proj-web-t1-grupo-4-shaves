@@ -16,6 +16,13 @@ $(document).ready(async function(){
     let inputEmail = document.getElementById("email");
     let inputTelefone = document.getElementById("telefone");
     let inputSenha = document.getElementById("senha");
+
+    var img_perfil = objUsuario.imagem_perfil;
+    if (img_perfil == "") {
+      img_perfil = "../Img/imagemshavesigor.png";
+    }
+
+    let foto = document.getElementById("fotoPerfil").src = "../Img/"+img_perfil;
     /* let inputImagem = document.getElementById("imagem"); */
 
     inputNome.value = objUsuario.nome;
@@ -55,11 +62,20 @@ async function mudarconta(){
   var inputTelefone = document.getElementById("telefone").value;
   var inputSenha = document.getElementById("senha").value;
 
+  var arquivo = document.getElementById("arquivoFoto").files[0];
+  var nomeArquivo = "";
+  if (arquivo) {
+    nomeArquivo = arquivo.name;
+  }
+  
   var novoUsuario = objUsuario; //await JSONServer.buscaUsuarios(usuarioLogado);
   novoUsuario.nome = inputNome;
   novoUsuario.email = inputEmail;
   novoUsuario.telefone = inputTelefone;
   novoUsuario.senha = inputSenha;
+  if (nomeArquivo != "") {
+    novoUsuario.imagem_perfil = nomeArquivo;
+  }
 
   JSONServer.editaUsuario(usuarioLogado,novoUsuario)
   
