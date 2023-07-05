@@ -3,8 +3,7 @@ import LoginManager from "./ModuloLogin.js";
 
 $(document).ready(async function() {
     var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
-    LoginManager.login(1)
-
+   
     if(IdUsuarioLogado==""){
         $(".link-conta").remove()
         $(".link-gerencia").remove()
