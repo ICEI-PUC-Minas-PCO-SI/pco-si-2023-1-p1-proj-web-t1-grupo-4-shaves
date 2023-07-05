@@ -11,10 +11,10 @@ const params = new URLSearchParams(url.search);
 var idurl = params.get("id");
 
 // Enquanto não tiver passando id pela URL, usar essa linha
-idurl = 3;
+//idurl = 3;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-LoginManager.login(3);
+//LoginManager.login(1);
 
 var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
 if(IdUsuarioLogado == ""){
