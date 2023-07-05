@@ -11,21 +11,20 @@ const params = new URLSearchParams(url.search);
 var idurl = params.get("id");
 
 // Enquanto não tiver passando id pela URL, usar essa linha
-idurl = 3;
+idurl = 2;
 
 // Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-LoginManager.login(2);
+LoginManager.logoff();
 
 
 
-//Verificar se os usuários estão logados e tem permissão ou não para realizar funções:
+//Verificar se os usuários estão logados e tem permissão ou não para realizar funções, além de definir qual imagem aparecerá para cada usuário baseado na sua permissão:
 $(document).ready(async () => {
     var usuario = null;
 
     if (IdUsuarioLogado) {
         usuario = await objConexao.buscaUsuarios(idurl);
         setValues(usuario);
-        exibeTrabalhos();
 
         if (IdUsuarioLogado == idurl && (usuario.permissao == 2 || usuario.permissao == 3)) {
             exibirVisaoBarbeiro();
@@ -35,8 +34,15 @@ $(document).ready(async () => {
     } else {
         exibeTrabalhos();
         exibirVisaoComum();
+
+        usuario = await objConexao.buscaUsuarios(idurl);
+        $('#nomeBarbeiro').text(usuario.nome);
+        $('#contatoBarbeiro').text(usuario.telefone);
+        $('#emailBarbeiro').text(usuario.email);
+        $('#fotoBarbeiro').attr('src', usuario.imagem_perfil || '../Img/fotobarbeiro.jpg');
     }
 });
+
 
 
 //Verifica se o usuário está logado ou tem permissão. Esse código faz aparecer o "Minha Conta" ou o "Gerência" de acordo com as permissões do usuário.
