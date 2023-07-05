@@ -82,8 +82,8 @@
     {
       "data": "11/10/2021",
       "horario": "09:00",
-      "cliente": "3",
-      "barbeiro": "2",
+      "cliente": "4",     
+       "barbeiro": "2",
       "servico": "Corte de cabelo",
       "descricao": "a1",
       "status": "1",

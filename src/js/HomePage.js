@@ -99,12 +99,11 @@ $(document).ready(async function(){
 
         var ultimoAgendamento = [];
         
+        ultimoAgendamento = null;    
         for (let i=0; i<agendamentos.length;i++) {
             console.log('status:',agendamentos[i].status, agendamentos[i].cliente, usuarioLogado.id)
             if (agendamentos[i].status == "1" && parseInt(agendamentos[i].cliente) == usuarioLogado.id)
                 ultimoAgendamento = agendamentos[i];
-            else
-                ultimoAgendamento = null;    
         }
         
         console.log('aqui', ultimoAgendamento)
@@ -155,3 +154,31 @@ function CriarUltimo(ultimoAgendamento, barbeiroAgendado){
     } 
     $("#cardUltimo").append(card)
 }
+
+  // Obtém o elemento do carrossel
+  var carousel = document.getElementById('carouselExampleIndicators');
+
+  // Inicia a rolagem automática
+  var carouselInterval = setInterval(function() {
+    // Verifica se o carrossel está sendo exibido
+    if (document.visibilityState === 'visible') {
+      // Rola para o próximo slide
+      var nextButton = carousel.querySelector('.carousel-control-next');
+      nextButton.click();
+    }
+  }, 3000); // Define o intervalo de tempo em milissegundos (3000 = 3 segundos)
+
+  // Pausa a rolagem automática ao passar o mouse sobre o carrossel
+  carousel.addEventListener('mouseenter', function() {
+    clearInterval(carouselInterval);
+  });
+
+  // Retoma a rolagem automática ao remover o mouse do carrossel
+  carousel.addEventListener('mouseleave', function() {
+    carouselInterval = setInterval(function() {
+      if (document.visibilityState === 'visible') {
+        var nextButton = carousel.querySelector('.carousel-control-next');
+        nextButton.click();
+      }
+    }, 3000);
+  });
