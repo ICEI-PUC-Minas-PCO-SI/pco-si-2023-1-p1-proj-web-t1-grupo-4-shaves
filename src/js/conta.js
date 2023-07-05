@@ -2,7 +2,10 @@ import JSONServer from "./ModuloConexao.js";
 import LoginManager from "./ModuloLogin.js";
 
 $(document).ready(async function(){
-    var usuarioLogado = JSON.parse(LoginManager.getIdUsuarioLogado());
+    var usuarioLogado = LoginManager.getIdUsuarioLogado();
+    var objetousuario = await JSONServer.buscaUsuarios(parseInt(usuarioLogado))
+    console.log(objetousuario)
+  
 
     let inputNome = document.getElementById("nome");
     let inputEmail = document.getElementById("email");
@@ -10,9 +13,9 @@ $(document).ready(async function(){
     let inputSenha = document.getElementById("senha");
     /* let inputImagem = document.getElementById("imagem"); */
 
-    inputNome.value = usuarioLogado.nome;
-    inputEmail.value = usuarioLogado.email;
-    inputTelefone.value = usuarioLogado.telefone;
+    inputNome.value = objetousuario.nome;
+    inputEmail.value = objetousuario.email;
+    inputTelefone.value = objetousuario.telefone;
 
     let telefone = inputTelefone.value
     telefone = telefone.replace(/\D/g, "");
@@ -25,7 +28,7 @@ $(document).ready(async function(){
 
     inputTelefone.value = telefone;
 
-    inputSenha.value = usuarioLogado.senha;
+    inputSenha.value = objetousuario.senha;
    /*  inputImagem.src = usuarioLogado.imagem_perfil; */
 
     /* console.log("usuarioLogado", usuarioLogado.imagem_perfil); */

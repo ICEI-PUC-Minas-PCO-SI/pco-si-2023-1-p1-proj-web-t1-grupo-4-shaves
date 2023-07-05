@@ -65,6 +65,17 @@
       "trabalhos": "0",
       "imagem_perfil": "",
       "id": 7
+    },
+    {
+      "nome": "igor ",
+      "senha": "123456",
+      "email": "igao@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "04/07/2023",
+      "telefone": "994138119",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 8
     }
   ],
   "agendamentos": [
