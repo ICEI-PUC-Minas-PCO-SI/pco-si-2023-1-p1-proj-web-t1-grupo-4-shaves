@@ -35,7 +35,7 @@
     },
     {
       "nome": "Romario",
-      "senha": "123",
+      "senha": "123456789",
       "email": "romario@gmail.com",
       "permissao": "1",
       "dataCriacao": "26/06/2023",
@@ -82,11 +82,21 @@
       "data": "11/10/2021",
       "horario": "09:00",
       "cliente": "3",
-      "barbeiro": "6",
+      "barbeiro": "5",
       "servico": "Corte + Barba",
       "descricao": "Novo",
       "status": "1",
       "id": 2
+    },
+    {
+      "data": "18/07/2023",
+      "horario": "09:00",
+      "cliente": "3",
+      "barbeiro": "5",
+      "servico": "Corte",
+      "descricao": "Corte Afro",
+      "status": "1",
+      "id": 3
     }
   ]
 }
