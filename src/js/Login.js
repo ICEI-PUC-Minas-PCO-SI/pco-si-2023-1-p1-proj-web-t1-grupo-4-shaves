@@ -10,14 +10,25 @@ const login = document.getElementById("loginBtn");
 
 email.addEventListener("input", validateEmail);
 senha.addEventListener("input", validatePassword);
-checkbox.addEventListener("change", () => {
+checkbox.addEventListener("change", togglePasswordVisible);
+login.addEventListener("click", searchAccount);
+document.addEventListener("DOMContentLoaded", verifyLogged);
+
+
+function verifyLogged() {
+  const logged = loginManager.getIdUsuarioLogado(); 
+  if(logged != null && logged != ""){
+    window.location.href = "../pages/HomePage.html";
+  }
+}
+
+function togglePasswordVisible() {
   if (checkbox.checked) {
     senha.type = "text";
   } else {
     senha.type = "password";
   }
-});
-login.addEventListener("click", searchAccount);
+}
 
 function validateEmail() {
   if (!email.value) {
