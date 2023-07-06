@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "sweetalert2": "^11.7.12"
+  },
+  "scripts": {
+    "start": "json-server --watch src/js/db.json --port $PORT"
   }
 }
