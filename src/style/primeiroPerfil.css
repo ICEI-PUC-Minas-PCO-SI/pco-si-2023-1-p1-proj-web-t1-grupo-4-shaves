@@ -39,6 +39,6 @@
     .footer_area{margin-top: 70px;}
 }
 
-@media screen and (min-width:575px) {
+@media screen and (min-width:1001px) {
     .btn_drop{display: none;}
 }
