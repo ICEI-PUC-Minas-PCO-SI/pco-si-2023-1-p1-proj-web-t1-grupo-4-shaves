@@ -8,8 +8,9 @@ Bruno Henrique Almeida Moreira - Durante a 5ª etapa fiquei com a responsabilida
 
 Matheus Felipe Galdino - Ao longo da etapa 5, fiquei responsável pela adição de funcionalidade da tela HOMEPAGE, adicionei as funcionalidades da página utilizando o javascript, auxiliei o inategrante Igor na implementação da funcionalidade da página de Conta, além disso fiz os slides para a a apresentação juntamente com os alunos Igor e Felipe, também modifiquei o carrossel para o devido funcionamento da rolagem automática.
 
-Guilherme Simão Barbosa da Silva - 
+Guilherme Simão Barbosa da Silva - Durante a etapa 5, fiquei responsável por melhorar as páginas de login e cadastro, melhorei os verificadores de campos, fiz refactor de alguns código das mesmas e melhorei a responsividade das páginas. Além disso tomei a responsabilidade de outro membro para criar um repositório de API para a comunicação do frontend com o db.json. Adicionalmente fiquei responsável por coordenar e realizar o deploy de 2 repositórios, o da página da aplicação e da API que se comunica com o db.json. Também auxilei outros membros na construção de algumas páginas e resolução de problemas. 
 
 Felipe Ferreira de Castro - Durante a etapa 5, fiquei responsável pelo término das funcionalidades da página "telaBarbeiros", utilizei javascript e Jquery para auxiliar no meu trabalho, além disso fiquei responsável pela planilha e execução de testes como foi solicitado pelo professor,e ajuda em outros campos gerais do grupo como a integração com outras páginas da aplicação.
 
 Gabriel Amorim Gonçalves Silva - Ao longo da etapa 5 fiquei responsável por tornar real o perfil dos barbeiros. Ao contrário da última etapa, nessa eu consegui me empenhar totalmente ao projeto e desenvolvi, com auxílio do João Vítor de Souza França, a tela de perfil dos barbeiros. Consegui entender bem o projeto e até auxiliar meus companheiros com problemas que estavam ao meu alcance, como alguns processos de fluxo do GitHub. Realizei a funcionalidade da tela utilizando as ferramentas CRUD Server Json, Javascript e Jquery, corrigi bugs da página e alterei também algumas coisas no visual da mesma. 
+
