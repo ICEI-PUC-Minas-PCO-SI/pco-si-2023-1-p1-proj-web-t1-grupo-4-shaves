@@ -10,13 +10,6 @@ const params = new URLSearchParams(url.search);
 // Obtém o valor do parâmetro "id"
 var idurl = params.get("id");
 
-// Enquanto não tiver passando id pela URL, usar essa linha
-idurl = 3;
-
-// Aqui é pra simular qual usuário tá logado, comenta ou descomenta se necessário
-LoginManager.logoff();
-
-
 
 //Verificar se os usuários estão logados e tem permissão ou não para realizar funções, além de definir qual imagem aparecerá para cada usuário baseado na sua permissão:
 $(document).ready(async () => {
