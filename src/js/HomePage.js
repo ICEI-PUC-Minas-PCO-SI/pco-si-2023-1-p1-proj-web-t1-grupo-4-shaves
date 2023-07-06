@@ -44,6 +44,8 @@ async function validaUsuario() {
 
 
 $(document).ready(async function(){
+    var usuarioId = LoginManager.getIdUsuarioLogado();
+    var usuarioLogado = null;
 
     Swal.fire({
         title: 'Aguarde!',
@@ -55,7 +57,9 @@ $(document).ready(async function(){
         },
     });
 
-    var idUsuarioLogado = LoginManager.getIdUsuarioLogado();
+    if (usuarioId)
+        var usuarioLogado = await JSONServer.buscaUsuarios(usuarioId);
+    // var idUsuarioLogado = LoginManager.getIdUsuarioLogado();
 
     if (idUsuarioLogado != "") { 
         var usuarioLogado = await JSONServer.buscaUsuarios(idUsuarioLogado);

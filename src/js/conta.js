@@ -6,7 +6,7 @@ var objUsuario = null;
 
 $(document).ready(async function(){
 
-    if (usuarioLogado == null || usuarioLogado == "") { return; } // Se ninguém está logado para por aqui
+     if (usuarioLogado == null || usuarioLogado == "") { return; } // Se ninguém está logado para por aqui
 
     objUsuario = await JSONServer.buscaUsuarios(parseInt(usuarioLogado))
 
