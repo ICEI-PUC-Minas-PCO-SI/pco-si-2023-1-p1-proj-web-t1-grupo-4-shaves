@@ -24,22 +24,45 @@ console.log(objConexao.lista_usuarios_json) */
      objConexao.upload_imagem_perfil(2,arquivo) 
 }) */
 
+validaUsuario()
+
+async function validaUsuario() {
+    var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
+    if(IdUsuarioLogado == ""){
+        $('.linkGerencia').remove()
+    }else{
+        var usuario = await JSONServer.buscaUsuarios(IdUsuarioLogado) ;
+        if(usuario.permissao !=3){
+            $('.linkGerencia').remove() 
+        }
+        console.log(usuario.permissao)
+        if (usuario.permissao != 2) {
+            $('#agendamentoBarbeiro').remove()
+        }
+    }
+}
+
 
 $(document).ready(async function(){
-    var usuarioId = LoginManager.getIdUsuarioLogado();
-    var usuarioLogado = null;
 
-    console.log(usuarioId)
+    Swal.fire({
+        title: 'Aguarde!',
+        html: 'Carregando informações...',
+        icon: 'success',
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading()
+        },
+    });
 
-    if (usuarioId)
-        var usuarioLogado = await JSONServer.buscaUsuarios(usuarioId);
+    var idUsuarioLogado = LoginManager.getIdUsuarioLogado();
 
-    console.log("usuarioLogado", usuarioLogado)
+    if (idUsuarioLogado != "") { 
+        var usuarioLogado = await JSONServer.buscaUsuarios(idUsuarioLogado);
+        if (usuarioLogado && usuarioLogado.permissao == '3')
+            document.getElementById("ultimoAgendamento").style.display = "none";
 
-    if (!usuarioLogado || usuarioLogado.permissao == '3')
-        document.getElementById("ultimoAgendamento").style.display = "none";
-    
-    if (!usuarioLogado) {
+    } else {
         const minhaConta = document.getElementById("minhaConta")
         minhaConta.innerText = "Login"
         minhaConta.href = "login.html"
@@ -52,6 +75,19 @@ $(document).ready(async function(){
     });
 
     var agendamentos = await JSONServer.buscaAgendamentos();
+
+    var table = $('#t-agen');
+    agendamentos.forEach(async function(agendamento){
+        if (agendamento.barbeiro == idUsuarioLogado && agendamento.status == 1) {
+            var usuario = await JSONServer.buscaUsuarios(agendamento.cliente);
+            table.append(`<tr>
+                            <td>${agendamento.id}</td>
+                            <td>${agendamento.data}</td>
+                            <td>${agendamento.horario}</td>
+                            <td>${usuario.nome}</td>
+                        `);
+        }
+    });
 
     var listaQuantidadesBarbeiros = []; // Lista para armazenar as quantidades de agendamentos por barbeiro
 
@@ -79,20 +115,16 @@ $(document).ready(async function(){
             });
         }
 
-        console.log("Lista de quantidades por barbeiro:", listaQuantidadesBarbeiros);
-
         listaQuantidadesBarbeiros.sort(function(a, b) {
             return b.quantidade - a.quantidade;
           });
 
-        console.log("Lista ordenada de  quantidades por barbeiro:", listaQuantidadesBarbeiros);  
     } 
 
     for(let i=0; i < listaQuantidadesBarbeiros.length; i++){
-        console.log('lista', listaQuantidadesBarbeiros[i].barbeiro);
+
         for(let j=0; j<barbeiros.length; j++) {
-            
-            console.log(listaQuantidadesBarbeiros[i].barbeiro, barbeiros[j].id )
+
             if(listaQuantidadesBarbeiros[i].barbeiro == barbeiros[j].id) {
                 var barbeiro = await JSONServer.buscaUsuarios(barbeiros[j].id);
                 CriarCard(barbeiro)
@@ -107,19 +139,19 @@ $(document).ready(async function(){
         
         ultimoAgendamento = null;    
         for (let i=0; i<agendamentos.length;i++) {
-            console.log('status:',agendamentos[i].status, agendamentos[i].cliente, usuarioLogado.id)
+
             if (agendamentos[i].status == "1" && parseInt(agendamentos[i].cliente) == usuarioLogado.id)
                 ultimoAgendamento = agendamentos[i];
         }
-        
-        console.log('aqui', ultimoAgendamento)
+
         if (ultimoAgendamento) {
             var barbeiroAgendado = await JSONServer.buscaUsuarios(parseInt(ultimoAgendamento.barbeiro));
-            console.log("filtro", ultimoAgendamento,barbeiroAgendado)
         }
         CriarUltimo(ultimoAgendamento, barbeiroAgendado)
         
     }
+
+    Swal.close();
 })
 
 function CriarCard(barbeiro){
@@ -145,7 +177,7 @@ function CriarCard(barbeiro){
 /* <a href="segundoPerfil.html" class="btn btn-dark">Agendar horário</a> */
 
 function CriarUltimo(ultimoAgendamento, barbeiroAgendado){
-    console.log('ultimoAgendamento', ultimoAgendamento);
+
     if (ultimoAgendamento) {
         var card= `                                 <p class="h4">Barbeiro:</p>
         <p>${barbeiroAgendado.nome}</p>

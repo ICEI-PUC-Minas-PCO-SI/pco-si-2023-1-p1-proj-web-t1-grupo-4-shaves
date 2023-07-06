@@ -70,7 +70,8 @@ function validateEmail() {
   }
 }
 function validateContato() {
-  if (contato.value) {
+  const contatoPattern = /^\d{2}\s\d{9}$/;
+  if (contato.value && contatoPattern.test(contato.value)) {
     contato.classList.remove("is-invalid");
     contato.classList.add("is-valid");
     document.getElementById("contato-validation").innerText = "";

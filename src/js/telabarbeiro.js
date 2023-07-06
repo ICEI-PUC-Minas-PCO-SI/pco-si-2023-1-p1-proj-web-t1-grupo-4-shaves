@@ -59,7 +59,7 @@ function filtraBarbeiros(todosUsuarios){
 
 $(document).ready(function() {
     
-    $('#search-input').on('input', function() {
+    $('.search-input').on('input', function() {
        
         var searchTerm = $(this).val().toLowerCase();
         

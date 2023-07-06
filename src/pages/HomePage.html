@@ -42,10 +42,10 @@
                                         <a class="nav-link h5" href="agendamento.html">Agenda</a>
                                     </li>
                                     <li class="nav-item breadcrumb-item">
-                                        <a class="nav-link h5" href="#">Contato</a>
-                                    </li>
-                                    <li class="nav-item breadcrumb-item">
                                         <a class="nav-link h5" href="telaconta.html" id="minhaConta">Minha Conta</a>
+                                    </li>
+                                    <li class="nav-item breadcrumb-item linkGerencia">
+                                        <a class="nav-link" href="TelaAdministracao.html">Gerência</a>
                                     </li>
                                 </ul>
                             </div>
@@ -153,13 +153,25 @@
         </section>
 
                
-        <div class="p-5">
+        <div class="p-5" id="agendamentoBarbeiro">
+            <!-- Tabela de agendamentos -->
+            <h2>Agendamentos</h2>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar my-3 w-75">
+                <table class="table align-middle table-dark table-striped table-hover m-0" id="t-agen">
+                    <tr>
+                        <th class="table-dark">ID</td>
+                        <th class="table-dark">Data</td>
+                        <th class="table-dark">Horário</td>
+                        <th class="table-dark">Cliente</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </main>
    <!--  <input id="arquivo" type="file"><button id="enviar">Enviar</button> -->
 
     <!--Footer-->
-    <footer class="footer bg-dark">
+    <footer class="footer bg-dark mt-3">
         <div class="container">
             <div class="row align-items-center p-3">
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 footer_area text-center">
