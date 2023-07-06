@@ -10,6 +10,6 @@ Matheus Felipe Galdino - Ao longo da etapa 5, fiquei responsável pela adição 
 
 Guilherme Simão Barbosa da Silva - 
 
-Felipe Ferreira de Castro - Durante a etapa 5, fiquei responsável pelo término das funcionalidades da página "telaBarbeiros", utilizeijavascript e Jquery para auxiliar no meu trabalho, além disso fiquei responsável pela planilha e execução de testes como foi solicitado pelo professor,e ajuda em outros campos gerais do grupo como a integração com outras páginas da aplicação.
+Felipe Ferreira de Castro - Durante a etapa 5, fiquei responsável pelo término das funcionalidades da página "telaBarbeiros", utilizei javascript e Jquery para auxiliar no meu trabalho, além disso fiquei responsável pela planilha e execução de testes como foi solicitado pelo professor,e ajuda em outros campos gerais do grupo como a integração com outras páginas da aplicação.
 
 Gabriel Amorim Gonçalves Silva - 
