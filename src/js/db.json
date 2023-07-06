@@ -2,8 +2,8 @@
   "usuarios": [
     {
       "nome": "Luiz Otávio",
-      "senha": "123",
-      "email": "luizindocapa@gmail.com",
+      "senha": "luizotavio",
+      "email": "luizotaviovieira@gmail.com",
       "permissao": "1",
       "dataCriacao": "26/06/2023",
       "telefone": "31988888888",
@@ -13,7 +13,7 @@
     },
     {
       "nome": "Michael Fernades",
-      "senha": "1234567",
+      "senha": "mich1234",
       "email": "mich123@gmail.com",
       "permissao": "2",
       "dataCriacao": "26/06/2023",
@@ -24,9 +24,9 @@
     },
     {
       "nome": "Samuel Nogueira",
-      "senha": "123",
-      "email": "user3@gmail.com",
-      "permissao": "3",
+      "senha": "snogueira123",
+      "email": "samunog@gmail.com",
+      "permissao": "2",
       "dataCriacao": "26/06/2023",
       "telefone": "31988884032",
       "trabalhos": "0",
@@ -46,7 +46,7 @@
     },
     {
       "nome": "Washington Dias",
-      "senha": "123",
+      "senha": "wash1234",
       "email": "washington@gmail.com",
       "permissao": "2",
       "dataCriacao": "26/06/2023",
@@ -67,57 +67,49 @@
       "id": 7
     },
     {
-      "nome": "Matheus",
-      "senha": "123",
-      "email": "matheus@gmail.com",
+      "nome": "igor",
+      "senha": "123456",
+      "email": "igao@gmail.com",
       "permissao": "1",
       "dataCriacao": "04/07/2023",
-      "telefone": "313131313",
+      "telefone": "994138119",
       "trabalhos": "0",
       "imagem_perfil": "",
       "id": 8
+    },
+    {
+      "nome": "admin",
+      "senha": "admshaves",
+      "email": "shavesbarbearia@gmail.com",
+      "permissao": "3",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 9
+    },
+    {
+      "nome": "João França",
+      "senha": "tiawshaves",
+      "email": "joaof@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 10
     }
   ],
   "agendamentos": [
     {
-      "data": "11/10/2021",
-      "horario": "09:00",
-      "cliente": "4",     
-       "barbeiro": "2",
-      "servico": "Corte de cabelo",
-      "descricao": "a1",
+      "data": "06/07/2023",
+      "horario": "14:00",
+      "cliente": "9",
+      "barbeiro": "3",
+      "servico": "Corte",
+      "descricao": "",
       "status": "1",
       "id": 1
-    },
-    {
-      "data": "31/07/2023",
-      "horario": "09:00",
-      "cliente": "3",
-      "barbeiro": "5",
-      "servico": "Corte + Barba",
-      "descricao": "Corte + Barba",
-      "status": "1",
-      "id": 2
-    },
-    {
-      "data": "31/07/2023",
-      "horario": "16:00",
-      "cliente": "8",
-      "barbeiro": "5",
-      "servico": "Relaxamento",
-      "descricao": "asddfs",
-      "status": "1",
-      "id": 4
-    },
-    {
-      "data": "18/07/2023",
-      "horario": "09:00",
-      "cliente": "3",
-      "barbeiro": "5",
-      "servico": "Corte",
-      "descricao": "Corte Afro",
-      "status": "1",
-      "id": 4
     }
   ]
 }

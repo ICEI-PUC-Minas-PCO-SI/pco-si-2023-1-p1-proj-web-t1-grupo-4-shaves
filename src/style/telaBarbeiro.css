@@ -74,4 +74,7 @@ body, html {
   .dropdown-menu-no-divider .dropdown-item {
     border-bottom: none;
   }
-  
+  @media screen and (max-width:525px) {
+    #barraPesquisa { display: none;}
+    #mainframe {margin-top: 30%;}
+}
