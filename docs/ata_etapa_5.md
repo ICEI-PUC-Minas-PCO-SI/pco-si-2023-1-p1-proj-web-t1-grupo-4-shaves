@@ -10,6 +10,6 @@ Matheus Felipe Galdino - Ao longo da etapa 5, fiquei responsável pela adição 
 
 Guilherme Simão Barbosa da Silva - 
 
-Felipe Ferreira de Castro - Durante a etapa 5, fiquei responsável pelo término das funcionalidades da página "telaBarbeiros", utilizeijavascript e Jquery para auxiliar no meu trabalho, além disso fiquei responsável pela planilha e execução de testes como foi solicitado pelo professor,e ajuda em outros campos gerais do grupo como a integração com outras páginas da aplicação.
+Felipe Ferreira de Castro - Durante a etapa 5, fiquei responsável pelo término das funcionalidades da página "telaBarbeiros", utilizei javascript e Jquery para auxiliar no meu trabalho, além disso fiquei responsável pela planilha e execução de testes como foi solicitado pelo professor,e ajuda em outros campos gerais do grupo como a integração com outras páginas da aplicação.
 
-Gabriel Amorim Gonçalves Silva - 
+Gabriel Amorim Gonçalves Silva - Ao longo da etapa 5 fiquei responsável por tornar real o perfil dos barbeiros. Ao contrário da última etapa, nessa eu consegui me empenhar totalmente ao projeto e desenvolvi, com auxílio do João Vítor de Souza França, a tela de perfil dos barbeiros. Consegui entender bem o projeto e até auxiliar meus companheiros com problemas que estavam ao meu alcance, como alguns processos de fluxo do GitHub. Realizei a funcionalidade da tela utilizando as ferramentas CRUD Server Json, Javascript e Jquery, corrigi bugs da página e alterei também algumas coisas no visual da mesma. 
