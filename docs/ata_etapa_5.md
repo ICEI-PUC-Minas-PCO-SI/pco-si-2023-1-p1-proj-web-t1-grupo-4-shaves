@@ -2,7 +2,7 @@ João Vítor de Souza França - João Vítor de Souza França - Durante a etapa 
 
 Igor Alavarenga Nunes de Brito - Ao decorrer da etapa 5, fiquei com a responsabilidade de editar as funcionalidades da pagina de conta, adicionei funcionalidade para os botões ultilizando o javascript, além de atualizar o HTML para uma melhor identidade visual do site. Juntamente com os integrantes do grupo Matheus e Felipe, criamos o slide para a apresentação do projeto.
 
-Bruno Henrique Almeida Moreira - 
+Bruno Henrique Almeida Moreira - Durante a 5ª etapa fiquei com a responsabilidade de ajustar a página de agendamento e adicionar novas funcionalidades ao que se encontrava nas últimas etapas do projeto. Adicionei regras de controle para o agendamento e alinhei com os requisitos;
 
 Matheus Felipe Galdino - Ao longo da etapa 5, fiquei responsável pela adição de funcionalidade da tela HOMEPAGE, adicionei as funcionalidades da página utilizando o javascript, auxiliei o inategrante Igor na implementação da funcionalidade da página de Conta, além disso fiz os slides para a a apresentação juntamente com os alunos Igor e Felipe, também modifiquei o carrossel para o devido funcionamento da rolagem automática.
 
