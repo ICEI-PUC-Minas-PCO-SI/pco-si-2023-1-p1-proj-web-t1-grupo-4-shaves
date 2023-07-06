@@ -28,7 +28,7 @@ validaUsuario()
 
 async function validaUsuario() {
     var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
-    if(IdUsuarioLogado == ""){
+    if(!IdUsuarioLogado || IdUsuarioLogado == ""){
         $('.linkGerencia').remove()
         $('#agendamentoBarbeiro').remove()
     }else{
@@ -59,15 +59,18 @@ $(document).ready(async function(){
 
     var idUsuarioLogado = LoginManager.getIdUsuarioLogado();
 
-    if (idUsuarioLogado != "") { 
-        usuarioLogado = await JSONServer.buscaUsuarios(idUsuarioLogado);
+    if (idUsuarioLogado != "" && idUsuarioLogado) { 
+        var usuarioLogado = await JSONServer.buscaUsuarios(idUsuarioLogado);
         if (usuarioLogado && usuarioLogado.permissao == '3')
             document.getElementById("ultimoAgendamento").style.display = "none";
 
     } else {
-        const minhaConta = document.getElementById("minhaConta")
-        minhaConta.innerText = "Login"
-        minhaConta.href = "login.html"
+        if (!idUsuarioLogado || idUsuarioLogado == "") {
+            const minhaConta = document.getElementById("minhaConta")
+            minhaConta.innerText = "Login"
+            minhaConta.href = "login.html"
+            document.getElementById("ultimoAgendamento").style.display = "none";
+        }
     }
 
     var todosUsuarios = await JSONServer.buscaUsuarios();
