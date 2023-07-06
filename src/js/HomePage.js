@@ -30,6 +30,7 @@ async function validaUsuario() {
     var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
     if(IdUsuarioLogado == ""){
         $('.linkGerencia').remove()
+        $('#agendamentoBarbeiro').remove()
     }else{
         var usuario = await JSONServer.buscaUsuarios(IdUsuarioLogado) ;
         if(usuario.permissao !=3){
