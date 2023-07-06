@@ -44,6 +44,17 @@ async function validaUsuario() {
 
 
 $(document).ready(async function(){
+
+    Swal.fire({
+        title: 'Aguarde!',
+        html: 'Carregando informações...',
+        icon: 'success',
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading()
+        },
+    });
+
     var idUsuarioLogado = LoginManager.getIdUsuarioLogado();
 
     if (idUsuarioLogado != "") { 
@@ -66,13 +77,14 @@ $(document).ready(async function(){
     var agendamentos = await JSONServer.buscaAgendamentos();
 
     var table = $('#t-agen');
-    agendamentos.forEach(agendamento => {
+    agendamentos.forEach(async function(agendamento){
         if (agendamento.barbeiro == idUsuarioLogado && agendamento.status == 1) {
+            var usuario = await JSONServer.buscaUsuarios(agendamento.cliente);
             table.append(`<tr>
                             <td>${agendamento.id}</td>
                             <td>${agendamento.data}</td>
                             <td>${agendamento.horario}</td>
-                            <td>${agendamento.cliente}</td>
+                            <td>${usuario.nome}</td>
                         `);
         }
     });
@@ -138,6 +150,8 @@ $(document).ready(async function(){
         CriarUltimo(ultimoAgendamento, barbeiroAgendado)
         
     }
+
+    Swal.close();
 })
 
 function CriarCard(barbeiro){
