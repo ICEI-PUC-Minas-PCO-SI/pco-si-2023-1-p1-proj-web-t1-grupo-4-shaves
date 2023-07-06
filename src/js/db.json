@@ -1,0 +1,125 @@
+{
+  "usuarios": [
+    {
+      "nome": "Luiz Otávio",
+      "senha": "luizotavio",
+      "email": "luizotaviovieira@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 1
+    },
+    {
+      "nome": "Michael Fernades",
+      "senha": "mich1234",
+      "email": "mich123@gmail.com",
+      "permissao": "2",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988883120",
+      "trabalhos": "0",
+      "imagem_perfil": "../Img/barbeiro1.png",
+      "id": 2
+    },
+    {
+      "nome": "Samuel Nogueira",
+      "senha": "snogueira123",
+      "email": "samunog@gmail.com",
+      "permissao": "2",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988884032",
+      "trabalhos": "0",
+      "imagem_perfil": "../Img/barbeiro2.png",
+      "id": 3
+    },
+    {
+      "nome": "Romario",
+      "senha": "123456789",
+      "email": "romario@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988882380",
+      "trabalhos": "0",
+      "imagem_perfil": "../Img/corte.jpeg",
+      "id": 4
+    },
+    {
+      "nome": "Washington Dias",
+      "senha": "wash1234",
+      "email": "washington@gmail.com",
+      "permissao": "2",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988490372",
+      "trabalhos": "0",
+      "imagem_perfil": "../Img/barbeiro3.png",
+      "id": 5
+    },
+    {
+      "nome": "Guilherme Simao Primeiro",
+      "senha": "simao11",
+      "email": "guisimao1@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "27/06/2023",
+      "telefone": "31 999998888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 7
+    },
+    {
+      "nome": "igor",
+      "senha": "123456",
+      "email": "igao@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "04/07/2023",
+      "telefone": "994138119",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 8
+    },
+    {
+      "nome": "admin",
+      "senha": "admshaves",
+      "email": "shavesbarbearia@gmail.com",
+      "permissao": "3",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 9
+    },
+    {
+      "nome": "João França",
+      "senha": "tiawshaves",
+      "email": "joaof@gmail.com",
+      "permissao": "1",
+      "dataCriacao": "26/06/2023",
+      "telefone": "31988888888",
+      "trabalhos": "0",
+      "imagem_perfil": "",
+      "id": 10
+    }
+  ],
+  "agendamentos": [
+    {
+      "data": "06/07/2023",
+      "horario": "14:00",
+      "cliente": "9",
+      "barbeiro": "3",
+      "servico": "Corte",
+      "descricao": "",
+      "status": "1",
+      "id": 1
+    },
+    {
+      "data": "11/10/2021",
+      "horario": "16:00",
+      "cliente": "10",
+      "barbeiro": "5",
+      "servico": "Corte",
+      "descricao": "",
+      "status": "1",
+      "id": 2
+    }
+  ]
+}

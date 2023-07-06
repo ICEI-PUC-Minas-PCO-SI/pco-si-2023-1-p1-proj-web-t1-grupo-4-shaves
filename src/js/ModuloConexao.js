@@ -4,8 +4,8 @@ class JSONServer {
     status = { ativo: 1, finalizado: 2, cancelado: 3, remarcado: 4 };
     servicos = ['Corte','Barba','Corte + Barba','Escova','Relaxamento'];
 
-    static urlUsuarios() { return "https://tiaw-shavez-api.vercel.app/usuarios"; }
-    static urlAgendamentos() { return "https://tiaw-shavez-api.vercel.app/agendamentos"; }
+    static urlUsuarios() { return "http://localhost:3000/usuarios"; }
+    static urlAgendamentos() { return "http://localhost:3000/agendamentos"; }
 
     constructor() {
         if (JSONServer.instance) {
