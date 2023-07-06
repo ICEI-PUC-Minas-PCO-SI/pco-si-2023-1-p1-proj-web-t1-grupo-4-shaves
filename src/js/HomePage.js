@@ -69,6 +69,7 @@ $(document).ready(async function(){
             const minhaConta = document.getElementById("minhaConta")
             minhaConta.innerText = "Login"
             minhaConta.href = "login.html"
+            document.getElementById("ultimoAgendamento").style.display = "none";
         }
     }
 
