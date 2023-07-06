@@ -44,7 +44,6 @@ async function validaUsuario() {
 
 
 $(document).ready(async function(){
-    var usuarioId = LoginManager.getIdUsuarioLogado();
     var usuarioLogado = null;
 
     Swal.fire({
@@ -57,12 +56,10 @@ $(document).ready(async function(){
         },
     });
 
-    if (usuarioId)
-        var usuarioLogado = await JSONServer.buscaUsuarios(usuarioId);
-    // var idUsuarioLogado = LoginManager.getIdUsuarioLogado();
+    var idUsuarioLogado = LoginManager.getIdUsuarioLogado();
 
     if (idUsuarioLogado != "") { 
-        var usuarioLogado = await JSONServer.buscaUsuarios(idUsuarioLogado);
+        usuarioLogado = await JSONServer.buscaUsuarios(idUsuarioLogado);
         if (usuarioLogado && usuarioLogado.permissao == '3')
             document.getElementById("ultimoAgendamento").style.display = "none";
 
