@@ -8,10 +8,10 @@ class JSONServer {
     static urlAgendamentos() { return "https://tiaw-shavez-api.vercel.app/agendamentos"; }
 
     constructor() {
-        if (Conexao.instance) {
-            return Conexao.instance;
+        if (JSONServer.instance) {
+            return JSONServer.instance;
         }
-        Conexao.instance = this;
+        JSONServer.instance = this;
     }
 
     // Métodos READ ---------------------
