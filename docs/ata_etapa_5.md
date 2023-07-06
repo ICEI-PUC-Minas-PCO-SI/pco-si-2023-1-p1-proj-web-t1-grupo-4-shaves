@@ -1,4 +1,4 @@
-João Vítor de Souza França - Durante a etapa 5, fiquei responsável por ajustar diversos pontos e funcionalidades restantes no projeto. Também auxiliei o grupo com controle de fluxo git, além de organizar alguns arquivos e criar o index.html.
+João Vítor de Souza França - João Vítor de Souza França - Durante a etapa 5, fiquei responsável por ajustar diversos pontos com bugs e funcionalidades restantes no projeto, como o relatório de agendamentos para o barbeiro na homepage. Também auxiliei o grupo com controle de fluxo git, além de organizar alguns arquivos e criar o index.html. Fui responsável por colocar algumas melhorias visuais e auxiliar o Igor com a criação e ajustes de sua página.
 
 Igor Alavarenga Nunes de Brito - Ao decorrer da etapa 5, fiquei com a responsabilidade de editar as funcionalidades da pagina de conta, adicionei funcionalidade para os botões ultilizando o javascript, além de atualizar o HTML para uma melhor identidade visual do site. Juntamente com os integrantes do grupo Matheus e Felipe, criamos o slide para a apresentação do projeto.
 
