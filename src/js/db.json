@@ -110,6 +110,16 @@
       "descricao": "",
       "status": "1",
       "id": 1
+    },
+    {
+      "data": "11/10/2021",
+      "horario": "16:00",
+      "cliente": "10",
+      "barbeiro": "5",
+      "servico": "Corte",
+      "descricao": "",
+      "status": "1",
+      "id": 2
     }
   ]
 }

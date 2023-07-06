@@ -28,14 +28,16 @@ validaUsuario()
 
 async function validaUsuario() {
     var IdUsuarioLogado = LoginManager.getIdUsuarioLogado();
-    console.log(IdUsuarioLogado)
     if(IdUsuarioLogado == ""){
         $('.linkGerencia').remove()
     }else{
         var usuario = await JSONServer.buscaUsuarios(IdUsuarioLogado) ;
-        console.log(usuario)
         if(usuario.permissao !=3){
             $('.linkGerencia').remove() 
+        }
+        console.log(usuario.permissao)
+        if (usuario.permissao != 2) {
+            $('#agendamentoBarbeiro').remove()
         }
     }
 }
@@ -62,6 +64,18 @@ $(document).ready(async function(){
     });
 
     var agendamentos = await JSONServer.buscaAgendamentos();
+
+    var table = $('#t-agen');
+    agendamentos.forEach(agendamento => {
+        if (agendamento.barbeiro == idUsuarioLogado && agendamento.status == 1) {
+            table.append(`<tr>
+                            <td>${agendamento.id}</td>
+                            <td>${agendamento.data}</td>
+                            <td>${agendamento.horario}</td>
+                            <td>${agendamento.cliente}</td>
+                        `);
+        }
+    });
 
     var listaQuantidadesBarbeiros = []; // Lista para armazenar as quantidades de agendamentos por barbeiro
 
